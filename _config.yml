@@ -24,7 +24,7 @@ author:
   name             : "Ester Chen"
   avatar           : "images/android-chrome-512x512.png"
   # bio              : "Rochester Institute of Technology"
-  location         : "ROCHESTER, NY"
+  location         : "Rochester, NY"
   employer         :
   pubmed           : 
   # googlescholar    : "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
@@ -37,13 +37,13 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "cxc6160"
+  github           : "https://github.com/cxc6160"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "ec6152"
+  linkedin         : "https://linkedin.com/in/ec6152"
   dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
   orcid            : # e.g., "https://orcid.org/xxxx"
   pinterest        :
