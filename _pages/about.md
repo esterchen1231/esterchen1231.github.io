@@ -47,8 +47,10 @@ My research interest includes neural machine translation and computer vision. I 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 
 # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2024.08 - now*, CIS Ph.D. Student, Golisano College of Computing and Information Sciences, Rochester Institute of Technology, NY, United States
+- *2022.08 - 2024.05*, M.Sc. Informatics, College of Information Sciences and Technology, Penn State University, PA, United States
+- *2017.09 - 2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, ON, Canada
+
 
 # 💬 Invited Talks
 - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
