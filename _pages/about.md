@@ -17,6 +17,8 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
+Thanks for passing by!
+
 🚧detour🚧...
 
 My research interest includes human-computer interaction, accessibility, and visualization. 
@@ -24,11 +26,13 @@ My research interest includes human-computer interaction, accessibility, and vis
 
 
 # 🔥 News
-*2023.05*: 🎉Poster Accepted by The 20th Academy of Neuroscience for Architecture (ANFA), San Diego. Impact of Virtual Reality Navigation on Emotional Response to Virtual Architectural Environments: A Pilot Study. | Keywords: Virtual Reality; Architectural Geometry; Navigation Technique; Spatial Cognition; User Experience
-*2020.08*: 🎉Abstract Accepted by The 4th Academic Conference on Humanities and Social Sciences (IACHSS), Milan. Social Support of Life-Simulation Video Games: Animal Crossing New Horizons Case Study. | Keywords: Life Simulation Video Games; Social Support; Animal Crossing; Content Analysis Methods
+- *2023.05*: 🎉Poster Accepted by ANFA 2023, San Diego. | Impact of Virtual Reality Navigation on Emotional Response to Virtual Architectural Environments
+
+- *2020.08*: 🎉Abstract Accepted by IACHSS 2020, Milan. | Social Support of Life-Simulation Video Games
 
 # 📝 Publications 
 🚧detour🚧...
+
 <!-- <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div> -->
 <!-- <div class='paper-box-text' markdown="1"> -->
 
@@ -45,17 +49,19 @@ My research interest includes human-computer interaction, accessibility, and vis
 
 # 🎖 Honors and Awards
 🚧detour🚧...
+
 <!-- - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 # 📖 Educations
-- *2024.08 - now*, CIS Ph.D. Student, College of Computing and Information Sciences, Rochester Institute of Technology, United States
+- *2024.08 - Present*, CIS Ph.D. Student, College of Computing and Information Sciences, Rochester Institute of Technology, United States
 - *2022.08 - 2024.05*, M.Sc. Informatics, College of Information Sciences and Technology, Penn State University, United States
 - *2019.07 - 2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
 - *2017.09 - 2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, Canada
 
 # 💬 Invited Talks
 🚧detour🚧...
+
 <!-- - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
