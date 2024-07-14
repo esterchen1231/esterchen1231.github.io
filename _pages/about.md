@@ -59,12 +59,12 @@ My research interest includes human-computer interaction, accessibility, and vis
 - *2019.07 - 2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
 - *2017.09 - 2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, Canada
 
-# 💬 Invited Talks
-🚧detour🚧...
+<!-- # 💬 Invited Talks
+🚧detour🚧... -->
 
 <!-- - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
-# 💻 Internships
+<!-- # 💻 Internships
 - *2020.09 - 2020.11*, [PatternedScience, Data Analysis](https://github.com/), Montreal, Quebec.
-- *2020.07 - 2020.09*, [K11 Concepts, Digital Transformation](https://github.com/), Tsim Sha Tsui, Hong Kong.
+- *2020.07 - 2020.09*, [K11 Concepts, Digital Transformation](https://github.com/), Tsim Sha Tsui, Hong Kong. -->
