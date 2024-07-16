@@ -19,7 +19,7 @@ redirect_from:
 
 Thanks for passing by!
 
-🚧detour🚧...
+🚧detour en route🚧...
 
 My research interest includes human-computer interaction, accessibility, and visualization. 
 <!-- I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
@@ -31,7 +31,7 @@ My research interest includes human-computer interaction, accessibility, and vis
 - *2020.08*: 🎉Abstract Accepted by IACHSS 2020, Milan. | Social Support of Life-Simulation Video Games
 
 # 📝 Publications 
-🚧detour🚧...
+🚧detour en route🚧...
 
 <!-- <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div> -->
 <!-- <div class='paper-box-text' markdown="1"> -->
@@ -47,17 +47,17 @@ My research interest includes human-computer interaction, accessibility, and vis
 
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
-# 🎖 Honors and Awards
-🚧detour🚧...
+<!-- # 🎖 Honors and Awards
+🚧detour en route🚧... -->
 
 <!-- - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 # 📖 Educations
-- *2024.08 - Present*, CIS Ph.D. Student, College of Computing and Information Sciences, Rochester Institute of Technology, United States
-- *2022.08 - 2024.05*, M.Sc. Informatics, College of Information Sciences and Technology, Penn State University, United States
+- *2024.08 - Present*, CIS Ph.D. Student, Golisano College of Computing and Information Sciences, Rochester Institute of Technology, NY, United States
+- *2022.08 - 2024.05*, M.Sc. Informatics, College of Information Sciences and Technology, Penn State University, PA, United States
 - *2019.07 - 2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
-- *2017.09 - 2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, Canada
+- *2017.09 - 2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, ON, Canada
 
 <!-- # 💬 Invited Talks
 🚧detour🚧... -->
