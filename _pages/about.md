@@ -47,8 +47,8 @@ My research interest includes human-computer interaction, accessibility, and vis
 
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
-<!-- # 🎖 Honors and Awards
-🚧detour en route🚧... -->
+# 🎖 Honors and Awards
+🚧detour en route🚧...
 
 <!-- - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
@@ -66,5 +66,6 @@ My research interest includes human-computer interaction, accessibility, and vis
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
 <!-- # 💻 Internships
+
 - *2020.09 - 2020.11*, [PatternedScience, Data Analysis](https://github.com/), Montreal, Quebec.
 - *2020.07 - 2020.09*, [K11 Concepts, Digital Transformation](https://github.com/), Tsim Sha Tsui, Hong Kong. -->
