@@ -26,7 +26,7 @@ My research interest includes human-computer interaction, accessibility, and vis
 
 
 # 🔥 News
-- *2023.05*: 🎉Poster Accepted by ANFA 2023, San Diego. | Impact of Virtual Reality Navigation on Emotional Response to Virtual Architectural Environments
+- *2023.09*: 🎉Poster Presented at ANFA 2023, San Diego. | Impact of Virtual Reality Navigation on Emotional Response to Virtual Architectural Environments
 
 - *2020.08*: 🎉Abstract Accepted by IACHSS 2020, Milan. | Social Support of Life-Simulation Video Games
 
@@ -54,7 +54,7 @@ My research interest includes human-computer interaction, accessibility, and vis
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 # 📖 Educations
-- *2024.08 - Present*, Ph.D. Student, Golisano College of Computing and Information Sciences, Rochester Institute of Technology, NY, United States
+- *2024.08 - Present*, Ph.D. Student in CIS, Golisano College of Computing and Information Sciences, Rochester Institute of Technology, NY, United States
 - *2022.08 - 2024.05*, M.Sc. Informatics, College of Information Sciences and Technology, Penn State University, PA, United States
 - *2019.07 - 2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
 - *2017.09 - 2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, ON, Canada
@@ -65,7 +65,8 @@ My research interest includes human-computer interaction, accessibility, and vis
 <!-- - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
-<!-- # 💻 Internships
+# 💻 Apprenticeships/Internships
 
-- *2020.09 - 2020.11*, [PatternedScience, Data Analysis](https://github.com/), Montreal, Quebec.
-- *2020.07 - 2020.09*, [K11 Concepts, Digital Transformation](https://github.com/), Tsim Sha Tsui, Hong Kong. -->
+- *2020.09 - 2020.11*, [PatternedScience, Geospatial Data Analytics](https://www.patterned.science/), Montreal, Quebec.
+- *2020.07 - 2020.09*, [K11 Concepts, Digital Transformation](https://www.k11musea.com/), Tsim Sha Tsui, Hong Kong.
+- *2020.05 - 2020.07*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York.
