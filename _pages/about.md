@@ -17,11 +17,12 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Thanks for passing by!
+Thanks for stopping by!
 
-🚧detour en route🚧...
+I am a first-year Ph.D. student in Computing and Information Sciences (CIS) at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR). My research focuses on human-computer interaction, assistive technologies, accessibility, and visualization. My work centers on understanding and improving user experiences, designing, building, and evaluating assistive technology tools, ensuring responsible AI practices, and enhancing the usability of emerging technologies through critical studies and innovative design and development methods. In my leisure time, I enjoy hiking, canoeing, and playing guitar.
 
-My research interest includes human-computer interaction, accessibility, and visualization. 
+<!-- 🚧detour en route🚧... -->
+
 <!-- I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
 
@@ -30,8 +31,8 @@ My research interest includes human-computer interaction, accessibility, and vis
 
 - *2020.08*: 🎉Abstract Accepted by IACHSS 2020, Milan. | Social Support of Life-Simulation Video Games
 
-# 📝 Publications 
-🚧detour en route🚧...
+<!-- # 📝 Publications 
+🚧detour en route🚧... -->
 
 <!-- <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div> -->
 <!-- <div class='paper-box-text' markdown="1"> -->
@@ -47,8 +48,8 @@ My research interest includes human-computer interaction, accessibility, and vis
 
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
-# 🎖 Honors and Awards
-🚧detour en route🚧...
+<!-- # 🎖 Honors and Awards
+🚧detour en route🚧... -->
 
 <!-- - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
