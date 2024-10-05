@@ -19,7 +19,11 @@ redirect_from:
 
 Thanks for stopping by!
 
-I am a first-year Ph.D. student in Computing and Information Sciences (CIS) at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR). My research focuses on human-computer interaction, assistive technologies, accessibility, and visualization. My work centers on understanding and improving user experiences, designing, building, and evaluating assistive technology tools, ensuring responsible AI practices, and enhancing the usability of emerging technologies through critical studies and innovative design and development methods. In my leisure time, I enjoy hiking, canoeing, and playing guitar.
+I am a first-year Ph.D. student in Computer and Information Sciences (CIS) at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR). 
+
+My research focuses on human-computer interaction, assistive technologies, accessibility, and visualization. My work centers on understanding and improving user experiences, designing, building, and evaluating assistive technology tools, ensuring responsible AI practices, and enhancing the usability of emerging technologies through critical studies and innovative design and development methods. 
+
+In my leisure time, I enjoy hiking, canoeing, and playing guitar.
 
 <!-- 🚧detour en route🚧... -->
 
@@ -55,8 +59,8 @@ I am a first-year Ph.D. student in Computing and Information Sciences (CIS) at t
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 # 📖 Educations
-- *2024.08 - Present*, Ph.D. Student in CIS, Golisano College of Computing and Information Sciences, Rochester Institute of Technology, NY, United States
-- *2022.08 - 2024.05*, M.Sc. Informatics, College of Information Sciences and Technology, Penn State University, PA, United States
+- *2024.08 - Present*, Ph.D. Student in Computer and Info. Sciences, Golisano College of Computing and Information Sciences, Rochester Institute of Technology, NY, United States
+- *2022.08 - 2024.05*, M.Sc. Informatics in Human-Centered Design, College of Information Sciences and Technology, Penn State University, PA, United States
 - *2019.07 - 2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
 - *2017.09 - 2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, ON, Canada
 
