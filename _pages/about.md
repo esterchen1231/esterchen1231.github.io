@@ -19,11 +19,11 @@ redirect_from:
 
 Thanks for stopping by!
 
-I am a first-year Ph.D. student in Computer and Information Sciences (CIS) at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR). 
+I am a first-year Ph.D. student in Computing and Information Sciences (CIS) at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group.
 
-My research focuses on human-computer interaction, assistive technologies, accessibility, and visualization. My work centers on understanding and improving user experiences, designing, building, and evaluating assistive technology tools, ensuring responsible AI practices, and enhancing the usability of emerging technologies through critical studies and innovative design and development methods. 
+My research focuses on human-computer interaction, assistive technologies, accessibility, and visualization. I aim to understand and improve user experiences by designing, building, and evaluating assistive technology tools and interactive systems. My work centers on enhancing the accessibility and usability of digital spaces by addressing the challenges faced by both novice and expert digital creators, such as mobile app and website designers. Additionally, I explore how people perceive and use data visualization across various domains, including healthcare and media.
 
-In my leisure time, I enjoy hiking, canoeing, and playing guitar.
+In my leisure time, I enjoy racquetball, canoeing, and music.
 
 <!-- 🚧detour en route🚧... -->
 
@@ -59,10 +59,10 @@ In my leisure time, I enjoy hiking, canoeing, and playing guitar.
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 # 📖 Educations
-- *2024.08 - Present*, Ph.D. Student in Computer and Info. Sciences, Golisano College of Computing and Information Sciences, Rochester Institute of Technology, NY, United States
-- *2022.08 - 2024.05*, M.Sc. Informatics in Human-Centered Design, College of Information Sciences and Technology, Penn State University, PA, United States
-- *2019.07 - 2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
-- *2017.09 - 2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, ON, Canada
+- *2024.08 - Present*, Ph.D. Student in Computer and Info. Sciences, Golisano College of Computing and Information Sciences, Rochester Institute of Technology, United States
+- *2022.08 - 2024.05*, M.Sc. Informatics in Human-Centered Design, College of Information Sciences and Technology, Penn State University - University Park, United States
+- *2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
+- *2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, Canada
 
 <!-- # 💬 Invited Talks
 🚧detour🚧... -->
@@ -70,7 +70,7 @@ In my leisure time, I enjoy hiking, canoeing, and playing guitar.
 <!-- - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
-# 💻 Apprenticeships/Internships
+# 💻 Apprenticeships
 
 - *2020.09 - 2020.11*, [PatternedScience, Geospatial Data Analytics](https://www.patterned.science/), Montreal, Quebec.
 - *2020.07 - 2020.09*, [K11 Concepts, Digital Transformation](https://www.k11musea.com/), Tsim Sha Tsui, Hong Kong.
