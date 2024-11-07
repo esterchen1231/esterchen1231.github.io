@@ -21,7 +21,7 @@ Thanks for stopping by!
 
 I am a first-year Ph.D. student in Computing and Information Sciences (CIS) at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group.
 
-My research focuses on human-computer interaction, assistive technologies, accessibility, and visualization. I aim to understand and improve user experiences by designing, building, and evaluating assistive technology tools and interactive systems. My work centers on enhancing the accessibility and usability of digital spaces by addressing the challenges faced by both novice and expert digital creators, such as mobile app and website designers. Additionally, I explore how people perceive and use data visualization across various domains, including healthcare and media.
+My research focuses on human-computer interaction, assistive technologies, accessibility, and visualization. I aim to understand and improve user experiences by designing, building, and evaluating assistive technology tools and interactive systems. My work centers on enhancing the accessibility and usability of digital spaces, and I explore how people perceive and use data visualization across various domains, including healthcare and media.
 
 In my leisure time, I enjoy racquetball, canoeing, and music.
 
@@ -70,8 +70,8 @@ In my leisure time, I enjoy racquetball, canoeing, and music.
 <!-- - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
-# 💻 Apprenticeships
+<!-- # 💻 Apprenticeships
 
 - *2020.11*, [PatternedScience, Geospatial Data Analytics](https://www.patterned.science/), Montreal, Quebec.
 - *2020.07*, [K11 Concepts, Digital Transformation](https://www.k11musea.com/), Tsim Sha Tsui, Hong Kong.
-- *2020.05*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York.
+- *2020.05*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York. -->
