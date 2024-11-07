@@ -59,8 +59,8 @@ In my leisure time, I enjoy racquetball, canoeing, and music.
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 # 📖 Educations
-- *2024.08 - Present*, Ph.D. Student in Computer and Info. Sciences, Golisano College of Computing and Information Sciences, Rochester Institute of Technology, United States
-- *2022.08 - 2024.05*, M.Sc. Informatics in Human-Centered Design, College of Information Sciences and Technology, Penn State University - University Park, United States
+- *2024.08 - Present*, Ph.D. Student in Computing and Info. Sciences, Golisano College of Computing, Rochester Institute of Technology, United States
+- *2024.05*, M.Sc. Informatics, College of Information Sciences and Technology, Penn State University - University Park, United States
 - *2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
 - *2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, Canada
 
@@ -72,6 +72,6 @@ In my leisure time, I enjoy racquetball, canoeing, and music.
 
 # 💻 Apprenticeships
 
-- *2020.09 - 2020.11*, [PatternedScience, Geospatial Data Analytics](https://www.patterned.science/), Montreal, Quebec.
-- *2020.07 - 2020.09*, [K11 Concepts, Digital Transformation](https://www.k11musea.com/), Tsim Sha Tsui, Hong Kong.
-- *2020.05 - 2020.07*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York.
+- *2020.11*, [PatternedScience, Geospatial Data Analytics](https://www.patterned.science/), Montreal, Quebec.
+- *2020.07*, [K11 Concepts, Digital Transformation](https://www.k11musea.com/), Tsim Sha Tsui, Hong Kong.
+- *2020.05*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York.
