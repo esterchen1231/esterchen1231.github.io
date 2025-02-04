@@ -31,7 +31,7 @@ In my leisure time, I enjoy racquetball, canoeing, and music.
 
 
 # 🔥 News
-- *2024.11*: 🎉New Paper Accepted by AAAI Conference on Web and Social Media 2025, Copenhagen. | Deepfake Images
+- *2024.11*: 🎉New Paper Accepted by AAAI ICWSM 2025, Copenhagen. | Deepfake Images
 
 - *2023.09*: 🎉Poster Presented at ANFA 2023, San Diego. | Impact of Virtual Reality Navigation on Emotional Response to Virtual Architectural Environments
 
