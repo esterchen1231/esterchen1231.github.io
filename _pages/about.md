@@ -31,9 +31,13 @@ In my leisure time, I enjoy racquetball, canoeing, and music.
 
 
 # 🔥 News
+- *2024.11*: 🎉New Paper Accepted by AAAI Conference on Web and Social Media 2025, Copenhagen. | Deepfake Images
+
 - *2023.09*: 🎉Poster Presented at ANFA 2023, San Diego. | Impact of Virtual Reality Navigation on Emotional Response to Virtual Architectural Environments
 
-- *2020.08*: 🎉Abstract Accepted by IACHSS 2020, Milan. | Social Support of Life-Simulation Video Games
+<!-- - *2023.09*: 🎉Abstract Accepted by ANFA 2023, San Diego.  -->
+
+<!-- - *2020.08*: 🎉Abstract Accepted by IACHSS 2020, Milan. | Social Support of Life-Simulation Video Games -->
 
 <!-- # 📝 Publications 
 🚧detour en route🚧... -->
@@ -70,8 +74,8 @@ In my leisure time, I enjoy racquetball, canoeing, and music.
 <!-- - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
-<!-- # 💻 Apprenticeships
+# 💻 Apprenticeships
 
-- *2020.11*, [PatternedScience, Geospatial Data Analytics](https://www.patterned.science/), Montreal, Quebec.
+<!-- - *2020.11*, [PatternedScience, Geospatial Data Analytics](https://www.patterned.science/), Montreal, Quebec. -->
 - *2020.07*, [K11 Concepts, Digital Transformation](https://www.k11musea.com/), Tsim Sha Tsui, Hong Kong.
-- *2020.05*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York. -->
+- *2020.05*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York.
