@@ -6,9 +6,9 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "EC - Homepage"
-description              : ""
-repository               : "cxc6160/cxc6160.github.io"
+title                    : "EsterChen - Homepage"
+description              : "CIS PhD Student"
+repository               : "esterchen1231/esterchen1231.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -23,12 +23,12 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Ester Chen"
   avatar           : "images/android-chrome-512x512.png"
-  # bio              : "Rochester Institute of Technology"
+  bio              : "Rochester Institute of Technology"
   location         : "Upstate NY"
   employer         :
   pubmed           : 
   # googlescholar    : "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
-  email            : "cxc6160@gmail.com"
+  email            : "esterchen@mail.rit.edu"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -37,13 +37,13 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "cxc6160"
+  github           : "esterchen1231"
   google_plus      :
   keybase          :
-  instagram        : "ecchhhhh"
+  instagram        : "esterrrr_cc"
   impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "ec6152"
+  linkedin         : "esterchen"
   dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
   orcid            : # e.g., "https://orcid.org/xxxx"
   pinterest        :
