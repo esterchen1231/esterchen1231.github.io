@@ -19,21 +19,27 @@ redirect_from:
 
 Thanks for stopping by!
 
-I am a first-year Ph.D. student in Computing and Information Sciences (CIS) at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group.
+I am a second-year Ph.D. student in Computing and Information Sciences (CIS) at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group.
 
 My research focuses on human-computer interaction, assistive technologies, accessibility, and visualization. I aim to understand and improve user experiences by designing, building, and evaluating assistive technology tools and interactive systems. My work centers on enhancing the accessibility and usability of digital spaces, and I explore how people perceive and use data visualization across various domains, including healthcare and media.
 
 In my leisure time, I enjoy racquetball, canoeing, and music.
 
-<!-- 🚧detour en route🚧... -->
+<!-- ...🚧detour en route🚧... -->
 
 <!-- I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
 
 # 🔥 News
-- *2024.11*: 🎉New Paper Accepted by AAAI ICWSM 2025, Copenhagen. | Deepfake Images
+- *2025.06*: 🎉New Paper Accepted by ACM CSCW 2025, Bergen, Norway🇳🇴. | TBA
 
-- *2023.09*: 🎉Poster Presented at ANFA 2023, San Diego. | Impact of Virtual Reality Navigation on Emotional Response to Virtual Architectural Environments
+- *2025.05*: 📖Successfully Passed the Ph.D. Qualifying Exam.
+
+- *2024.11*: 🎉New Paper Accepted by AAAI ICWSM 2025, Copenhagen, Denmark🇩🇰. | TBA
+
+- *2024.08*: 📖Joined RIT for Ph.D. studies in CIS.
+
+- *2023.09*: 🎉Poster Presented at ANFA 2023, San Diego, United States🇺🇸. | Impact of Virtual Reality Navigation on Emotional Response to Virtual Architectural Environments
 
 <!-- - *2023.09*: 🎉Abstract Accepted by ANFA 2023, San Diego.  -->
 
