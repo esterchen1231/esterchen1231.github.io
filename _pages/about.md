@@ -31,15 +31,15 @@ In my leisure time, I enjoy racquetball, canoeing, and music.
 
 
 # 🔥 News
-- *2025.06*: 🎉New Paper Accepted by ACM CSCW 2025, Bergen, Norway🇳🇴. | TBA
+- *2025.06*: 🎉 New paper accepted by ACM CSCW 2025 in Bergen, Norway 🇳🇴. | Details TBA
 
-- *2025.05*: 📖Successfully Passed the Ph.D. Qualifying Exam.
+- *2025.05*: 📖 Successfully passed the Ph.D. Qualifying Exam.
 
-- *2024.11*: 🎉New Paper Accepted by AAAI ICWSM 2025, Copenhagen, Denmark🇩🇰. | TBA
+- *2024.11*: 🎉 New paper accepted by AAAI ICWSM 2025 in Copenhagen, Denmark 🇩🇰. | Details TBA
 
-- *2024.08*: 📖Joined RIT for Ph.D. studies in CIS.
+- *2024.08*: 📖 Joined Rochester Institute of Technology (RIT) for Ph.D. studies in Computing and Information Sciences.
 
-- *2023.09*: 🎉Poster Presented at ANFA 2023, San Diego, United States🇺🇸. | Impact of Virtual Reality Navigation on Emotional Response to Virtual Architectural Environments
+- *2023.09*: 🎉 Presented poster at ANFA 2023 in San Diego, USA 🇺🇸. | "Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments."
 
 <!-- - *2023.09*: 🎉Abstract Accepted by ANFA 2023, San Diego.  -->
 
