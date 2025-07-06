@@ -27,17 +27,17 @@ In my leisure time, I enjoy racquetball, canoeing, and music.
 
 
 # 🔥 News
-- *2025.06*: 🎉 New paper accepted by ACM CSCW 2025 in Bergen, Norway 🇳🇴. | Details TBA
+- *2025.06*: 🎉 New paper accepted by ACM CSCW 2025 in Bergen🇳🇴. | Details TBA
 
 - *2025.05*: 📖 Successfully passed the Ph.D. Qualifying Exam.
 
-- *2024.11*: 🎉 New paper accepted by AAAI ICWSM 2025 in Copenhagen, Denmark 🇩🇰. | Details TBA
+- *2024.11*: 🎉 New paper accepted by AAAI ICWSM 2025 in Copenhagen🇩🇰. | Details TBA
 
 - *2024.08*: 📖 Joined RIT to pursue a Ph.D. in Computing and Information Sciences under the supervision of Advisor Hidy.
 
-- *2024.05*: 🎓 Graduated from Penn State with an M.Sc. in Informatics (HCI Track) under the supervision of Advisor Jack.
+- *2024.05*: 🎓 Graduated from Penn State with an M.Sc. in Informatics under the supervision of Advisor Jack.
 
-- *2023.09*: 🎉 Presented poster at ANFA 2023 in San Diego, USA 🇺🇸. | "Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments."
+- *2023.09*: 🎉 Presented poster at ANFA 2023 in San Diego🇺🇸. | "Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments."
 
 <!-- - *2023.09*: 🎉Abstract Accepted by ANFA 2023, San Diego.  -->
 
