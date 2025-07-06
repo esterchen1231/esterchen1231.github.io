@@ -25,10 +25,6 @@ My research focuses on human-computer interaction, assistive technologies, acces
 
 In my leisure time, I enjoy racquetball, canoeing, and music.
 
-<!-- ...🚧detour en route🚧... -->
-
-<!-- I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
-
 
 # 🔥 News
 - *2025.06*: 🎉 New paper accepted by ACM CSCW 2025 in Bergen, Norway 🇳🇴. | Details TBA
@@ -37,7 +33,9 @@ In my leisure time, I enjoy racquetball, canoeing, and music.
 
 - *2024.11*: 🎉 New paper accepted by AAAI ICWSM 2025 in Copenhagen, Denmark 🇩🇰. | Details TBA
 
-- *2024.08*: 📖 Joined Rochester Institute of Technology (RIT) for Ph.D. studies in Computing and Information Sciences.
+- *2024.08*: 📖 Joined RIT to pursue a Ph.D. in Computing and Information Sciences under the supervision of Advisor Hidy.
+
+- *2024.05*: 🎓 Graduated from Penn State with an M.Sc. in Informatics (HCI Track) under the supervision of Advisor Jack.
 
 - *2023.09*: 🎉 Presented poster at ANFA 2023 in San Diego, USA 🇺🇸. | "Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments."
 
