@@ -19,14 +19,14 @@ redirect_from:
 
 Thanks for stopping by!
 
-I’m a second-year Ph.D. student in Computing & Information Sciences at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group. My work sits at the intersection of HCI, accessibility, assistive technology, and visualization. I design, build, and evaluate tools and interactive systems that reduce barriers in digital spaces, and I study how people interpret visual data in contexts such as healthcare and media. Away from research, you’ll find me on a racquetball court, in a canoe, or making music.
+I’m a Ph.D. student in Computing & Information Sciences at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group. My work sits at the intersection of HCI, accessibility, assistive technology, and visualization. I design, build, and evaluate tools and interactive systems that reduce barriers in digital spaces, and I study how people interpret visual data in contexts such as healthcare and media. Away from research, you’ll find me on a racquetball court, in a canoe, or making music.
 
 # 🔥 News
-- *2025.06*: 🎉 New paper accepted by ACM CSCW 2025 in Bergen🇳🇴. | Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI system
+- *2025.06*: 🎉 New paper accepted by ACM CSCW 2025 in Bergen🇳🇴. | "Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI system"
 
 - *2025.05*: 📖 Successfully passed the Ph.D. Qualifying Exam.
 
-- *2024.11*: 🎉 New paper accepted by AAAI ICWSM 2025 in Copenhagen🇩🇰. | A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces
+- *2024.11*: 🎉 New paper accepted by AAAI ICWSM 2025 in Copenhagen🇩🇰. | "A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces"
 
 - *2024.08*: 📖 Joined RIT to pursue a Ph.D. in Computing and Information Sciences under the supervision of Advisor Hidy.
 
