@@ -19,12 +19,7 @@ redirect_from:
 
 Thanks for stopping by!
 
-I am a second-year Ph.D. student in Computing and Information Sciences (CIS) at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group.
-
-My research focuses on human-computer interaction, assistive technologies, accessibility, and visualization. I aim to understand and improve user experiences by designing, building, and evaluating assistive technology tools and interactive systems. My work centers on enhancing the accessibility and usability of digital spaces, and I explore how people perceive and use data visualization across various domains, including healthcare and media.
-
-In my leisure time, I enjoy racquetball, canoeing, and music.
-
+I’m a second-year Ph.D. student in Computing & Information Sciences at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group. My work sits at the intersection of HCI, accessibility, assistive technology, and visualization. I design, build, and evaluate tools and interactive systems that reduce barriers in digital spaces, and I study how people interpret visual data in contexts such as healthcare and media. Away from research, you’ll find me on a racquetball court, in a canoe, or making music.
 
 # 🔥 News
 - *2025.06*: 🎉 New paper accepted by ACM CSCW 2025 in Bergen🇳🇴. | Details TBA
