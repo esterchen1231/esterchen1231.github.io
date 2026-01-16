@@ -20,7 +20,7 @@ redirect_from:
 Thanks for stopping by!
 
 <<<<<<< Updated upstream
-I’m a Ph.D. student in Computer & Information Sciences at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group. My work sits at the intersection of HCI, accessibility, assistive technology, and visualization. I design, build, and evaluate tools and interactive systems that reduce barriers in digital spaces, and I study how people interpret visual data in contexts such as healthcare and media. Away from research, you’ll find me on a racquetball court, in a canoe, or making music.
+I’m a Ph.D. student in Computing & Information Sciences at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group. My work sits at the intersection of HCI, accessibility, assistive technology, and visualization. I design, build, and evaluate tools and interactive systems that reduce barriers in digital spaces, and I study how people interpret visual data in contexts such as healthcare and media. Away from research, you’ll find me on a racquetball court, in a canoe, or making music.
 =======
 I am a Ph.D. student in Computing and Information Sciences (CIS) at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group.
 
@@ -31,17 +31,15 @@ In my leisure time, I enjoy racquetball, canoeing, and music.
 >>>>>>> Stashed changes
 
 # 🔥 News
-- *2026.01*: 🎉 New paper accepted by ACM CHI 2026 in Barcelona🇪🇸. | Details TBA
-
 - *2025.06*: 🎉 New paper accepted by ACM CSCW 2025 in Bergen🇳🇴. | "Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI system"
 
 - *2025.05*: 📖 Successfully passed the Ph.D. Qualifying Exam.
 
 - *2024.11*: 🎉 New paper accepted by AAAI ICWSM 2025 in Copenhagen🇩🇰. | "A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces"
 
-- *2024.08*: 📖 Joined RIT to pursue a Ph.D. in Computer and Information Sciences under the supervision of Advisor Hidy.
+- *2024.08*: 📖 Joined RIT to pursue a Ph.D. in Computing and Information Sciences under the supervision of Advisor Dr. Hidy Kong.
 
-- *2024.05*: 🎓 Graduated from Penn State with an M.Sc. in Informatics under the supervision of Advisor Jack.
+- *2024.05*: 🎓 Graduated from Penn State with an M.Sc. in Informatics under the supervision of Advisor Dr. Jack Carroll.
 
 - *2023.09*: 🎉 Presented poster at ANFA 2023 in San Diego🇺🇸. | "Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments."
 
@@ -73,7 +71,7 @@ In my leisure time, I enjoy racquetball, canoeing, and music.
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 # 📖 Educations
-- *2024.08 - Present*, Ph.D. Student in Computer and Info. Sciences, Golisano College of Computing, Rochester Institute of Technology, United States
+- *2024.08 - Present*, Ph.D. Student in Computing and Info. Sciences, Golisano College of Computing, Rochester Institute of Technology, United States
 - *2024.05*, M.Sc. Informatics, College of Information Sciences and Technology, Penn State University - University Park, United States
 - *2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
 - *2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, Canada
