@@ -74,15 +74,8 @@ Outside of the lab, I enjoy staying active by skiing and forest hiking, as well 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Working Paper</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Rochester_Institute_of_Technology_logo.svg/320px-Rochester_Institute_of_Technology_logo.svg.png' alt="RIT Logo" width="100%" style="object-fit: contain; padding: 15px;"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)
-
-**Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Ha-Kyung Hidy Kong
-
-- *Working Paper* (Expected Jun 2026).
 </div>
 </div>
-
-<!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
 <!-- # 🎖 Honors and Awards
 🚧detour🚧... -->
