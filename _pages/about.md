@@ -23,7 +23,7 @@ I am a second-year Ph.D. student in Computing & Information Sciences at the Roch
 
 My research lies at the intersection of **Human-Computer Interaction (HCI)**, **Accessibility**, **Visualization**, and **Human-Centered AI**. I design, build, and evaluate interactive systems that reduce barriers in digital spaces, and I study how people interpret complex visual data. Recently, my work has focused on human-AI collaboration, specifically investigating how training strategies, risk perception, and trust influence human dependence on AI systems in contexts like deepfake detection. I am also exploring the evolving role of AI in data visualization to make these tools more inclusive and effective.
 
-Outside of the lab, I enjoy staying active by skiing and forest hiking, as well as playing the electric guitar.
+To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the electric guitar.
 
 # 🔥 News
 - *2026.01*: 🎉 Full Paper accepted to **ACM CHI 2026** in Barcelona🇪🇸. | ["[What Happened to Scenario-Based Design in HCI?: A Scoping Review]](https://doi.org/10.1145/3772318.3790899)"
