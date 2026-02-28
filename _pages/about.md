@@ -19,7 +19,7 @@ redirect_from:
 
 Thanks for stopping by!
 
-I am a second-year Ph.D. student in Computer & Information Sciences at the Rochester Institute of Technology, working with Dr. Hidy Kong. I am affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group.
+I am a second-year Ph.D. student in Computing & Information Sciences at the Rochester Institute of Technology, working with Dr. Hidy Kong. I am affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group.
 
 My research lies at the intersection of **Human-Computer Interaction (HCI)**, **Accessibility**, **Visualization**, and **Human-Centered AI**. I design, build, and evaluate interactive systems that reduce barriers in digital spaces, and I study how people interpret complex visual data. Recently, my work has focused on human-AI collaboration, specifically investigating how training strategies, risk perception, and trust influence human dependence on AI systems in contexts like deepfake detection. I am also exploring the evolving role of AI in data visualization to make these tools more inclusive and effective.
 
@@ -30,13 +30,13 @@ Outside of the lab, I enjoy staying active by skiing and forest hiking, as well 
 
 - *2025.06*: 🎉 Full Paper accepted to **ACM CSCW 2025** in Bergen🇳🇴. | "[Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI system](https://doi.org/10.1145/3757588)"
 
-- *2025.05*: 📖 Successfully passed the Ph.D. Qualifying Exam.
+- *2025.05*: 📖 Successfully passed the Ph.D. Qualifying Exam. A huge thanks to my advisor, Dr. Hidy Kong, and my examining committee --- Dr. Roshan L. Peiris, Dr. Ji Hwan Park, and Dr. Garreth W. Tigwell for their time and insights.
 
 - *2024.11*: 🎉 Full Paper accepted to **AAAI ICWSM 2025** in Copenhagen🇩🇰. | "[A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces](https://doi.org/10.1609/icwsm.v19i1.35821)"
 
-- *2024.08*: 📖 Joined RIT to pursue a Ph.D. in Computer and Information Sciences under the supervision of Dr. Hidy Kong.
+- *2024.08*: 📖 Joined RIT to pursue a Ph.D. in Computing and Information Sciences under the supervision of Dr. Hidy Kong.
 
-- *2024.05*: 🎓 Graduated from Penn State with an M.Sc. in Informatics under the supervision of Dr. Jack Carroll.
+- *2024.05*: 🎓 Graduated from Penn State with an M.Sc. in Informatics under the supervision of Dr. John M. Carroll, and supported by a wonderful committee of mentors: Dr. Dongwon Lee, Dr. Aiping Xiong, and Dr. Anna N. Kresiberg.
 
 - *2023.09*: 🎉 Presented a poster at **ANFA 2023** in San Diego🇺🇸. | "[Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments.](https://forums.anfarch.org/d/105-keerthana-g-swati-c-ester-c-impact-of-virtual-reality-navigation-on-emo)"
 
