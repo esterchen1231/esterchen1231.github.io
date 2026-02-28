@@ -44,7 +44,7 @@ Outside of the lab, I enjoy staying active by skiing and forest hiking, as well 
 
 ### Peer-Reviewed Publications
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CHI 2026</div><img src='images/chi2026_placeholder.png' alt="chi2026" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CHI 2026</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Association_for_Computing_Machinery_%28ACM%29_logo.svg/320px-Association_for_Computing_Machinery_%28ACM%29_logo.svg.png' alt="ACM Logo" width="100%" style="object-fit: contain; padding: 10px;"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [What Happened to Scenario-Based Design in HCI?: A Scoping Review](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)
@@ -56,7 +56,7 @@ John M. Carroll, Jeongwon Jo, Jiyoon Kim, Ya-Fang Lin, **Ester Chen**
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CSCW 2025</div><img src='images/cscw2025_placeholder.png' alt="cscw2025" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CSCW 2025</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Association_for_Computing_Machinery_%28ACM%29_logo.svg/320px-Association_for_Computing_Machinery_%28ACM%29_logo.svg.png' alt="ACM Logo" width="100%" style="object-fit: contain; padding: 10px;"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI Systems](https://dl.acm.org/doi/abs/10.1145/3757588)
@@ -68,7 +68,7 @@ Yingfan Zhou, **Ester Chen**, Manasa Pisipati, Aiping Xiong, Sarah Rajtmajer
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICWSM 2025</div><img src='images/icwsm2025_placeholder.png' alt="icwsm2025" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICWSM 2025</div><img src='https://logo.clearbit.com/aaai.org' alt="AAAI Logo" width="100%" style="object-fit: contain; padding: 10px;"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces](https://doi.org/10.1609/icwsm.v19i1.35821)
@@ -85,7 +85,7 @@ Yingfan Zhou, **Ester Chen**, Manasa Pisipati, Aiping Xiong, Sarah Rajtmajer
 
 ### Preprints & Working Papers
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='images/arxiv2026_placeholder.png' alt="arxiv2026" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/ArXiv_logo_and_wordmark.svg/320px-ArXiv_logo_and_wordmark.svg.png' alt="arXiv Logo" width="100%" style="object-fit: contain; padding: 20px;"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)
@@ -97,7 +97,7 @@ Anoushka Puranik, **Ester Chen**, Roshan L. Peiris, Ha-Kyung Hidy Kong
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Under Review</div><img src='images/underreview_placeholder.png' alt="underreview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Under Review</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Rochester_Institute_of_Technology_logo.svg/320px-Rochester_Institute_of_Technology_logo.svg.png' alt="RIT Logo" width="100%" style="object-fit: contain; padding: 15px;"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Exploring the Use of Visualization and AI for Qualitative Data Analysis](#)
@@ -108,7 +108,7 @@ Anoushka Puranik, **Ester Chen**, Roshan L. Peiris, Ha-Kyung Hidy Kong
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Working Paper</div><img src='images/workingpaper_placeholder.png' alt="working" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Working Paper</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Rochester_Institute_of_Technology_logo.svg/320px-Rochester_Institute_of_Technology_logo.svg.png' alt="RIT Logo" width="100%" style="object-fit: contain; padding: 15px;"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)
@@ -122,10 +122,7 @@ Anoushka Puranik, **Ester Chen**, Roshan L. Peiris, Ha-Kyung Hidy Kong
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
 <!-- # 🎖 Honors and Awards
-🚧detour en route🚧... -->
-
-<!-- - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
+🚧detour🚧... -->
 
 # 📖 Educations
 - *2024.08 - Present*, Ph.D. Student in Computing and Info. Sciences, Golisano College of Computing, Rochester Institute of Technology, United States
