@@ -44,70 +44,33 @@ Outside of the lab, I enjoy staying active by skiing and forest hiking, as well 
 
 ### Peer-Reviewed Publications
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CHI 2026</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Association_for_Computing_Machinery_%28ACM%29_logo.svg/320px-Association_for_Computing_Machinery_%28ACM%29_logo.svg.png' alt="ACM Logo" width="100%" style="object-fit: contain; padding: 10px;"></div></div>
-<div class='paper-box-text' markdown="1">
+- **[What Happened to Scenario-Based Design in HCI?: A Scoping Review](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)**
+  <br> John M. Carroll, Jeongwon Jo, Jiyoon Kim, Ya-Fang Lin, **Ester Chen**
+  <br> `ACM CHI 2026` *Barcelona, Spain* | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)
 
-[What Happened to Scenario-Based Design in HCI?: A Scoping Review](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)
+- **[Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI Systems](https://dl.acm.org/doi/abs/10.1145/3757588)**
+  <br> Yingfan Zhou, **Ester Chen**, Manasa Pisipati, Aiping Xiong, Sarah Rajtmajer
+  <br> `ACM CSCW 2025` *Bergen, Norway* | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3757588)
 
-John M. Carroll, Jeongwon Jo, Jiyoon Kim, Ya-Fang Lin, **Ester Chen**
-
-[**ACM Digital Library**](https://dl.acm.org/doi/abs/10.1145/3772318.3790899) 
-- Published in *ACM CHI 2026*, Barcelona, Spain.
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CSCW 2025</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Association_for_Computing_Machinery_%28ACM%29_logo.svg/320px-Association_for_Computing_Machinery_%28ACM%29_logo.svg.png' alt="ACM Logo" width="100%" style="object-fit: contain; padding: 10px;"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI Systems](https://dl.acm.org/doi/abs/10.1145/3757588)
-
-Yingfan Zhou, **Ester Chen**, Manasa Pisipati, Aiping Xiong, Sarah Rajtmajer
-
-[**ACM Digital Library**](https://dl.acm.org/doi/abs/10.1145/3757588) 
-- Published in *ACM CSCW 2025*, Bergen, Norway.
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICWSM 2025</div><img src='https://logo.clearbit.com/aaai.org' alt="AAAI Logo" width="100%" style="object-fit: contain; padding: 10px;"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces](https://doi.org/10.1609/icwsm.v19i1.35821)
-
-**Ester Chen\***, Haeseung Seo, Margie Ruffin, Dongwon Lee, Gang Wang, Aiping Xiong
-
-[**Paper Link**](https://doi.org/10.1609/icwsm.v19i1.35821)
-- Published in *AAAI ICWSM 2025*, Copenhagen, Denmark. 
-- *\*Co-first author*
-</div>
-</div>
+- **[A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces](https://doi.org/10.1609/icwsm.v19i1.35821)**
+  <br> **Ester Chen\***, Haeseung Seo, Margie Ruffin, Dongwon Lee, Gang Wang, Aiping Xiong (*\*Co-first author*)
+  <br> `AAAI ICWSM 2025` *Copenhagen, Denmark* | [[Paper Link]](https://doi.org/10.1609/icwsm.v19i1.35821)
 
 ---
 
 ### Preprints & Working Papers
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/ArXiv_logo_and_wordmark.svg/320px-ArXiv_logo_and_wordmark.svg.png' alt="arXiv Logo" width="100%" style="object-fit: contain; padding: 20px;"></div></div>
-<div class='paper-box-text' markdown="1">
+- **[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)**
+  <br> Anoushka Puranik, **Ester Chen**, Roshan L. Peiris, Ha-Kyung Hidy Kong
+  <br> `Preprint` *Expected Mar 2026* | [[arXiv]](https://arxiv.org/abs/2509.18297)
 
-[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)
+- **[Exploring the Use of Visualization and AI for Qualitative Data Analysis](#)**
+  <br> **Ester Chen**, Nikita Bhyri, Vidhi Rathod, Ha-Kyung Hidy Kong
+  <br> `Under Review` *Expected Mar 2026*
 
-Anoushka Puranik, **Ester Chen**, Roshan L. Peiris, Ha-Kyung Hidy Kong
-
-[**arXiv**](https://arxiv.org/abs/2509.18297)
-- Preprint available on arXiv (Expected Mar 2026).
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Under Review</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Rochester_Institute_of_Technology_logo.svg/320px-Rochester_Institute_of_Technology_logo.svg.png' alt="RIT Logo" width="100%" style="object-fit: contain; padding: 15px;"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Exploring the Use of Visualization and AI for Qualitative Data Analysis](#)
-
-**Ester Chen**, Nikita Bhyri, Vidhi Rathod, Ha-Kyung Hidy Kong
-
-- *Under Review* (Expected Mar 2026).
-</div>
-</div>
-
+- **[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)**
+  <br> **Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Ha-Kyung Hidy Kong
+  <br> `Working Paper` *Expected Jun 2026*
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Working Paper</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Rochester_Institute_of_Technology_logo.svg/320px-Rochester_Institute_of_Technology_logo.svg.png' alt="RIT Logo" width="100%" style="object-fit: contain; padding: 15px;"></div></div>
 <div class='paper-box-text' markdown="1">
 
