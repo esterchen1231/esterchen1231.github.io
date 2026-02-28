@@ -36,7 +36,7 @@ Outside of the lab, I enjoy staying active by skiing and forest hiking, as well 
 
 - *2024.08*: 📖 Joined RIT to pursue a Ph.D. in Computing and Information Sciences under the supervision of Dr. Hidy Kong.
 
-- *2024.05*: 🎓 Graduated from Penn State with an M.Sc. in Informatics under the supervision of Dr. John M. Carroll, and supported by a wonderful committee of mentors: Dr. Dongwon Lee, Dr. Aiping Xiong, and Dr. Anna N. Kresiberg.
+- *2024.05*: 🎓 Graduated from Penn State with an M.Sc. in Informatics under the supervision of Dr. John M. Carroll, and supported by a wonderful committee of mentors: Dr. Dongwon Lee, Dr. Aiping Xiong, and Dr. Anna N. Kreisberg.
 
 - *2023.09*: 🎉 Presented a poster at **ANFA 2023** in San Diego🇺🇸. | "[Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments.](https://forums.anfarch.org/d/105-keerthana-g-swati-c-ester-c-impact-of-virtual-reality-navigation-on-emo)"
 
