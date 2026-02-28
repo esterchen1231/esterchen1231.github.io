@@ -19,10 +19,10 @@ redirect_from:
 
 Thanks for stopping by!
 
-I’m a Ph.D. student in Computer & Information Sciences at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group. My work sits at the intersection of HCI, accessibility, assistive technology, and visualization. I design, build, and evaluate tools and interactive systems that reduce barriers in digital spaces, and I study how people interpret visual data in contexts such as healthcare and media. Away from research, you’ll find me on a racquetball court, in a canoe, or making music.
+I’m a 2nd-year Ph.D. student in Computer & Information Sciences at the Rochester Institute of Technology, affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group. My work sits at the intersection of HCI, accessibility, assistive technology, and visualization. I design, build, and evaluate tools and interactive systems that reduce barriers in digital spaces, and I study how people interpret visual data in contexts such as healthcare and media. Away from research, you’ll find me on a racquetball court, in a canoe, or making music.
 
 # 🔥 News
-- *2026.01*: 🎉 New paper accepted by ACM CHI 2026 in Barcelona🇪🇸. | "Details TBA"
+- *2026.01*: 🎉 New paper accepted by ACM CHI 2026 in Barcelona🇪🇸. | "What Happened to Scenario-Based Design in HCI?: A Scoping Review"
 
 - *2025.06*: 🎉 New paper accepted by ACM CSCW 2025 in Bergen🇳🇴. | "Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI system"
 
