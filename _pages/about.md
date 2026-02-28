@@ -40,20 +40,84 @@ Outside of the lab, I enjoy staying active by skiing and forest hiking, as well 
 
 - *2023.09*: 🎉 Presented a poster at **ANFA 2023** in San Diego🇺🇸. | "[Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments.](https://forums.anfarch.org/d/105-keerthana-g-swati-c-ester-c-impact-of-virtual-reality-navigation-on-emo)"
 
-<!-- # 📝 Publications 
-🚧detour en route🚧... -->
+# 📝 Publications 
 
-<!-- <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div> -->
-<!-- <div class='paper-box-text' markdown="1"> -->
+### Peer-Reviewed Publications
 
-<!-- [Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf) -->
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CHI 2026</div><img src='images/chi2026_placeholder.png' alt="chi2026" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
 
-<!-- **Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun -->
+[What Happened to Scenario-Based Design in HCI?: A Scoping Review](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)
 
-<!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
-<!-- - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
-<!-- </div>
-</div> -->
+John M. Carroll, Jeongwon Jo, Jiyoon Kim, Ya-Fang Lin, **Ester Chen**
+
+[**ACM Digital Library**](https://dl.acm.org/doi/abs/10.1145/3772318.3790899) 
+- Published in *ACM CHI 2026*, Barcelona, Spain.
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CSCW 2025</div><img src='images/cscw2025_placeholder.png' alt="cscw2025" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI Systems](https://dl.acm.org/doi/abs/10.1145/3757588)
+
+Yingfan Zhou, **Ester Chen**, Manasa Pisipati, Aiping Xiong, Sarah Rajtmajer
+
+[**ACM Digital Library**](https://dl.acm.org/doi/abs/10.1145/3757588) 
+- Published in *ACM CSCW 2025*, Bergen, Norway.
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICWSM 2025</div><img src='images/icwsm2025_placeholder.png' alt="icwsm2025" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces](https://doi.org/10.1609/icwsm.v19i1.35821)
+
+**Ester Chen\***, Haeseung Seo, Margie Ruffin, Dongwon Lee, Gang Wang, Aiping Xiong
+
+[**Paper Link**](https://doi.org/10.1609/icwsm.v19i1.35821)
+- Published in *AAAI ICWSM 2025*, Copenhagen, Denmark. 
+- *\*Co-first author*
+</div>
+</div>
+
+---
+
+### Preprints & Working Papers
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='images/arxiv2026_placeholder.png' alt="arxiv2026" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)
+
+Anoushka Puranik, **Ester Chen**, Roshan L. Peiris, Ha-Kyung Hidy Kong
+
+[**arXiv**](https://arxiv.org/abs/2509.18297)
+- Preprint available on arXiv (Expected Mar 2026).
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Under Review</div><img src='images/underreview_placeholder.png' alt="underreview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Exploring the Use of Visualization and AI for Qualitative Data Analysis](#)
+
+**Ester Chen**, Nikita Bhyri, Vidhi Rathod, Ha-Kyung Hidy Kong
+
+- *Under Review* (Expected Mar 2026).
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Working Paper</div><img src='images/workingpaper_placeholder.png' alt="working" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)
+
+**Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Ha-Kyung Hidy Kong
+
+- *Working Paper* (Expected Jun 2026).
+</div>
+</div>
 
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
@@ -64,7 +128,7 @@ Outside of the lab, I enjoy staying active by skiing and forest hiking, as well 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 # 📖 Educations
-- *2024.08 - Present*, Ph.D. Student in Computer and Info. Sciences, Golisano College of Computing, Rochester Institute of Technology, United States
+- *2024.08 - Present*, Ph.D. Student in Computing and Info. Sciences, Golisano College of Computing, Rochester Institute of Technology, United States
 - *2024.05*, M.Sc. Informatics, College of Information Sciences and Technology, Penn State University - University Park, United States
 - *2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
 - *2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, Canada
