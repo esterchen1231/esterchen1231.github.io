@@ -71,17 +71,13 @@ Outside of the lab, I enjoy staying active by skiing and forest hiking, as well 
 - **[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)**
   <br> **Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Ha-Kyung Hidy Kong
   <br> `Working Paper` *Expected Jun 2026*
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Working Paper</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Rochester_Institute_of_Technology_logo.svg/320px-Rochester_Institute_of_Technology_logo.svg.png' alt="RIT Logo" width="100%" style="object-fit: contain; padding: 15px;"></div></div>
-<div class='paper-box-text' markdown="1">
 
-</div>
-</div>
 
 <!-- # 🎖 Honors and Awards
 🚧detour🚧... -->
 
 # 📖 Educations
-- *2024.08 - Present*, Ph.D. Student in Computing and Info. Sciences, Golisano College of Computing, Rochester Institute of Technology, United States
+- *2024.08 - Now*, Ph.D. Student in Computing and Info. Sciences, Golisano College of Computing, Rochester Institute of Technology, United States
 - *2024.05*, M.Sc. Informatics, College of Information Sciences and Technology, Penn State University - University Park, United States
 - *2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
 - *2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, Canada
