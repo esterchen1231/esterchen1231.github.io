@@ -48,19 +48,19 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
 
 - **[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)**
   <br> Anoushka Puranik, **Ester Chen**, Roshan L. Peiris, Hidy Kong
-  <br> `Preprint` | *Keywords*: Qualitative Data Analysis, Collaborative Coding, Degree of Delegation, Artificial Intelligence [[arXiv]](https://arxiv.org/abs/2509.18297)
+  <br> `Preprint` | *About*: Qualitative Data Analysis, Collaborative Coding, Degree of Delegation, Artificial Intelligence [[arXiv]](https://arxiv.org/abs/2509.18297)
 
 - **[What Happened to Scenario-Based Design in HCI?: A Scoping Review](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)**
   <br> John M. Carroll, Jeongwon Jo, Jiyoon Kim, Ya-Fang Lin, **Ester Chen**
-  <br> `ACM CHI 2026` *Keywords*: Design Envisionment, Design Thinking, Human-Computer Interaction, Participatory Design, Design Fiction | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)
+  <br> `ACM CHI 2026` *About*: Design Envisionment, Design Thinking, Human-Computer Interaction, Participatory Design, Design Fiction | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)
 
 - **[Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI Systems](https://dl.acm.org/doi/abs/10.1145/3757588)**
   <br> Yingfan Zhou, **Ester Chen**, Manasa Pisipati, Aiping Xiong, Sarah Rajtmajer
-  <br> `ACM CSCW 2025` *Keywords*: Deepfake, Human-AI Collaboration, Human-AI Decision Making, Trust | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3757588)
+  <br> `ACM CSCW 2025` *About*: Deepfake, Human-AI Collaboration, Human-AI Decision Making, Trust | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3757588)
 
 - **[A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces](https://doi.org/10.1609/icwsm.v19i1.35821)**
   <br> **Ester Chen\***, Haeseung Seo, Margie Ruffin, Dongwon Lee, Gang Wang, Aiping Xiong (*\*Co-first author*)
-  <br> `AAAI ICWSM 2025` *Keywords*: AI-Synthesized Faces, Deepfakes, Training Strategies, Human Detection | [[Paper Link]](https://doi.org/10.1609/icwsm.v19i1.35821)
+  <br> `AAAI ICWSM 2025` *About*: Deepfake Detection, Visual Misinformation, Human-in-the-Loop, Training Strategies, AI Literacy | [[Paper Link]](https://doi.org/10.1609/icwsm.v19i1.35821)
 
 ---
 
