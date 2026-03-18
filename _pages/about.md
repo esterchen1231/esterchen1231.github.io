@@ -26,6 +26,8 @@ My research lies at the intersection of **Human-Computer Interaction (HCI)**, **
 To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the electric guitar.
 
 # 🔥 News
+- *2026.03*: 🎉 Full Paper accepted to **ACM CSCW 2026** in Salt Lake City🇺🇸. | "Details TBA"
+
 - *2026.01*: 🎉 Full Paper accepted to **ACM CHI 2026** in Barcelona🇪🇸. | ["[What Happened to Scenario-Based Design in HCI?: A Scoping Review]](https://doi.org/10.1145/3772318.3790899)"
 
 - *2025.06*: 🎉 Full Paper accepted to **ACM CSCW 2025** in Bergen🇳🇴. | "[Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI system](https://doi.org/10.1145/3757588)"
@@ -44,32 +46,32 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
 
 ### Peer-Reviewed Publications
 
+- **[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)**
+  <br> Anoushka Puranik, **Ester Chen**, Roshan L. Peiris, Hidy Kong
+  <br> `Preprint` | *Keywords*: Qualitative Data Analysis, Collaborative Coding, Degree of Delegation, Artificial Intelligence [[arXiv]](https://arxiv.org/abs/2509.18297)
+
 - **[What Happened to Scenario-Based Design in HCI?: A Scoping Review](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)**
   <br> John M. Carroll, Jeongwon Jo, Jiyoon Kim, Ya-Fang Lin, **Ester Chen**
-  <br> `ACM CHI 2026` *Barcelona, Spain* | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)
+  <br> `ACM CHI 2026` *Keywords*: Design Envisionment, Design Thinking, Human-Computer Interaction, Participatory Design, Design Fiction | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)
 
 - **[Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI Systems](https://dl.acm.org/doi/abs/10.1145/3757588)**
   <br> Yingfan Zhou, **Ester Chen**, Manasa Pisipati, Aiping Xiong, Sarah Rajtmajer
-  <br> `ACM CSCW 2025` *Bergen, Norway* | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3757588)
+  <br> `ACM CSCW 2025` *Keywords*: Deepfake, Human-AI Collaboration, Human-AI Decision Making, Trust | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3757588)
 
 - **[A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces](https://doi.org/10.1609/icwsm.v19i1.35821)**
   <br> **Ester Chen\***, Haeseung Seo, Margie Ruffin, Dongwon Lee, Gang Wang, Aiping Xiong (*\*Co-first author*)
-  <br> `AAAI ICWSM 2025` *Copenhagen, Denmark* | [[Paper Link]](https://doi.org/10.1609/icwsm.v19i1.35821)
+  <br> `AAAI ICWSM 2025` *Keywords*: AI-Synthesized Faces, Deepfakes, Training Strategies, Human Detection | [[Paper Link]](https://doi.org/10.1609/icwsm.v19i1.35821)
 
 ---
 
 ### Preprints & Working Papers
 
-- **[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)**
-  <br> Anoushka Puranik, **Ester Chen**, Roshan L. Peiris, Ha-Kyung Hidy Kong
-  <br> `Preprint` *Expected Mar 2026* | [[arXiv]](https://arxiv.org/abs/2509.18297)
-
 - **[Exploring the Use of Visualization and AI for Qualitative Data Analysis](#)**
-  <br> **Ester Chen**, Nikita Bhyri, Vidhi Rathod, Ha-Kyung Hidy Kong
+  <br> **Ester Chen**, Nikita Bhyri, Vidhi Rathod, Hidy Kong
   <br> `Under Review` *Expected Mar 2026*
 
 - **[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)**
-  <br> **Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Ha-Kyung Hidy Kong
+  <br> **Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Hidy Kong
   <br> `Working Paper` *Expected Jun 2026*
 
 
