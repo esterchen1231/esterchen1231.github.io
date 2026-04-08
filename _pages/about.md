@@ -48,7 +48,7 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
 
 - **[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)**
   <br> Anoushka Puranik, **Ester Chen**, Roshan L. Peiris, Hidy Kong
-  <br> `Preprint` | *Qualitative Data Analysis, Collaborative Coding, Degree of Delegation, Artificial Intelligence* [[arXiv]](https://arxiv.org/abs/2509.18297)
+  <br> `ACM CSCW 2026` | *Qualitative Data Analysis, Collaborative Coding, Degree of Delegation, Artificial Intelligence* [[arXiv]](https://arxiv.org/abs/2509.18297)
 
 - **[What Happened to Scenario-Based Design in HCI?: A Scoping Review](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)**
   <br> John M. Carroll, Jeongwon Jo, Jiyoon Kim, Ya-Fang Lin, **Ester Chen**
@@ -68,11 +68,11 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
 
 - **[Exploring the Use of Visualization and AI for Qualitative Data Analysis](#)**
   <br> **Ester Chen**, Nikita Bhyri, Vidhi Rathod, Hidy Kong
-  <br> `Under Review` *Expected Mar 2026*
+  <br> `Under Review` *Expected Jun 2026*
 
 - **[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)**
   <br> **Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Hidy Kong
-  <br> `Working Paper` *Expected Jun 2026*
+  <br> `Under Review` *Expected Jun 2026*
 
 
 <!-- # 🎖 Honors and Awards
