@@ -26,7 +26,7 @@ My research lies at the intersection of **Human-Computer Interaction (HCI)**, **
 To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the electric guitar.
 
 # 🔥 News
-- *2026.03*: 🎉 Full Paper accepted to **ACM CSCW 2026** in Salt Lake City🇺🇸. | "Details TBA"
+- *2026.03*: 🎉 Full Paper accepted to **ACM CSCW 2026** in Salt Lake City🇺🇸. | "[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)"
 
 - *2026.01*: 🎉 Full Paper accepted to **ACM CHI 2026** in Barcelona🇪🇸. | ["[What Happened to Scenario-Based Design in HCI?: A Scoping Review]](https://doi.org/10.1145/3772318.3790899)"
 
