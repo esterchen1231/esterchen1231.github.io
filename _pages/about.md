@@ -26,9 +26,11 @@ My research lies at the intersection of **Human-Computer Interaction (HCI)**, **
 To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the electric guitar.
 
 # 🔥 News
-- *2026.03*: 🎉 Full Paper accepted to **ACM CSCW 2026** in Salt Lake City🇺🇸. | "[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)"
+- *2026.04*: 🎉 Full Paper accepted to **ACM CSCW 2026** in Salt Lake City🇺🇸. | "[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)"
 
-- *2026.01*: 🎉 Full Paper accepted to **ACM CHI 2026** in Barcelona🇪🇸. | ["[What Happened to Scenario-Based Design in HCI?: A Scoping Review]](https://doi.org/10.1145/3772318.3790899)"
+- *2026.03*: 💡 Joining the NSF AWARE-AI Program as a Research Trainee (2026–2027) to develop accessible HCI methods and investigate human-robot interaction.
+
+- *2026.01*: 🎉 Full Paper accepted to **ACM CHI 2026** in Barcelona🇪🇸. | "[What Happened to Scenario-Based Design in HCI?: A Scoping Review](https://doi.org/10.1145/3772318.3790899)"
 
 - *2025.06*: 🎉 Full Paper accepted to **ACM CSCW 2025** in Bergen🇳🇴. | "[Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI system](https://doi.org/10.1145/3757588)"
 
@@ -40,7 +42,7 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
 
 - *2024.05*: 🎓 Graduated from Penn State with an M.Sc. in Informatics under the supervision of Dr. John M. Carroll, and supported by a wonderful committee of mentors: Dr. Dongwon Lee, Dr. Aiping Xiong, and Dr. Anna N. Kreisberg.
 
-- *2023.09*: 🎉 Presented a poster at **ANFA 2023** in San Diego🇺🇸. | "[Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments.](https://forums.anfarch.org/d/105-keerthana-g-swati-c-ester-c-impact-of-virtual-reality-navigation-on-emo)"
+- *2023.09*: 💡 Presented a poster at **ANFA 2023** in San Diego🇺🇸. | "[Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments.](https://forums.anfarch.org/d/105-keerthana-g-swati-c-ester-c-impact-of-virtual-reality-navigation-on-emo)"
 
 # 📝 Publications 
 
