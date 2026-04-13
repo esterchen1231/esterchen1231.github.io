@@ -26,23 +26,53 @@ My research lies at the intersection of **Human-Computer Interaction (HCI)**, **
 To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the electric guitar.
 
 # 🔥 News
-- *2026.04*: 🎉 Full Paper accepted to **ACM CSCW 2026** in Salt Lake City🇺🇸. | "[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://arxiv.org/abs/2509.18297)"
 
-- *2026.03*: 💡 Joining the NSF AWARE-AI Program as a Research Trainee (2026–2027) to develop accessible HCI methods and investigate human-robot interaction.
+<div style="max-height: 350px; overflow-y: auto; border: 1px solid #eaeaea; padding: 15px; border-radius: 8px; background-color: #fafafa; margin-bottom: 20px; box-shadow: inset 0 0 5px rgba(0,0,0,0.02);">
 
-- *2026.01*: 🎉 Full Paper accepted to **ACM CHI 2026** in Barcelona🇪🇸. | "[What Happened to Scenario-Based Design in HCI?: A Scoping Review](https://doi.org/10.1145/3772318.3790899)"
+  <h4 style="margin-top: 0; color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2026</h4>
+  <ul style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
+    <li style="margin-bottom: 10px;">
+      <em>2026.04</em>: 🎉 Full Paper accepted to <strong>ACM CSCW 2026</strong> in Salt Lake City🇺🇸. | <a href="https://arxiv.org/abs/2509.18297">"Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis"</a>
+    </li>
+    <li style="margin-bottom: 10px;">
+      <em>2026.03</em>: 💡 Joining the NSF AWARE-AI Program as a Research Trainee (2026–2027) to develop accessible HCI methods and investigate human-robot interaction.
+    </li>
+    <li style="margin-bottom: 10px;">
+      <em>2026.01</em>: 🎉 Full Paper accepted to <strong>ACM CHI 2026</strong> in Barcelona🇪🇸. | <a href="https://doi.org/10.1145/3772318.3790899">"What Happened to Scenario-Based Design in HCI?: A Scoping Review"</a>
+    </li>
+  </ul>
 
-- *2025.06*: 🎉 Full Paper accepted to **ACM CSCW 2025** in Bergen🇳🇴. | "[Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI system](https://doi.org/10.1145/3757588)"
+  <h4 style="color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2025</h4>
+  <ul style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
+    <li style="margin-bottom: 10px;">
+      <em>2025.06</em>: 🎉 Full Paper accepted to <strong>ACM CSCW 2025</strong> in Bergen🇳🇴. | <a href="https://doi.org/10.1145/3757588">"Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI system"</a>
+    </li>
+    <li style="margin-bottom: 10px;">
+      <em>2025.05</em>: 📖 Successfully passed the Ph.D. Qualifying Exam. A huge thanks to my advisor, Dr. Hidy Kong, and my examining committee --- Dr. Roshan L. Peiris, Dr. Ji Hwan Park, and Dr. Garreth W. Tigwell for their time and insights.
+    </li>
+  </ul>
 
-- *2025.05*: 📖 Successfully passed the Ph.D. Qualifying Exam. A huge thanks to my advisor, Dr. Hidy Kong, and my examining committee --- Dr. Roshan L. Peiris, Dr. Ji Hwan Park, and Dr. Garreth W. Tigwell for their time and insights.
+  <h4 style="color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2024</h4>
+  <ul style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
+    <li style="margin-bottom: 10px;">
+      <em>2024.11</em>: 🎉 Full Paper accepted to <strong>AAAI ICWSM 2025</strong> in Copenhagen🇩🇰. | <a href="https://doi.org/10.1609/icwsm.v19i1.35821">"A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces"</a>
+    </li>
+    <li style="margin-bottom: 10px;">
+      <em>2024.08</em>: 📖 Joined RIT to pursue a Ph.D. in Computing and Information Sciences (CIS).
+    </li> 
+    <li style="margin-bottom: 10px;">
+      <em>2024.05</em>: 🎓 Graduated from Penn State with an M.Sc. in Informatics under the supervision of Dr. John M. Carroll, and supported by a wonderful committee of mentors: Dr. Dongwon Lee, Dr. Aiping Xiong, and Dr. Anna N. Kreisberg.
+    </li>
+  </ul>
 
-- *2024.11*: 🎉 Full Paper accepted to **AAAI ICWSM 2025** in Copenhagen🇩🇰. | "[A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces](https://doi.org/10.1609/icwsm.v19i1.35821)"
+  <h4 style="color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2023</h4>
+  <ul style="padding-left: 20px; margin-bottom: 10px; line-height: 1.6;">
+    <li style="margin-bottom: 10px;">
+      <em>2023.09</em>: 💡 Presented a poster at <strong>ANFA 2023</strong> in San Diego🇺🇸. | <a href="https://forums.anfarch.org/d/105-keerthana-g-swati-c-ester-c-impact-of-virtual-reality-navigation-on-emo">"Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments."</a>
+    </li>
+  </ul>
 
-- *2024.08*: 📖 Joined RIT to pursue a Ph.D. in Computing and Information Sciences under the supervision of Dr. Hidy Kong.
-
-- *2024.05*: 🎓 Graduated from Penn State with an M.Sc. in Informatics under the supervision of Dr. John M. Carroll, and supported by a wonderful committee of mentors: Dr. Dongwon Lee, Dr. Aiping Xiong, and Dr. Anna N. Kreisberg.
-
-- *2023.09*: 💡 Presented a poster at **ANFA 2023** in San Diego🇺🇸. | "[Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments.](https://forums.anfarch.org/d/105-keerthana-g-swati-c-ester-c-impact-of-virtual-reality-navigation-on-emo)"
+</div>
 
 # 📝 Publications 
 
@@ -69,28 +99,18 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
 ### Preprints & Working Papers
 
 - **[Exploring the Use of Visualization and AI for Qualitative Data Analysis](#)**
-  <br> **Ester Chen**, Nikita Bhyri, Vidhi Rathod, Hidy Kong
+  <!-- <br> **Ester Chen**, Nikita Bhyri, Vidhi Rathod, Hidy Kong -->
   <br> `Under Review` *Expected Jun 2026*
 
 - **[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)**
-  <br> **Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Hidy Kong
+  <!-- <br> **Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Hidy Kong -->
   <br> `Under Review` *Expected Jun 2026*
-
-
-<!-- # 🎖 Honors and Awards
-🚧detour🚧... -->
 
 # 📖 Educations
 - *2024.08 - Now*, Ph.D. Student in Computing and Info. Sciences, Golisano College of Computing, Rochester Institute of Technology, United States
 - *2024.05*, M.Sc. Informatics, College of Information Sciences and Technology, Penn State University - University Park, United States
 - *2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
 - *2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, Canada
-
-<!-- # 💬 Invited Talks
-🚧detour🚧... -->
-
-<!-- - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
 # 💻 Apprenticeships
 
