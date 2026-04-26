@@ -100,11 +100,11 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
 
 - **[Exploring the Use of Visualization and AI for Qualitative Data Analysis](#)**
   <!-- <br> **Ester Chen**, Nikita Bhyri, Vidhi Rathod, Hidy Kong -->
-  <br> `Under Review` *Expected Jun 2026*
+  <!-- <br> `Under Review` *Expected Jun 2026* -->
 
-- **[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)**
+<!-- - **[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)** -->
   <!-- <br> **Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Hidy Kong -->
-  <br> `Under Review` *Expected Jun 2026* -->
+  <!-- <br> `Under Review` *Expected Jun 2026* --> -->
 
 # 📖 Educations
 - *2024.08 - Now*, Ph.D. Student in Computing and Info. Sciences, Golisano College of Computing, Rochester Institute of Technology, United States
