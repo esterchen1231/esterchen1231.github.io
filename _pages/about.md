@@ -96,7 +96,7 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
 
 ---
 
-### Preprints & Working Papers
+<!-- ### Preprints & Working Papers
 
 - **[Exploring the Use of Visualization and AI for Qualitative Data Analysis](#)**
   <!-- <br> **Ester Chen**, Nikita Bhyri, Vidhi Rathod, Hidy Kong -->
@@ -104,7 +104,7 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
 
 - **[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)**
   <!-- <br> **Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Hidy Kong -->
-  <br> `Under Review` *Expected Jun 2026*
+  <br> `Under Review` *Expected Jun 2026* -->
 
 # 📖 Educations
 - *2024.08 - Now*, Ph.D. Student in Computing and Info. Sciences, Golisano College of Computing, Rochester Institute of Technology, United States
@@ -112,8 +112,8 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
 - *2019.09*, Term Exchange, Department of Computer Engineering, University of Warwick, United Kingdom
 - *2021.06*, B.Sc. Mathematics, School of Mathematical and Statistical Sciences, University of Western Ontario, Canada
 
-# 💻 Apprenticeships
+<!-- # 💻 Apprenticeships
 
 - *2020.11*, [PatternedScience, Geospatial Data Analytics](https://www.patterned.science/), Montreal, Quebec.
 - *2020.07*, [K11 Concepts, Digital Transformation](https://www.k11musea.com/), Tsim Sha Tsui, Hong Kong.
-- *2020.05*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York.
+- *2020.05*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York. -->
