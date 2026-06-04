@@ -35,7 +35,7 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
       <em>2026.04</em>: 🎉 Full Paper accepted to <strong>ACM CSCW 2026</strong> in Salt Lake City🇺🇸. | <a href="https://arxiv.org/abs/2509.18297">"Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis"</a>
     </li>
     <li style="margin-bottom: 10px;">
-      <em>2026.03</em>: 💡 Joining the NSF AWARE-AI Program as a Research Trainee (2026–2027) to develop accessible HCI methods and investigate human-robot interaction.
+      <em>2026.03</em>: 💡 Joining the NSF AWARE-AI Program as a Research Trainee (2026–2027) to develop accessible HCI methods and investigate human-AI/robot interaction.
     </li>
     <li style="margin-bottom: 10px;">
       <em>2026.01</em>: 🎉 Full Paper accepted to <strong>ACM CHI 2026</strong> in Barcelona🇪🇸. | <a href="https://doi.org/10.1145/3772318.3790899">"What Happened to Scenario-Based Design in HCI?: A Scoping Review"</a>
