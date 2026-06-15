@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ester Chen | Product Design Portfolio</title>
+    <meta
+      name="description"
+      content="Product design portfolio for Ester Chen, focused on complex workflows, human-AI systems, information architecture, and technical prototyping."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1d1d24;
+        --muted: #5f5b68;
+        --soft: #fbfaf8;
+        --panel: #ffffff;
+        --accent: #635bff;
+        --accent-dark: #4f46e5;
+        --line: #dfdcff;
+        --chip: #f7f5ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--soft);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .wrap {
+        width: min(1120px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        border-bottom: 1px solid var(--line);
+        padding: 34px 0 32px;
+      }
+
+      .hero-grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 28px;
+        align-items: flex-start;
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 12px;
+        font-size: clamp(42px, 7vw, 68px);
+        line-height: 0.94;
+        letter-spacing: -0.045em;
+      }
+
+      .intro {
+        margin-top: 18px;
+        max-width: 680px;
+        color: #575463;
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .nav a,
+      .button {
+        border: 1px solid #cbc8ff;
+        padding: 10px 13px;
+        color: #34313f;
+        font-size: 14px;
+        font-weight: 700;
+        transition:
+          border-color 160ms ease,
+          color 160ms ease,
+          background 160ms ease;
+      }
+
+      .nav a:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .button {
+        display: inline-flex;
+        background: var(--accent);
+        border-color: var(--accent);
+        color: white;
+      }
+
+      .button:hover {
+        background: var(--accent-dark);
+        border-color: var(--accent-dark);
+      }
+
+      .main-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.4fr;
+        gap: 48px;
+        padding: 56px 0;
+      }
+
+      .sticky {
+        position: sticky;
+        top: 32px;
+        align-self: start;
+      }
+
+      h2 {
+        margin-top: 12px;
+        font-size: clamp(27px, 4vw, 40px);
+        line-height: 1.05;
+        letter-spacing: -0.035em;
+      }
+
+      .body-copy {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .note {
+        margin-top: 28px;
+        border-left: 2px solid var(--accent);
+        padding-left: 16px;
+      }
+
+      .note strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .cards {
+        display: grid;
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        padding: 22px;
+        box-shadow: 0 18px 45px rgba(30, 22, 85, 0.06);
+      }
+
+      h3 {
+        margin-top: 8px;
+        font-size: 24px;
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+      }
+
+      .summary {
+        margin-top: 13px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.72;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .chips li {
+        border: 1px solid #ece9ff;
+        background: var(--chip);
+        color: #47415f;
+        padding: 6px 10px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .strengths {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: white;
+        padding: 46px 0;
+      }
+
+      .strength-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.4fr;
+        gap: 40px;
+      }
+
+      .strength-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .strength-list li {
+        border: 1px solid #ece9ff;
+        background: var(--soft);
+        color: #4f4b59;
+        padding: 16px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .contact {
+        padding: 42px 0 52px;
+      }
+
+      .contact-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      @media (max-width: 820px) {
+        .wrap {
+          width: min(100% - 32px, 1120px);
+        }
+
+        .hero-grid,
+        .contact-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .main-grid,
+        .strength-grid,
+        .strength-list {
+          grid-template-columns: 1fr;
+        }
+
+        .sticky {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Product design portfolio</p>
+          <h1>Ester Chen</h1>
+          <p class="intro">
+            Product designer and HCI researcher focused on complex workflows,
+            human-AI systems, information architecture, and practical tools that
+            help people work with dense information.
+          </p>
+        </div>
+        <nav class="nav" aria-label="Contact links">
+          <a href="mailto:esterchen26@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/esterchen">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=cBErukUAAAAJ">
+            Scholar
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="wrap main-grid">
+        <aside class="sticky">
+          <p class="eyebrow">Design focus</p>
+          <h2>
+            I design for internal tools, AI-assisted workflows, and product
+            systems where clarity matters.
+          </h2>
+          <p class="body-copy">
+            My background combines product design, UX research, data analysis,
+            and technical prototyping. I am especially interested in tools for
+            developer productivity, collaboration, knowledge discovery, and
+            high-stakes AI-assisted decisions.
+          </p>
+          <div class="note">
+            <strong>Current direction</strong>
+            <p class="body-copy">
+              Second-year Ph.D. researcher in Computer and Information Sciences
+              at RIT, with publications in ACM CHI, ACM CSCW, and AAAI ICWSM.
+            </p>
+          </div>
+        </aside>
+
+        <section class="cards" aria-label="Selected work">
+          <article class="card">
+            <p class="eyebrow">Product discovery + web implementation</p>
+            <h3>Alpha Arts digital arts platform</h3>
+            <p class="summary">
+              Owned early product discovery and UX delivery for a public-facing
+              digital arts initiative, turning audience needs into information
+              architecture, user flows, prototypes, launch-ready specs, and
+              responsive web pages.
+            </p>
+            <ul class="chips">
+              <li>Information architecture</li>
+              <li>Responsive web UI</li>
+              <li>Stakeholder feedback loops</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="eyebrow">Human-AI workflows</p>
+            <h3>Trust and risk in AI-assisted decisions</h3>
+            <p class="summary">
+              Designed studies and evaluation frameworks that examine how AI
+              performance, risk perception, task context, and trust shape user
+              dependence in complex decision workflows.
+            </p>
+            <ul class="chips">
+              <li>Study design</li>
+              <li>Survey and interview instruments</li>
+              <li>Behavioral data analysis</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="eyebrow">E-commerce transformation</p>
+            <h3>K11 customer and internal workflows</h3>
+            <p class="summary">
+              Translated business research, competitor benchmarks, and
+              user-centered design insights into product recommendations,
+              customer-experience flows, and operational workflows across 20+
+              provinces.
+            </p>
+            <ul class="chips">
+              <li>B2C information architecture</li>
+              <li>Competitor analysis</li>
+              <li>Workflow mapping</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <p class="eyebrow">Data visualization</p>
+            <h3>PatternedScience regional emotion map</h3>
+            <p class="summary">
+              Built a Python data workflow and static website that converted
+              geolocation, sentiment, and COVID-topic signals from Twitter data
+              into accessible map-based summaries.
+            </p>
+            <ul class="chips">
+              <li>Python analysis pipeline</li>
+              <li>Narrative visualization</li>
+              <li>Jekyll and Netlify</li>
+            </ul>
+          </article>
+        </section>
+      </section>
+
+      <section class="strengths">
+        <div class="wrap strength-grid">
+          <div>
+            <p class="eyebrow">Strengths</p>
+            <h2>How I can contribute to a product design team</h2>
+          </div>
+          <ul class="strength-list">
+            <li>Interaction design for dense workflows</li>
+            <li>Information architecture and content structure</li>
+            <li>Lightweight research and usability feedback</li>
+            <li>Human-AI systems and trust calibration</li>
+            <li>Technical prototyping with HTML, CSS, JavaScript, and Python</li>
+            <li>
+              Cross-functional communication with product, engineering, and
+              business teams
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="wrap contact">
+        <div class="contact-row">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Open to product design roles focused on tools, workflows, and AI.</h2>
+          </div>
+          <a class="button" href="mailto:esterchen26@gmail.com">
+            esterchen26@gmail.com
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
