@@ -237,6 +237,8 @@ author_profile: false
 
   .booking-calendar-shell {
     overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
     border: 1px solid var(--booking-line);
     border-radius: 8px;
     background: var(--booking-panel);
@@ -435,6 +437,77 @@ author_profile: false
     font-weight: 700;
   }
 
+  [data-theme="dark"] .booking-page {
+    --booking-ink: #e0e6ef;
+    --booking-muted: #aab4c3;
+    --booking-line: #354153;
+    --booking-soft: #151b24;
+    --booking-panel: #171e28;
+    --booking-blue: #173d56;
+    --booking-blue-line: #3f93c2;
+    --booking-blue-ink: #d8f0ff;
+    --booking-pending: #16384b;
+    --booking-pending-line: #65bdec;
+    --booking-focus: #8ab4ff;
+  }
+
+  [data-theme="dark"] .booking-hero {
+    border-bottom-color: var(--booking-line);
+  }
+
+  [data-theme="dark"] .booking-panel,
+  [data-theme="dark"] .booking-corner,
+  [data-theme="dark"] .booking-day-head {
+    background: linear-gradient(180deg, #1d2531 0%, #171e28 100%);
+  }
+
+  [data-theme="dark"] .booking-control select {
+    background: #111821;
+    color: var(--booking-ink);
+    border-color: var(--booking-line);
+  }
+
+  [data-theme="dark"] .booking-calendar-shell,
+  [data-theme="dark"] .booking-day-column {
+    background-color: var(--booking-panel);
+  }
+
+  [data-theme="dark"] .booking-time-axis {
+    background: #151b24;
+  }
+
+  [data-theme="dark"] .booking-day-column {
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent calc(12.5% - 1px),
+        #2b3544 calc(12.5% - 1px),
+        #2b3544 12.5%
+      );
+  }
+
+  [data-theme="dark"] .booking-day-column:hover {
+    background-color: #1b2633;
+  }
+
+  [data-theme="dark"] .booking-error {
+    background: #311c20;
+    border-color: #80404a;
+    color: #ffcbd1;
+  }
+
+  [data-theme="dark"] .booking-contact {
+    background: #171e28;
+    border-color: var(--booking-line);
+    border-left-color: var(--booking-focus);
+  }
+
+  [data-theme="dark"] .booking-delete-pending {
+    background: #111821;
+    color: var(--booking-blue-ink);
+  }
+
   @media (max-width: 720px) {
     #main .page {
       padding-right: 0;
@@ -442,28 +515,56 @@ author_profile: false
 
     .booking-page {
       width: 100%;
+      padding-bottom: 2.5rem;
+    }
+
+    .booking-page h1 {
+      font-size: clamp(1.85rem, 9vw, 2.45rem);
     }
 
     .booking-panel {
       display: grid;
       align-items: stretch;
+      padding: 0.95rem;
     }
 
     .booking-controls {
       grid-template-columns: 1fr;
+      min-width: 0;
+    }
+
+    .booking-legend {
+      gap: 0.65rem 0.9rem;
+      font-size: 0.86rem;
     }
 
     .booking-calendar {
-      min-width: 960px;
+      min-width: 860px;
     }
 
     .booking-grid {
-      grid-template-columns: 78px repeat(7, minmax(120px, 1fr));
+      grid-template-columns: 72px repeat(7, minmax(112px, 1fr));
     }
 
     .booking-time-axis,
     .booking-day-column {
-      height: 500px;
+      height: 480px;
+    }
+
+    .booking-day-head {
+      min-height: 76px;
+      padding: 0.62rem;
+    }
+
+    .booking-day-name {
+      font-size: 0.96rem;
+    }
+
+    .booking-busy-block {
+      left: 0.35rem;
+      right: 0.35rem;
+      padding: 0.36rem 0.42rem;
+      font-size: 0.8rem;
     }
   }
 </style>

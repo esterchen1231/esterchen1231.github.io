@@ -27,7 +27,7 @@ To recharge outside of the lab, I enjoy skiing, forest hiking, and playing the e
 
 # 🔥 News
 
-<div style="max-height: 350px; overflow-y: auto; border: 1px solid #eaeaea; padding: 15px; border-radius: 8px; background-color: #fafafa; margin-bottom: 20px; box-shadow: inset 0 0 5px rgba(0,0,0,0.02);">
+<div class="news-scrollbox" style="max-height: 350px; overflow-y: auto; border: 1px solid #eaeaea; padding: 15px; border-radius: 8px; background-color: #fafafa; margin-bottom: 20px; box-shadow: inset 0 0 5px rgba(0,0,0,0.02);">
 
   <h4 style="margin-top: 0; color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2026</h4>
   <ul style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
