@@ -123,6 +123,10 @@ h1:before, .anchor:before {
   --site-link-hover: #1a386a;
   --site-masthead-bg: #fff;
   --site-nav-button: #7a8288;
+  --site-icon: #5a6268;
+  --site-code-bg: #fafafa;
+  --site-code-text: #494e52;
+  --site-code-border: #f2f3f3;
   --site-shadow: rgba(0, 0, 0, 0.12);
   --site-card-shadow: rgba(42, 63, 95, 0.08);
 }
@@ -139,6 +143,10 @@ h1:before, .anchor:before {
   --site-link-hover: #bed6ff;
   --site-masthead-bg: #151a21;
   --site-nav-button: #596678;
+  --site-icon: #d6dde7;
+  --site-code-bg: #263242;
+  --site-code-text: #eef4fb;
+  --site-code-border: #536174;
   --site-shadow: rgba(0, 0, 0, 0.42);
   --site-card-shadow: rgba(0, 0, 0, 0.28);
 }
@@ -292,6 +300,37 @@ a:hover,
 
 .author__urls:after {
   border-color: var(--site-surface) transparent;
+}
+
+[data-theme="dark"] .social-icons .fa,
+[data-theme="dark"] .social-icons .fas,
+[data-theme="dark"] .social-icons .fab,
+[data-theme="dark"] .social-icons .far,
+[data-theme="dark"] .social-icons .ai,
+[data-theme="dark"] .author__urls_sm .fa,
+[data-theme="dark"] .author__urls_sm .fas,
+[data-theme="dark"] .author__urls_sm .fab,
+[data-theme="dark"] .author__urls_sm .far,
+[data-theme="dark"] .author__urls_sm .ai {
+  color: var(--site-icon);
+}
+
+p > code,
+a > code,
+li > code,
+figcaption > code,
+td > code {
+  color: var(--site-code-text);
+  background: var(--site-code-bg);
+  border-color: var(--site-code-border);
+}
+
+[data-theme="dark"] p > code,
+[data-theme="dark"] a > code,
+[data-theme="dark"] li > code,
+[data-theme="dark"] figcaption > code,
+[data-theme="dark"] td > code {
+  box-shadow: none;
 }
 
 .author-booking-card,
