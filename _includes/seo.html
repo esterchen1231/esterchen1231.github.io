@@ -2,7 +2,11 @@
 {% if site.url %}
   {% assign seo_url = site.url %}
 {% endif %}
-{% assign seo_url = seo_url | default: site.github.url %}
+{% unless seo_url %}
+  {% if jekyll.environment == "production" %}
+    {% assign seo_url = site.github.url %}
+  {% endif %}
+{% endunless %}
 
 {% if site.url %}
   {% assign canonical_url = page.url | replace: "index.html", "" | prepend: site.url %}

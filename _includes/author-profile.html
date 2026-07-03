@@ -119,6 +119,65 @@
         <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
 {% endif %}
     </ul>
+    {% if page.permalink == "/" and site.data.meeting_unavailability %}
+      {% assign availability = site.data.meeting_unavailability %}
+      {% assign week_start_seconds = availability.week_start | date: "%s" %}
+      {% assign week_end_seconds = week_start_seconds | plus: 518400 %}
+      {% assign week_days = "M,T,W,T,F,S,S" | split: "," %}
+      {% assign visible_start_parts = availability.visible_start | split: ":" %}
+      {% assign visible_end_parts = availability.visible_end | split: ":" %}
+      {% assign visible_start_hour = visible_start_parts[0] | plus: 0 %}
+      {% assign visible_start_minute = visible_start_parts[1] | plus: 0 %}
+      {% assign visible_end_hour = visible_end_parts[0] | plus: 0 %}
+      {% assign visible_end_minute = visible_end_parts[1] | plus: 0 %}
+      {% assign visible_start_minutes = visible_start_hour | times: 60 | plus: visible_start_minute %}
+      {% assign visible_end_minutes = visible_end_hour | times: 60 | plus: visible_end_minute %}
+      {% assign visible_total_minutes = visible_end_minutes | minus: visible_start_minutes %}
+      <a class="author-booking-card" href="{{ '/book-a-meeting/' | relative_url }}" aria-label="Book a meeting next week">
+        <span class="author-booking-card__header">
+          <span>
+            <span class="author-booking-card__label">Next week</span>
+            <span class="author-booking-card__title">Availability</span>
+          </span>
+          <span class="author-booking-card__dates">{{ availability.week_start | date: "%b %-d" }}-{{ week_end_seconds | date: "%-d" }}</span>
+        </span>
+        <span class="author-booking-card__calendar" aria-hidden="true">
+          <span class="author-booking-card__days">
+            {% for day_label in week_days %}
+              <span>{{ day_label }}</span>
+            {% endfor %}
+          </span>
+          <span class="author-booking-card__grid">
+            {% for day_label in week_days %}
+              {% assign day_index = forloop.index0 %}
+              {% assign day_offset = forloop.index0 | times: 86400 %}
+              {% assign day_seconds = week_start_seconds | plus: day_offset %}
+              {% assign day_iso = day_seconds | date: "%Y-%m-%d" %}
+              {% for block in availability.unavailable %}
+                {% if block.date == day_iso %}
+                  {% assign start_parts = block.start | split: ":" %}
+                  {% assign end_parts = block.end | split: ":" %}
+                  {% assign start_hour = start_parts[0] | plus: 0 %}
+                  {% assign start_minute = start_parts[1] | plus: 0 %}
+                  {% assign end_hour = end_parts[0] | plus: 0 %}
+                  {% assign end_minute = end_parts[1] | plus: 0 %}
+                  {% assign start_minutes = start_hour | times: 60 | plus: start_minute %}
+                  {% assign end_minutes = end_hour | times: 60 | plus: end_minute %}
+                  {% assign block_offset = start_minutes | minus: visible_start_minutes %}
+                  {% assign block_duration = end_minutes | minus: start_minutes %}
+                  {% assign block_top = block_offset | times: 100.0 | divided_by: visible_total_minutes %}
+                  {% assign block_height = block_duration | times: 100.0 | divided_by: visible_total_minutes %}
+                  {% if block_offset >= 0 and block_duration > 0 %}
+                    <span class="author-booking-card__busy" style="--day: {{ day_index }}; --top: {{ block_top }}%; --height: {{ block_height }}%;"></span>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </span>
+        </span>
+        <span class="author-booking-card__action">View times</span>
+      </a>
+    {% endif %}
       <div class="author__urls_sm">
       {% if author.uri %}
         <a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i></a>
