@@ -217,6 +217,7 @@ author_profile: false
 
   .booking-swatch--pending {
     border-color: var(--booking-pending-line);
+    border-style: dashed;
     background: var(--booking-pending);
   }
 
@@ -489,6 +490,19 @@ author_profile: false
 
   [data-theme="dark"] .booking-day-column:hover {
     background-color: #1b2633;
+  }
+
+  [data-theme="dark"] .booking-swatch--pending,
+  [data-theme="dark"] .booking-busy-block--pending {
+    background:
+      repeating-linear-gradient(
+        135deg,
+        rgba(101, 189, 236, 0.22) 0,
+        rgba(101, 189, 236, 0.22) 3px,
+        transparent 3px,
+        transparent 8px
+      ),
+      var(--booking-pending);
   }
 
   [data-theme="dark"] .booking-error {
