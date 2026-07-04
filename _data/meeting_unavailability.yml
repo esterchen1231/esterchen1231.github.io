@@ -6,6 +6,10 @@ visible_end: "18:00"
 # Times are entered in source_timezone.
 unavailable:
   - date: "2026-07-06"
+    start: "14:00"
+    end: "14:30"
+    label: ""
+  - date: "2026-07-06"
     start: "17:00"
     end: "18:00"
     label: ""
