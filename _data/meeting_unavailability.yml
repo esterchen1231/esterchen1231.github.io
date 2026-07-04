@@ -1,7 +1,7 @@
 week_start: "2026-07-06"
 source_timezone: "America/New_York"
 visible_start: "09:00"
-visible_end: "18:00"
+visible_end: "19:00"
 
 # Times are entered in source_timezone.
 unavailable:
