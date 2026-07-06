@@ -1,0 +1,39 @@
+name: Roll Meeting Unavailability
+
+on:
+  schedule:
+    - cron: "59 23 * * 0"
+      timezone: "America/New_York"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rollover:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Roll meeting unavailability
+        run: python3 scripts/roll_meeting_unavailability.py
+
+      - name: Commit updated meeting unavailability
+        run: |
+          if git diff --quiet -- _data/meeting_unavailability.yml; then
+            echo "No meeting availability rollover needed."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/meeting_unavailability.yml
+          git commit -m "Roll meeting unavailability schedule"
+          git push
