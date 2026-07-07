@@ -1,6 +1,6 @@
 week_start: "2026-07-06"
 source_timezone: "America/New_York"
-visible_start: "08:00"
+visible_start: "10:00"
 visible_end: "23:59"
 
 # Times are entered in source_timezone.
