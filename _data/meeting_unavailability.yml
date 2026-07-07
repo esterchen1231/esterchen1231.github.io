@@ -72,3 +72,7 @@ unavailable:
     start: "10:00"
     end: "12:00"
     label: ""
+  - date: "2026-07-12"
+    start: "20:30"
+    end: "22:00"
+    label: ""
