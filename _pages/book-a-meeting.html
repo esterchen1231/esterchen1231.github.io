@@ -1,7 +1,7 @@
 ---
 permalink: /book-a-meeting/
-title: "Book a meeting next week"
-excerpt: "View Ester Chen's weekly availability."
+title: "Book a meeting"
+excerpt: "View Ester Chen's current and next week availability."
 author_profile: false
 ---
 
@@ -9,7 +9,7 @@ author_profile: false
   <header class="booking-hero">
     <p class="booking-eyebrow">Availability</p>
     <h1>Book a meeting</h1>
-    <p class="booking-intro">This calendar is refreshed weekly with Ester's upcoming availability.</p>
+    <p class="booking-intro">This calendar shows Ester's availability for the current and next week.</p>
   </header>
 
   <section class="booking-panel" aria-label="Availability controls">
@@ -21,22 +21,30 @@ author_profile: false
       </p>
     </div>
 
-    <div class="booking-controls">
-      <label class="booking-control">
-        <span>Meeting length</span>
-        <select id="booking-duration-select" aria-label="Select meeting length">
-          <option value="30">30 minutes</option>
-          <option value="45">45 minutes</option>
-          <option value="60">60 minutes</option>
-          <option value="90">90 minutes</option>
-          <option value="120">120 minutes</option>
-        </select>
-      </label>
+    <div class="booking-toolbar">
+      <div class="booking-controls">
+        <label class="booking-control">
+          <span>Meeting length</span>
+          <select id="booking-duration-select" aria-label="Select meeting length">
+            <option value="30">30 minutes</option>
+            <option value="45">45 minutes</option>
+            <option value="60">60 minutes</option>
+            <option value="90">90 minutes</option>
+            <option value="120">120 minutes</option>
+          </select>
+        </label>
 
-      <label class="booking-control">
-        <span>View timezone</span>
-        <select id="booking-timezone-select" aria-label="Select display timezone"></select>
-      </label>
+        <label class="booking-control">
+          <span>View timezone</span>
+          <select id="booking-timezone-select" aria-label="Select display timezone"></select>
+        </label>
+      </div>
+
+      <div class="booking-week-nav" aria-label="Week navigation">
+        <button type="button" id="booking-prev-week">Previous week</button>
+        <span id="booking-week-range" class="booking-week-range" aria-live="polite"></span>
+        <button type="button" id="booking-next-week">Next week</button>
+      </div>
     </div>
   </section>
 
@@ -160,11 +168,17 @@ author_profile: false
     line-height: 1.5;
   }
 
+  .booking-toolbar {
+    display: grid;
+    gap: 0.7rem;
+    min-width: min(480px, 100%);
+  }
+
   .booking-controls {
     display: grid;
     grid-template-columns: minmax(130px, 0.7fr) minmax(220px, 1.3fr);
     gap: 0.7rem;
-    min-width: min(460px, 100%);
+    min-width: 0;
   }
 
   .booking-control {
@@ -184,6 +198,46 @@ author_profile: false
     font: inherit;
     font-weight: 600;
     padding: 0.62rem 0.68rem;
+  }
+
+  .booking-week-nav {
+    display: grid;
+    grid-template-columns: max-content minmax(10rem, 1fr) max-content;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .booking-week-nav button {
+    min-height: 2.45rem;
+    border: 1px solid var(--booking-line);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--booking-ink);
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 800;
+    line-height: 1.1;
+    padding: 0.55rem 0.75rem;
+    cursor: pointer;
+  }
+
+  .booking-week-nav button:hover:not(:disabled),
+  .booking-week-nav button:focus:not(:disabled) {
+    border-color: var(--booking-focus);
+    color: var(--booking-focus);
+  }
+
+  .booking-week-nav button:disabled {
+    cursor: not-allowed;
+    opacity: 0.48;
+  }
+
+  .booking-week-range {
+    color: var(--booking-ink);
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.25;
+    text-align: center;
   }
 
   .booking-legend {
@@ -462,7 +516,8 @@ author_profile: false
     background: linear-gradient(180deg, #1d2531 0%, #171e28 100%);
   }
 
-  [data-theme="dark"] .booking-control select {
+  [data-theme="dark"] .booking-control select,
+  [data-theme="dark"] .booking-week-nav button {
     background: #111821;
     color: var(--booking-ink);
     border-color: var(--booking-line);
@@ -542,9 +597,22 @@ author_profile: false
       padding: 0.95rem;
     }
 
+    .booking-toolbar {
+      min-width: 0;
+    }
+
     .booking-controls {
       grid-template-columns: 1fr;
       min-width: 0;
+    }
+
+    .booking-week-nav {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .booking-week-range {
+      grid-column: 1 / -1;
+      text-align: left;
     }
 
     .booking-legend {
@@ -591,11 +659,15 @@ author_profile: false
     var calendarElement = document.getElementById("booking-calendar");
     var durationSelect = document.getElementById("booking-duration-select");
     var timezoneSelect = document.getElementById("booking-timezone-select");
+    var prevWeekButton = document.getElementById("booking-prev-week");
+    var nextWeekButton = document.getElementById("booking-next-week");
+    var weekRangeElement = document.getElementById("booking-week-range");
     var requestStatusElement = document.getElementById("booking-request-status");
     var errorElement = document.getElementById("booking-error");
     var pendingRequests = [];
     var pendingStoragePrefix = "ester-booking-pending:";
     var slotIncrementMinutes = 30;
+    var visibleWeekIndex = 0;
 
     var commonTimezones = [
       "America/New_York",
@@ -733,6 +805,23 @@ author_profile: false
       });
     }
 
+    function formatWeekRange(weekStart, timezone) {
+      var weekEnd = addDays(weekStart, 6);
+      var start = zonedTimeToDate(weekStart, "12:00", timezone);
+      var end = zonedTimeToDate(weekEnd, "12:00", timezone);
+      if (!start || !end) {
+        return "";
+      }
+      return formatDate(start, timezone, {
+        month: "short",
+        day: "numeric"
+      }) + " - " + formatDate(end, timezone, {
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+      });
+    }
+
     function formatLocalRange(startDate, endDate, timezone) {
       var startDay = formatDate(startDate, timezone, { weekday: "short", month: "short", day: "numeric" });
       var endDay = formatDate(endDate, timezone, { weekday: "short", month: "short", day: "numeric" });
@@ -843,6 +932,38 @@ author_profile: false
       ].join("\n");
 
       return "mailto:esterchen@mail.rit.edu?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+
+    function getVisibleWeekCount(data) {
+      var configuredCount = Number(data.display_weeks);
+      if (Number.isFinite(configuredCount) && configuredCount > 0) {
+        return Math.max(1, Math.floor(configuredCount));
+      }
+      return 2;
+    }
+
+    function updateWeekControls(data, weekStart, sourceTimezone) {
+      var weekCount = getVisibleWeekCount(data);
+      if (weekRangeElement) {
+        weekRangeElement.textContent = formatWeekRange(weekStart, sourceTimezone);
+      }
+      if (prevWeekButton) {
+        prevWeekButton.disabled = visibleWeekIndex <= 0;
+      }
+      if (nextWeekButton) {
+        nextWeekButton.disabled = visibleWeekIndex >= weekCount - 1;
+      }
+    }
+
+    function setWeekIndex(nextIndex, data, selectedTimezone) {
+      var weekCount = getVisibleWeekCount(data);
+      var clampedIndex = Math.max(0, Math.min(nextIndex, weekCount - 1));
+      if (clampedIndex === visibleWeekIndex) {
+        return;
+      }
+      visibleWeekIndex = clampedIndex;
+      setStatus("");
+      renderCalendar(data, selectedTimezone);
     }
 
     function requestSlotFromClick(event, day, data, selectedTimezone) {
@@ -961,14 +1082,17 @@ author_profile: false
 
     function renderCalendar(data, selectedTimezone) {
       var sourceTimezone = data.source_timezone || "America/New_York";
-      var weekStart = data.week_start;
+      var baseWeekStart = data.week_start;
+      var weekCount = getVisibleWeekCount(data);
+      visibleWeekIndex = Math.max(0, Math.min(visibleWeekIndex, weekCount - 1));
+      var weekStart = addDays(baseWeekStart, visibleWeekIndex * 7);
       var visibleStart = data.visible_start || "09:00";
       var visibleEnd = data.visible_end || "17:00";
       var visibleStartMinutes = minutesFromTime(visibleStart);
       var visibleEndMinutes = minutesFromTime(visibleEnd);
       var unavailable = getMergedUnavailable(data);
 
-      if (!weekStart || visibleStartMinutes === null || visibleEndMinutes === null || visibleEndMinutes <= visibleStartMinutes) {
+      if (!baseWeekStart || !weekStart || visibleStartMinutes === null || visibleEndMinutes === null || visibleEndMinutes <= visibleStartMinutes) {
         showError();
         return;
       }
@@ -992,6 +1116,7 @@ author_profile: false
       calendarElement.hidden = false;
       errorElement.hidden = true;
       calendarElement.innerHTML = "";
+      updateWeekControls(data, weekStart, sourceTimezone);
 
       var grid = document.createElement("div");
       grid.className = "booking-grid";
@@ -1117,6 +1242,14 @@ author_profile: false
 
     timezoneSelect.addEventListener("change", function () {
       renderCalendar(bookingData, timezoneSelect.value || sourceTimezone);
+    });
+
+    prevWeekButton.addEventListener("click", function () {
+      setWeekIndex(visibleWeekIndex - 1, bookingData, timezoneSelect.value || sourceTimezone);
+    });
+
+    nextWeekButton.addEventListener("click", function () {
+      setWeekIndex(visibleWeekIndex + 1, bookingData, timezoneSelect.value || sourceTimezone);
     });
 
     durationSelect.addEventListener("change", function () {

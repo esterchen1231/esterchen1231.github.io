@@ -1,4 +1,5 @@
 week_start: "2026-07-06"
+display_weeks: 2
 source_timezone: "America/New_York"
 visible_start: "10:00"
 visible_end: "23:59"
