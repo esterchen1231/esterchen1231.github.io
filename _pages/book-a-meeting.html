@@ -105,6 +105,9 @@ author_profile: false
     --booking-pending: #dff3ff;
     --booking-pending-line: #3d9ed8;
     --booking-focus: #2f6fed;
+    --booking-today: #fff7d6;
+    --booking-today-line: #e7b928;
+    --booking-today-ink: #775900;
     color: var(--booking-ink);
     width: min(1120px, calc(100vw - 5rem));
     max-width: none;
@@ -346,6 +349,21 @@ author_profile: false
     line-height: 1.28;
   }
 
+  .booking-today-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.45rem;
+    border: 1px solid var(--booking-today-line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--booking-today-ink);
+    font-size: 0.68rem;
+    font-weight: 800;
+    line-height: 1;
+    padding: 0.24rem 0.42rem;
+    text-transform: uppercase;
+  }
+
   .booking-time-axis,
   .booking-day-column {
     position: relative;
@@ -387,8 +405,31 @@ author_profile: false
     background-color: #f7fcff;
   }
 
+  .booking-day-column--today {
+    border-left: 2px solid var(--booking-today-line);
+    border-right: 2px solid var(--booking-today-line);
+    background-color: #fffdf2;
+    background-image:
+      linear-gradient(180deg, rgba(231, 185, 40, 0.13), rgba(231, 185, 40, 0.04)),
+      repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent calc(12.5% - 1px),
+        #e6dfc6 calc(12.5% - 1px),
+        #e6dfc6 12.5%
+      );
+  }
+
+  .booking-day-column--today:hover {
+    background-color: #fff9df;
+  }
+
   .booking-day-column:last-child {
     border-right: 0;
+  }
+
+  .booking-day-column--today:last-child {
+    border-right: 2px solid var(--booking-today-line);
   }
 
   .booking-busy-block {
@@ -504,6 +545,9 @@ author_profile: false
     --booking-pending: #16384b;
     --booking-pending-line: #65bdec;
     --booking-focus: #8ab4ff;
+    --booking-today: #3a310f;
+    --booking-today-line: #d4ac28;
+    --booking-today-ink: #ffe89d;
   }
 
   [data-theme="dark"] .booking-hero {
@@ -514,6 +558,10 @@ author_profile: false
   [data-theme="dark"] .booking-corner,
   [data-theme="dark"] .booking-day-head {
     background: linear-gradient(180deg, #1d2531 0%, #171e28 100%);
+  }
+
+  [data-theme="dark"] .booking-today-badge {
+    background: #111821;
   }
 
   [data-theme="dark"] .booking-control select,
@@ -545,6 +593,23 @@ author_profile: false
 
   [data-theme="dark"] .booking-day-column:hover {
     background-color: #1b2633;
+  }
+
+  [data-theme="dark"] .booking-day-column--today {
+    background-color: #282411;
+    background-image:
+      linear-gradient(180deg, rgba(212, 172, 40, 0.16), rgba(212, 172, 40, 0.05)),
+      repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent calc(12.5% - 1px),
+        #504823 calc(12.5% - 1px),
+        #504823 12.5%
+      );
+  }
+
+  [data-theme="dark"] .booking-day-column--today:hover {
+    background-color: #302a12;
   }
 
   [data-theme="dark"] .booking-swatch--pending,
@@ -803,6 +868,21 @@ author_profile: false
         month: "short",
         day: "numeric"
       });
+    }
+
+    function getDateTextInTimezone(date, timezone) {
+      var values = {};
+      new Intl.DateTimeFormat("en-US", {
+        timeZone: timezone,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).formatToParts(date).forEach(function (part) {
+        if (part.type !== "literal") {
+          values[part.type] = part.value;
+        }
+      });
+      return values.year + "-" + values.month + "-" + values.day;
     }
 
     function formatWeekRange(weekStart, timezone) {
@@ -1091,6 +1171,7 @@ author_profile: false
       var visibleStartMinutes = minutesFromTime(visibleStart);
       var visibleEndMinutes = minutesFromTime(visibleEnd);
       var unavailable = getMergedUnavailable(data);
+      var todayDateText = getDateTextInTimezone(new Date(), sourceTimezone);
 
       if (!baseWeekStart || !weekStart || visibleStartMinutes === null || visibleEndMinutes === null || visibleEndMinutes <= visibleStartMinutes) {
         showError();
@@ -1140,6 +1221,12 @@ author_profile: false
 
         header.appendChild(sourceLabel);
         header.appendChild(localLabel);
+        if (day.dateText === todayDateText) {
+          var todayBadge = document.createElement("span");
+          todayBadge.className = "booking-today-badge";
+          todayBadge.textContent = "Today in NY";
+          header.appendChild(todayBadge);
+        }
         grid.appendChild(header);
       });
 
@@ -1153,6 +1240,9 @@ author_profile: false
       days.forEach(function (day) {
         var column = document.createElement("div");
         column.className = "booking-day-column";
+        if (day.dateText === todayDateText) {
+          column.className += " booking-day-column--today";
+        }
         column.setAttribute("aria-label", "Availability for " + formatSourceDay(day.dateText, sourceTimezone));
         column.addEventListener("click", function (event) {
           requestSlotFromClick(event, day, data, selectedTimezone);
