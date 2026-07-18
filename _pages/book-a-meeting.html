@@ -968,9 +968,37 @@ author_profile: false
       ) + ".");
     }
 
-    function getMergedUnavailable(data) {
+    function getConfiguredUnavailable(data) {
       var unavailable = Array.isArray(data.unavailable) ? data.unavailable : [];
-      return unavailable.concat(pendingRequests);
+      if (data.repeat_weekly !== true) {
+        return unavailable;
+      }
+
+      var weekCount = getVisibleWeekCount(data);
+      var calendarStart = addDays(data.week_start, 0);
+      var calendarEnd = addDays(data.week_start, weekCount * 7);
+      if (!calendarStart || !calendarEnd) {
+        return [];
+      }
+
+      var repeated = [];
+      unavailable.forEach(function (block) {
+        if (!block || !addDays(block.date, 0)) {
+          return;
+        }
+
+        for (var weekIndex = 0; weekIndex < weekCount; weekIndex += 1) {
+          var repeatedDate = addDays(block.date, weekIndex * 7);
+          if (repeatedDate >= calendarStart && repeatedDate < calendarEnd) {
+            repeated.push(Object.assign({}, block, { date: repeatedDate }));
+          }
+        }
+      });
+      return repeated;
+    }
+
+    function getMergedUnavailable(data) {
+      return getConfiguredUnavailable(data).concat(pendingRequests);
     }
 
     function slotOverlapsBlock(slotDate, slotStartMinutes, slotEndMinutes, block) {
