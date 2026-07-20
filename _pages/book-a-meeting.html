@@ -1216,6 +1216,33 @@ author_profile: false
       return 2;
     }
 
+    function getWeekStartDateText(dateText) {
+      var parsed = parseDate(dateText);
+      if (!parsed) {
+        return null;
+      }
+      var date = new Date(Date.UTC(parsed.year, parsed.month - 1, parsed.day));
+      var daysSinceMonday = (date.getUTCDay() + 6) % 7;
+      return addDays(dateText, -daysSinceMonday);
+    }
+
+    function getInitialWeekIndex(data) {
+      var sourceTimezone = data.source_timezone || "America/New_York";
+      var baseWeekStart = getWeekStartDateText(data.week_start);
+      var currentDateText = getDateTextInTimezone(new Date(), sourceTimezone);
+      var currentWeekStart = getWeekStartDateText(currentDateText);
+      var baseDate = parseDate(baseWeekStart);
+      var currentDate = parseDate(currentWeekStart);
+      if (!baseDate || !currentDate) {
+        return 0;
+      }
+
+      var baseUtc = Date.UTC(baseDate.year, baseDate.month - 1, baseDate.day);
+      var currentUtc = Date.UTC(currentDate.year, currentDate.month - 1, currentDate.day);
+      var weekIndex = Math.floor((currentUtc - baseUtc) / (7 * 24 * 60 * 60 * 1000));
+      return Math.max(0, Math.min(weekIndex, getVisibleWeekCount(data) - 1));
+    }
+
     function updateWeekControls(data, weekStart, sourceTimezone) {
       var weekCount = getVisibleWeekCount(data);
       if (weekRangeElement) {
@@ -1521,6 +1548,7 @@ author_profile: false
     }
 
     var sourceTimezone = bookingData.source_timezone || "America/New_York";
+    visibleWeekIndex = getInitialWeekIndex(bookingData);
     pendingRequests = loadPendingRequests(bookingData);
     populateTimezoneSelect(sourceTimezone);
     renderCalendar(bookingData, timezoneSelect.value || sourceTimezone);

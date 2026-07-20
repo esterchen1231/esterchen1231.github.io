@@ -450,3 +450,156 @@ td > code {
     height: 2rem;
   }
 }
+
+/* ==========================================================================
+   Miami Beach theme for pages using the shared site layout
+   ========================================================================== */
+
+body.main-layout-page {
+  --site-bg: #f4fffc;
+  --site-surface: #fffdf7;
+  --site-panel: #eafaf7;
+  --site-text: #123b52;
+  --site-muted: #527383;
+  --site-border: #b9dedc;
+  --site-link: #b43f3c;
+  --site-link-hover: #8f302f;
+  --site-masthead-bg: rgba(255, 253, 247, 0.92);
+  --site-nav-button: #2bbab2;
+  --site-icon: #176f73;
+  --site-code-bg: #fff0e9;
+  --site-code-text: #713d38;
+  --site-code-border: #efc6b9;
+  --site-shadow: rgba(13, 83, 91, 0.18);
+  --site-card-shadow: rgba(20, 104, 114, 0.12);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 93% 5%, rgba(97, 211, 207, 0.34), transparent 28rem),
+    radial-gradient(circle at 4% 25%, rgba(255, 151, 126, 0.22), transparent 25rem),
+    linear-gradient(145deg, #fff9ec 0%, #f0fffb 52%, #fff1eb 100%);
+  background-attachment: fixed;
+}
+
+[data-theme="dark"] body.main-layout-page {
+  --site-bg: #0d242b;
+  --site-surface: #122f37;
+  --site-panel: #173c42;
+  --site-text: #e7f8f5;
+  --site-muted: #a9cbc9;
+  --site-border: #35656a;
+  --site-link: #ff9b88;
+  --site-link-hover: #ffc1b3;
+  --site-masthead-bg: rgba(13, 36, 43, 0.93);
+  --site-nav-button: #36aaa6;
+  --site-icon: #72d8d2;
+  --site-code-bg: #4a2d2d;
+  --site-code-text: #ffd8cf;
+  --site-code-border: #7b4b46;
+  --site-shadow: rgba(0, 0, 0, 0.42);
+  --site-card-shadow: rgba(0, 0, 0, 0.3);
+  background:
+    radial-gradient(circle at 93% 5%, rgba(32, 153, 158, 0.26), transparent 28rem),
+    radial-gradient(circle at 4% 25%, rgba(215, 101, 83, 0.2), transparent 25rem),
+    linear-gradient(145deg, #102630 0%, #0e292c 52%, #2b2023 100%);
+  background-attachment: fixed;
+}
+
+body.main-layout-page .masthead {
+  background: linear-gradient(90deg, var(--site-masthead-bg), rgba(229, 252, 247, 0.88));
+  box-shadow: 0 7px 24px var(--site-card-shadow);
+  backdrop-filter: blur(12px);
+}
+
+[data-theme="dark"] body.main-layout-page .masthead {
+  background: linear-gradient(90deg, var(--site-masthead-bg), rgba(27, 57, 61, 0.9));
+}
+
+body.main-layout-page .greedy-nav {
+  background: transparent;
+}
+
+body.main-layout-page #main {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+body.main-layout-page:not(.main-layout-page--booking) .sidebar,
+body.main-layout-page:not(.main-layout-page--booking) .page__content {
+  border: 1px solid var(--site-border);
+  border-radius: 18px;
+  background: rgba(255, 253, 247, 0.9);
+  box-shadow: 0 18px 44px var(--site-card-shadow);
+}
+
+[data-theme="dark"] body.main-layout-page:not(.main-layout-page--booking) .sidebar,
+[data-theme="dark"] body.main-layout-page:not(.main-layout-page--booking) .page__content {
+  background: rgba(18, 47, 55, 0.92);
+}
+
+body.main-layout-page:not(.main-layout-page--booking) .sidebar {
+  padding: 0.9rem;
+}
+
+body.main-layout-page:not(.main-layout-page--booking) .page__content {
+  padding: 1.35rem 1.5rem 2rem;
+}
+
+body.main-layout-page .page__content h1,
+body.main-layout-page .page__content h2,
+body.main-layout-page .page__content h3,
+body.main-layout-page .author__name {
+  color: var(--site-text);
+}
+
+body.main-layout-page .author__avatar img {
+  border-color: var(--site-border);
+  box-shadow: 0 8px 22px var(--site-card-shadow);
+}
+
+body.main-layout-page .author-booking-card__label {
+  color: var(--site-link);
+}
+
+body.main-layout-page .author-booking-card__action {
+  border-color: var(--site-link);
+  background: var(--site-link);
+}
+
+body.main-layout-page .author-booking-card:hover {
+  border-color: #2bbab2;
+}
+
+body.main-layout-page .author-booking-card:hover .author-booking-card__action {
+  border-color: #176f73;
+  background: #176f73;
+}
+
+body.main-layout-page .author-booking-card__busy {
+  border-color: #2bbab2;
+  background: #a8e9e3;
+}
+
+[data-theme="dark"] body.main-layout-page .author-booking-card__busy {
+  border-color: #42c9c0;
+  background: #145b61;
+}
+
+@media (max-width: 720px) {
+  body.main-layout-page #main {
+    padding-top: 0.55rem;
+    padding-bottom: 2rem;
+  }
+
+  body.main-layout-page:not(.main-layout-page--booking) .sidebar,
+  body.main-layout-page:not(.main-layout-page--booking) .page__content {
+    border-radius: 14px;
+  }
+
+  body.main-layout-page:not(.main-layout-page--booking) .sidebar {
+    padding: 0.75rem;
+  }
+
+  body.main-layout-page:not(.main-layout-page--booking) .page__content {
+    padding: 1rem 0.9rem 1.5rem;
+  }
+}

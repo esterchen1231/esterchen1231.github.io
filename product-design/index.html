@@ -201,6 +201,108 @@
         display: block;
       }
 
+      body.portfolio-locked {
+        overflow: hidden;
+      }
+
+      .portfolio-gate {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: grid;
+        place-items: center;
+        overflow-y: auto;
+        background:
+          radial-gradient(circle at 88% 12%, rgba(99, 91, 255, 0.16), transparent 34%),
+          var(--soft);
+        padding: 24px;
+      }
+
+      .portfolio-gate[hidden] {
+        display: none;
+      }
+
+      .portfolio-gate__card {
+        width: min(440px, 100%);
+        border: 1px solid var(--line);
+        background: var(--panel);
+        box-shadow: 0 24px 70px var(--shadow);
+        padding: clamp(24px, 6vw, 38px);
+      }
+
+      .portfolio-gate__card h1 {
+        margin-top: 10px;
+        font-size: clamp(32px, 8vw, 46px);
+        line-height: 1;
+      }
+
+      .portfolio-gate__copy {
+        margin-top: 16px;
+        color: var(--muted);
+      }
+
+      .portfolio-gate__form {
+        display: grid;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .portfolio-gate__form label {
+        font-size: 14px;
+        font-weight: 750;
+      }
+
+      .portfolio-gate__form input {
+        width: 100%;
+        border: 1px solid var(--nav-border);
+        background: var(--panel);
+        color: var(--ink);
+        font: inherit;
+        padding: 12px 13px;
+      }
+
+      .portfolio-gate__form input:focus {
+        border-color: var(--accent);
+        outline: 3px solid rgba(99, 91, 255, 0.18);
+      }
+
+      .portfolio-gate__submit {
+        border: 1px solid var(--accent);
+        background: var(--accent);
+        color: #ffffff;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 750;
+        padding: 12px 14px;
+      }
+
+      .portfolio-gate__submit:hover,
+      .portfolio-gate__submit:focus {
+        border-color: var(--accent-dark);
+        background: var(--accent-dark);
+      }
+
+      .portfolio-gate__submit:disabled {
+        cursor: wait;
+        opacity: 0.68;
+      }
+
+      [data-theme="dark"] .portfolio-gate__submit {
+        color: #101318;
+      }
+
+      .portfolio-gate__error {
+        min-height: 1.4em;
+        margin-top: 2px;
+        color: #b42318;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      [data-theme="dark"] .portfolio-gate__error {
+        color: #ffaaa1;
+      }
+
       .main-grid {
         display: grid;
         grid-template-columns: 0.9fr 1.4fr;
@@ -404,7 +506,23 @@
       }
     </style>
   </head>
-  <body>
+  <body class="portfolio-locked">
+    <section id="portfolio-gate" class="portfolio-gate" role="dialog" aria-modal="true" aria-labelledby="portfolio-gate-title">
+      <div class="portfolio-gate__card">
+        <p class="eyebrow">Private portfolio</p>
+        <h1 id="portfolio-gate-title">Enter password</h1>
+        <p class="portfolio-gate__copy">This portfolio is shared with invited visitors.</p>
+        <form id="portfolio-gate-form" class="portfolio-gate__form">
+          <label for="portfolio-password">Password</label>
+          <input id="portfolio-password" name="password" type="password" autocomplete="current-password" required />
+          <button id="portfolio-gate-submit" class="portfolio-gate__submit" type="submit">View portfolio</button>
+          <p id="portfolio-gate-error" class="portfolio-gate__error" role="alert" aria-live="polite"></p>
+        </form>
+        <noscript><p class="portfolio-gate__error">JavaScript is required to unlock this portfolio.</p></noscript>
+      </div>
+    </section>
+
+    <div id="portfolio-content" hidden>
     <header class="hero">
       <div class="wrap hero-grid">
         <div>
@@ -555,6 +673,83 @@
         </div>
       </section>
     </main>
+    </div>
     <script src="/assets/js/theme-toggle.js"></script>
+    <script>
+      (function() {
+        "use strict";
+
+        var storageKey = "ester-product-design-unlocked";
+        var expectedHash = "3147a07607a5123553f8bffbca0e846e833bbb32d002b7547c4cac1ac17ca892";
+        var gate = document.getElementById("portfolio-gate");
+        var content = document.getElementById("portfolio-content");
+        var form = document.getElementById("portfolio-gate-form");
+        var passwordInput = document.getElementById("portfolio-password");
+        var submitButton = document.getElementById("portfolio-gate-submit");
+        var errorElement = document.getElementById("portfolio-gate-error");
+
+        function unlockPortfolio() {
+          gate.hidden = true;
+          content.hidden = false;
+          document.body.classList.remove("portfolio-locked");
+        }
+
+        function setError(message) {
+          errorElement.textContent = message || "";
+        }
+
+        function digestPassword(value) {
+          var bytes = new TextEncoder().encode(value);
+          return window.crypto.subtle.digest("SHA-256", bytes).then(function(buffer) {
+            return Array.from(new Uint8Array(buffer)).map(function(byte) {
+              return byte.toString(16).padStart(2, "0");
+            }).join("");
+          });
+        }
+
+        try {
+          if (sessionStorage.getItem(storageKey) === "1") {
+            unlockPortfolio();
+            return;
+          }
+        } catch (error) {
+          setError("");
+        }
+
+        if (!window.crypto || !window.crypto.subtle || !window.TextEncoder) {
+          passwordInput.disabled = true;
+          submitButton.disabled = true;
+          setError("This browser cannot verify the password. Please use a current browser.");
+          return;
+        }
+
+        passwordInput.focus();
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          setError("");
+          submitButton.disabled = true;
+
+          digestPassword(passwordInput.value).then(function(passwordHash) {
+            if (passwordHash !== expectedHash) {
+              passwordInput.value = "";
+              passwordInput.focus();
+              setError("Incorrect password. Please try again.");
+              return;
+            }
+
+            try {
+              sessionStorage.setItem(storageKey, "1");
+            } catch (error) {
+              setError("");
+            }
+            unlockPortfolio();
+          }).catch(function() {
+            setError("The password could not be verified. Please try again.");
+          }).finally(function() {
+            submitButton.disabled = false;
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
