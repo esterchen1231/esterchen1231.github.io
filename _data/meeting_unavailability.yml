@@ -7,6 +7,10 @@ visible_end: "21:00"
 
 # Times are entered in source_timezone.
 unavailable:
+  - date: "2026-07-13"
+    start: "14:30"
+    end: "15:30"
+
   - date: "2026-07-14"
     start: "14:30"
     end: "16:30"
@@ -24,6 +28,9 @@ unavailable:
   - date: "2026-07-16"
     start: "14:00"
     end: "15:00"
+  - date: "2026-07-16"
+    start: "16:00"
+    end: "17:00"
 
   - date: "2026-07-17"
     start: "10:00"
