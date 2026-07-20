@@ -64,6 +64,12 @@ author_profile: false
     <div id="booking-calendar" class="booking-calendar"></div>
   </section>
 
+  <div id="booking-block-tooltip" class="booking-block-tooltip" role="tooltip" hidden>
+    <strong id="booking-block-tooltip-label"></strong>
+    <span id="booking-block-tooltip-range"></span>
+    <small id="booking-block-tooltip-timezone"></small>
+  </div>
+
   <footer class="booking-contact">
     <p>
       Feel free to click an open time on the calendar, and an email request will be drafted automatically.
@@ -94,32 +100,39 @@ author_profile: false
   }
 
   .booking-page {
-    --booking-ink: #222533;
-    --booking-muted: #5f6677;
-    --booking-line: #d9dfeb;
-    --booking-soft: #f6f8fb;
-    --booking-panel: #ffffff;
-    --booking-blue: #bde7ff;
-    --booking-blue-line: #79c7f2;
-    --booking-blue-ink: #174769;
-    --booking-pending: #dff3ff;
-    --booking-pending-line: #3d9ed8;
-    --booking-focus: #2f6fed;
-    --booking-today: #fff7d6;
-    --booking-today-line: #e7b928;
-    --booking-today-ink: #775900;
+    --booking-ink: #123b52;
+    --booking-muted: #527383;
+    --booking-line: #b9dedc;
+    --booking-soft: #fff5e6;
+    --booking-panel: #fffdf8;
+    --booking-blue: #a8e9e3;
+    --booking-blue-line: #2bbab2;
+    --booking-blue-ink: #104c54;
+    --booking-pending: #ffe2d8;
+    --booking-pending-line: #ed7a66;
+    --booking-focus: #c94743;
+    --booking-today: #fff0b8;
+    --booking-today-line: #e8b53c;
+    --booking-today-ink: #6d5005;
     color: var(--booking-ink);
     width: min(1120px, calc(100vw - 5rem));
     max-width: none;
     margin-left: 0;
     margin-right: auto;
-    padding-bottom: 4rem;
+    border: 1px solid rgba(43, 186, 178, 0.22);
+    border-radius: 22px;
+    background:
+      radial-gradient(circle at 92% 3%, rgba(115, 218, 216, 0.3), transparent 28%),
+      radial-gradient(circle at 4% 20%, rgba(255, 159, 135, 0.2), transparent 24%),
+      linear-gradient(145deg, #fffaf0 0%, #f2fffd 54%, #fff3ed 100%);
+    box-shadow: 0 22px 60px rgba(20, 104, 114, 0.1);
+    padding: 1.3rem 1.35rem 4rem;
   }
 
   .booking-hero {
     margin-bottom: 1.4rem;
     padding: 0.5rem 0 1.1rem;
-    border-bottom: 1px solid #edf1f7;
+    border-bottom: 1px solid var(--booking-line);
   }
 
   .booking-eyebrow {
@@ -153,9 +166,8 @@ author_profile: false
     margin: 1.4rem 0 1rem;
     border: 1px solid var(--booking-line);
     border-radius: 8px;
-    background:
-      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-    box-shadow: 0 16px 36px rgba(42, 63, 95, 0.08);
+    background: linear-gradient(135deg, rgba(255, 253, 248, 0.97), rgba(229, 251, 248, 0.97));
+    box-shadow: 0 16px 36px rgba(20, 104, 114, 0.09);
     padding: 1.05rem 1.1rem;
   }
 
@@ -203,6 +215,11 @@ author_profile: false
     padding: 0.62rem 0.68rem;
   }
 
+  .booking-control select:focus {
+    border-color: var(--booking-focus);
+    outline: 3px solid rgba(233, 95, 88, 0.18);
+  }
+
   .booking-week-nav {
     display: grid;
     grid-template-columns: max-content minmax(10rem, 1fr) max-content;
@@ -227,6 +244,7 @@ author_profile: false
   .booking-week-nav button:hover:not(:disabled),
   .booking-week-nav button:focus:not(:disabled) {
     border-color: var(--booking-focus);
+    background: #fff1ec;
     color: var(--booking-focus);
   }
 
@@ -300,7 +318,7 @@ author_profile: false
     border: 1px solid var(--booking-line);
     border-radius: 8px;
     background: var(--booking-panel);
-    box-shadow: 0 14px 34px rgba(42, 63, 95, 0.09);
+    box-shadow: 0 14px 34px rgba(20, 104, 114, 0.11);
   }
 
   .booking-calendar {
@@ -316,8 +334,7 @@ author_profile: false
   .booking-day-head {
     min-height: 86px;
     border-bottom: 1px solid var(--booking-line);
-    background:
-      linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+    background: linear-gradient(180deg, #fffdf8 0%, #eafbf8 100%);
   }
 
   .booking-corner {
@@ -372,7 +389,7 @@ author_profile: false
 
   .booking-time-axis {
     border-right: 1px solid var(--booking-line);
-    background: #f8fbff;
+    background: #fff8ea;
   }
 
   .booking-time-label {
@@ -390,19 +407,19 @@ author_profile: false
   .booking-day-column {
     border-right: 1px solid var(--booking-line);
     cursor: pointer;
-    background-color: #ffffff;
+    background-color: #fffefa;
     background-image:
       repeating-linear-gradient(
         to bottom,
         transparent,
         transparent calc(12.5% - 1px),
-        #edf1f7 calc(12.5% - 1px),
-        #edf1f7 12.5%
+        #dcefeb calc(12.5% - 1px),
+        #dcefeb 12.5%
       );
   }
 
   .booking-day-column:hover {
-    background-color: #f7fcff;
+    background-color: #f2fffc;
   }
 
   .booking-day-column--today {
@@ -447,7 +464,15 @@ author_profile: false
     font-weight: 700;
     line-height: 1.18;
     cursor: default;
-    box-shadow: 0 5px 10px rgba(29, 92, 132, 0.11);
+    box-shadow: 0 5px 12px rgba(20, 104, 114, 0.15);
+  }
+
+  .booking-busy-block:hover,
+  .booking-busy-block:focus,
+  .booking-busy-block:focus-within {
+    border-color: var(--booking-focus);
+    outline: 3px solid rgba(233, 95, 88, 0.18);
+    z-index: 3;
   }
 
   .booking-busy-block--pending {
@@ -519,7 +544,7 @@ author_profile: false
     border: 1px solid var(--booking-line);
     border-left: 3px solid var(--booking-focus);
     border-radius: 8px;
-    background: #fbfcff;
+    background: linear-gradient(135deg, #fff9ed, #fff1ec);
     padding: 0.9rem 1rem;
     color: var(--booking-muted);
   }
@@ -533,21 +558,63 @@ author_profile: false
     font-weight: 700;
   }
 
+  .booking-block-tooltip {
+    position: fixed;
+    z-index: 1000;
+    display: grid;
+    gap: 0.28rem;
+    width: max-content;
+    max-width: min(22rem, calc(100vw - 1rem));
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+    background: #123b52;
+    box-shadow: 0 12px 30px rgba(8, 54, 70, 0.28);
+    color: #ffffff;
+    padding: 0.72rem 0.82rem;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    pointer-events: none;
+  }
+
+  .booking-block-tooltip[hidden] {
+    display: none;
+  }
+
+  .booking-block-tooltip strong,
+  .booking-block-tooltip span,
+  .booking-block-tooltip small {
+    display: block;
+  }
+
+  .booking-block-tooltip strong {
+    color: #84e4dd;
+    font-size: 0.94rem;
+  }
+
+  .booking-block-tooltip small {
+    color: #d5eeed;
+    font-size: 0.75rem;
+  }
+
   [data-theme="dark"] .booking-page {
-    --booking-ink: #e0e6ef;
-    --booking-muted: #aab4c3;
-    --booking-line: #354153;
-    --booking-soft: #151b24;
-    --booking-panel: #171e28;
-    --booking-blue: #173d56;
-    --booking-blue-line: #3f93c2;
-    --booking-blue-ink: #d8f0ff;
-    --booking-pending: #16384b;
-    --booking-pending-line: #65bdec;
-    --booking-focus: #8ab4ff;
-    --booking-today: #3a310f;
-    --booking-today-line: #d4ac28;
-    --booking-today-ink: #ffe89d;
+    --booking-ink: #e7f8f5;
+    --booking-muted: #a9cbc9;
+    --booking-line: #315d61;
+    --booking-soft: #142c35;
+    --booking-panel: #102832;
+    --booking-blue: #145b61;
+    --booking-blue-line: #42c9c0;
+    --booking-blue-ink: #e1fffb;
+    --booking-pending: #5a342f;
+    --booking-pending-line: #ff9b86;
+    --booking-focus: #ff9180;
+    --booking-today: #463b19;
+    --booking-today-line: #e0b94d;
+    --booking-today-ink: #ffe899;
+    background:
+      radial-gradient(circle at 92% 3%, rgba(32, 153, 158, 0.24), transparent 28%),
+      radial-gradient(circle at 4% 20%, rgba(215, 101, 83, 0.18), transparent 24%),
+      linear-gradient(145deg, #102630 0%, #0e2529 54%, #2b1f22 100%);
   }
 
   [data-theme="dark"] .booking-hero {
@@ -557,7 +624,7 @@ author_profile: false
   [data-theme="dark"] .booking-panel,
   [data-theme="dark"] .booking-corner,
   [data-theme="dark"] .booking-day-head {
-    background: linear-gradient(180deg, #1d2531 0%, #171e28 100%);
+    background: linear-gradient(180deg, #17343c 0%, #102832 100%);
   }
 
   [data-theme="dark"] .booking-today-badge {
@@ -566,7 +633,7 @@ author_profile: false
 
   [data-theme="dark"] .booking-control select,
   [data-theme="dark"] .booking-week-nav button {
-    background: #111821;
+    background: #0d232b;
     color: var(--booking-ink);
     border-color: var(--booking-line);
   }
@@ -577,7 +644,7 @@ author_profile: false
   }
 
   [data-theme="dark"] .booking-time-axis {
-    background: #151b24;
+    background: #172a2c;
   }
 
   [data-theme="dark"] .booking-day-column {
@@ -632,14 +699,19 @@ author_profile: false
   }
 
   [data-theme="dark"] .booking-contact {
-    background: #171e28;
+    background: linear-gradient(135deg, #173038, #332328);
     border-color: var(--booking-line);
     border-left-color: var(--booking-focus);
   }
 
   [data-theme="dark"] .booking-delete-pending {
-    background: #111821;
+    background: #0d232b;
     color: var(--booking-blue-ink);
+  }
+
+  [data-theme="dark"] .booking-week-nav button:hover:not(:disabled),
+  [data-theme="dark"] .booking-week-nav button:focus:not(:disabled) {
+    background: #38272b;
   }
 
   @media (max-width: 720px) {
@@ -649,7 +721,8 @@ author_profile: false
 
     .booking-page {
       width: 100%;
-      padding-bottom: 2.5rem;
+      border-radius: 16px;
+      padding: 1rem 0.8rem 2.5rem;
     }
 
     .booking-page h1 {
@@ -729,10 +802,15 @@ author_profile: false
     var weekRangeElement = document.getElementById("booking-week-range");
     var requestStatusElement = document.getElementById("booking-request-status");
     var errorElement = document.getElementById("booking-error");
+    var blockTooltipElement = document.getElementById("booking-block-tooltip");
+    var blockTooltipLabelElement = document.getElementById("booking-block-tooltip-label");
+    var blockTooltipRangeElement = document.getElementById("booking-block-tooltip-range");
+    var blockTooltipTimezoneElement = document.getElementById("booking-block-tooltip-timezone");
     var pendingRequests = [];
     var pendingStoragePrefix = "ester-booking-pending:";
     var slotIncrementMinutes = 30;
     var visibleWeekIndex = 0;
+    var activeTooltipBlock = null;
 
     var commonTimezones = [
       "America/New_York",
@@ -757,6 +835,94 @@ author_profile: false
 
     function setStatus(message) {
       requestStatusElement.textContent = message || "";
+    }
+
+    function hideBlockTooltip(blockElement) {
+      if (blockElement && activeTooltipBlock !== blockElement) {
+        return;
+      }
+      if (activeTooltipBlock) {
+        activeTooltipBlock.removeAttribute("aria-describedby");
+      }
+      activeTooltipBlock = null;
+      blockTooltipElement.hidden = true;
+    }
+
+    function positionBlockTooltip(blockElement) {
+      if (!blockElement || activeTooltipBlock !== blockElement || blockTooltipElement.hidden) {
+        return;
+      }
+
+      var blockRect = blockElement.getBoundingClientRect();
+      var tooltipRect = blockTooltipElement.getBoundingClientRect();
+      if (!blockRect.width || !blockRect.height || !tooltipRect.width || !tooltipRect.height) {
+        hideBlockTooltip(blockElement);
+        return;
+      }
+
+      var viewportPadding = 8;
+      var gap = 10;
+      var left = blockRect.left + blockRect.width / 2 - tooltipRect.width / 2;
+      left = Math.max(viewportPadding, Math.min(left, window.innerWidth - tooltipRect.width - viewportPadding));
+
+      var top = blockRect.top - tooltipRect.height - gap;
+      var placement = "top";
+      if (top < viewportPadding) {
+        top = blockRect.bottom + gap;
+        placement = "bottom";
+      }
+      top = Math.max(viewportPadding, Math.min(top, window.innerHeight - tooltipRect.height - viewportPadding));
+
+      blockTooltipElement.style.left = left + "px";
+      blockTooltipElement.style.top = top + "px";
+      blockTooltipElement.setAttribute("data-placement", placement);
+    }
+
+    function showBlockTooltip(blockElement, label, rangeLabel, selectedTimezone) {
+      if (!blockElement) {
+        return;
+      }
+      if (activeTooltipBlock && activeTooltipBlock !== blockElement) {
+        hideBlockTooltip();
+      }
+
+      activeTooltipBlock = blockElement;
+      blockTooltipLabelElement.textContent = label;
+      blockTooltipRangeElement.textContent = rangeLabel;
+      blockTooltipTimezoneElement.textContent = "Timezone: " + selectedTimezone;
+      blockElement.setAttribute("aria-describedby", blockTooltipElement.id);
+      blockTooltipElement.hidden = false;
+      positionBlockTooltip(blockElement);
+    }
+
+    function connectBlockTooltip(blockElement, label, rangeLabel, selectedTimezone) {
+      var accessibleLabel = label + ". " + rangeLabel + ". Timezone: " + selectedTimezone + ".";
+      blockElement.tabIndex = 0;
+      blockElement.setAttribute("aria-label", accessibleLabel);
+
+      blockElement.addEventListener("mouseenter", function () {
+        showBlockTooltip(blockElement, label, rangeLabel, selectedTimezone);
+      });
+      blockElement.addEventListener("mouseleave", function () {
+        if (!blockElement.contains(document.activeElement)) {
+          hideBlockTooltip(blockElement);
+        }
+      });
+      blockElement.addEventListener("focusin", function () {
+        showBlockTooltip(blockElement, label, rangeLabel, selectedTimezone);
+      });
+      blockElement.addEventListener("focusout", function () {
+        window.setTimeout(function () {
+          if (!blockElement.contains(document.activeElement)) {
+            hideBlockTooltip(blockElement);
+          }
+        }, 0);
+      });
+      blockElement.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          hideBlockTooltip(blockElement);
+        }
+      });
     }
 
     function parseData() {
@@ -1189,6 +1355,7 @@ author_profile: false
     }
 
     function renderCalendar(data, selectedTimezone) {
+      hideBlockTooltip();
       var sourceTimezone = data.source_timezone || "America/New_York";
       var baseWeekStart = data.week_start;
       var weekCount = getVisibleWeekCount(data);
@@ -1304,10 +1471,10 @@ author_profile: false
           blockElement.className = "booking-busy-block" + (block.pending ? " booking-busy-block--pending" : "");
           blockElement.style.top = top + "%";
           blockElement.style.height = height + "%";
-          blockElement.title = label + ": " + rangeLabel;
           blockElement.innerHTML = "<strong></strong><span></span>";
           blockElement.querySelector("strong").textContent = label;
           blockElement.querySelector("span").textContent = rangeLabel;
+          connectBlockTooltip(blockElement, label, rangeLabel, selectedTimezone);
           if (block.pending) {
             var deleteButton = document.createElement("button");
             deleteButton.type = "button";
@@ -1372,6 +1539,14 @@ author_profile: false
 
     durationSelect.addEventListener("change", function () {
       setStatus("");
+    });
+
+    window.addEventListener("scroll", function () {
+      hideBlockTooltip();
+    }, true);
+
+    window.addEventListener("resize", function () {
+      hideBlockTooltip();
     });
   }());
 </script>
