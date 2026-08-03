@@ -1,4 +1,4 @@
-week_start: "2026-07-27"
+week_start: "2026-08-03"
 display_weeks: 3
 repeat_weekly: true
 source_timezone: "America/New_York"
@@ -7,34 +7,34 @@ visible_end: "21:00"
 
 # Times are entered in source_timezone.
 unavailable:
-  - date: "2026-07-27"
+  - date: "2026-08-03"
     start: "14:30"
     end: "15:30"
 
-  - date: "2026-07-28"
+  - date: "2026-08-04"
     start: "14:30"
     end: "16:30"
 
-  - date: "2026-07-29"
+  - date: "2026-08-05"
     start: "10:30"
     end: "11:30"
-  - date: "2026-07-29"
+  - date: "2026-08-05"
     start: "13:00"
     end: "16:30"
 
-  - date: "2026-07-30"
+  - date: "2026-08-06"
     start: "11:30"
     end: "12:30"
-  - date: "2026-07-30"
+  - date: "2026-08-06"
     start: "14:00"
     end: "15:00"
-  - date: "2026-07-30"
+  - date: "2026-08-06"
     start: "16:00"
     end: "17:00"
 
-  - date: "2026-07-31"
+  - date: "2026-08-07"
     start: "10:00"
     end: "11:00"
-  - date: "2026-07-31"
+  - date: "2026-08-07"
     start: "14:00"
     end: "15:00"
