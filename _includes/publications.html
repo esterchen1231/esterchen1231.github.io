@@ -4,7 +4,12 @@
   {% assign author_count = paper.authors | split: ',' | size %}
   <article class="publication" role="listitem" aria-labelledby="publication-{{ paper.id }}">
     <div class="publication__figure">
-      {% include publication-diagram.html paper=paper %}
+      <div class="publication__paper-figure">
+        <img src="{{ paper.image | relative_url }}" alt="{{ paper.image_alt | escape }}" width="{{ paper.image_width }}" height="{{ paper.image_height }}" loading="lazy" decoding="async">
+      </div>
+      <div class="publication__contribution">
+        {% include publication-diagram.html paper=paper %}
+      </div>
     </div>
     <div class="publication__body">
       <h3 class="publication__title" id="publication-{{ paper.id }}"><a href="{{ paper.url }}">{{ paper.title | escape }}</a></h3>
