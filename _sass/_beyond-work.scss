@@ -1,4 +1,8 @@
 /* A small, quiet photo strip; the existing page provides the typography and color. */
+html.has-photo-dialog {
+  overflow: hidden;
+}
+
 .beyond-work {
   margin-top: 2rem;
   min-width: 0;
@@ -18,10 +22,13 @@
 
   &__controls {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
+    gap: 0 0.5rem;
   }
 
-  &__pause {
+  &__pause,
+  &__view-all {
     margin: 0 0 0.6rem;
     padding: 0.4rem 0.65rem;
     border: 1px solid var(--site-border);
@@ -42,6 +49,20 @@
     }
   }
 
+  &__view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--site-text);
+    background: var(--site-mint);
+
+    svg {
+      width: 1em;
+      height: 1em;
+      flex: 0 0 auto;
+    }
+  }
+
   &__row {
     overflow-x: auto;
     overflow-y: hidden;
@@ -56,6 +77,9 @@
   }
 
   &__pause:focus-visible,
+  &__view-all:focus-visible,
+  &__close:focus-visible,
+  &__grid:focus-visible,
   &__row:focus-visible {
     outline: 2px solid var(--site-link);
     outline-offset: 3px;
@@ -115,8 +139,107 @@
   }
 
   &__gallery.is-paused &__track,
+  &__gallery.is-dialog-open &__track,
   &__rows:focus-within &__track {
     animation-play-state: paused;
+  }
+
+  &__dialog {
+    position: fixed;
+    inset: 0;
+    width: 920px;
+    max-width: calc(100vw - 2rem);
+    max-height: 85vh;
+    max-height: 85dvh;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--site-border);
+    border-radius: 12px;
+    color: var(--site-text);
+    background: var(--site-surface);
+    box-shadow: 0 18px 70px rgba(16, 24, 40, 0.25);
+
+    &[open] {
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+    }
+
+    &::backdrop {
+      background: rgba(20, 28, 42, 0.48);
+    }
+  }
+
+  &__dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.65rem 0.8rem 0.65rem 1rem;
+    border-bottom: 1px solid var(--site-border);
+    background: var(--site-surface);
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+  }
+
+  &__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--site-border);
+    border-radius: 50%;
+    color: var(--site-text);
+    background: var(--site-panel);
+    font: inherit;
+    font-size: 1.65rem;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--site-lilac);
+    }
+  }
+
+  ul.beyond-work__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-auto-rows: max-content;
+    align-items: start;
+    align-content: start;
+    gap: 12px;
+    min-height: 0;
+    margin: 0;
+    padding: 1rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    list-style: none;
+    -webkit-overflow-scrolling: touch;
+
+    li.beyond-work__photo {
+      position: relative;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      overflow: visible;
+
+      img {
+        position: absolute;
+        inset: 0;
+        object-fit: contain;
+        border-radius: 3px;
+      }
+    }
   }
 }
 
@@ -128,12 +251,33 @@
   .beyond-work__photo:hover img {
     transform: scale(1.04);
   }
+
+  .beyond-work__grid .beyond-work__photo:hover {
+    z-index: 1;
+
+    img {
+      transform: scale(1.06);
+      box-shadow: 0 3px 14px rgba(16, 24, 40, 0.2);
+    }
+  }
 }
 
 @media (max-width: 600px) {
   .beyond-work__gallery {
     --photo-height: 116px;
     --photo-gap: 10px;
+  }
+
+  .beyond-work__dialog {
+    max-width: calc(100vw - 1rem);
+    max-height: 85vh;
+    max-height: 85dvh;
+  }
+
+  .beyond-work ul.beyond-work__grid {
+    grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+    gap: 8px;
+    padding: 0.75rem;
   }
 }
 

@@ -1,0 +1,35 @@
+{% assign worked_with_files = site.static_files | sort: 'path' %}
+{% assign worked_with_count = 0 %}
+{% capture worked_with_logos %}
+  {% for organization in site.data.worked_with %}
+    {% assign organization_path = '/images/worked-with/' | append: organization.file %}
+    {% assign organization_logo = site.static_files | where: 'path', organization_path | first %}
+    {% if organization_logo %}
+      {% assign worked_with_count = worked_with_count | plus: 1 %}
+      {% include worked-with-logo.html logo=organization_logo organization=organization %}
+    {% endif %}
+  {% endfor %}
+  {% for logo in worked_with_files %}
+    {% if logo.path contains '/images/worked-with/' %}
+      {% assign logo_relative_path = logo.path | remove_first: '/images/worked-with/' %}
+      {% unless logo_relative_path contains '/' %}
+        {% assign logo_extension = logo.extname | downcase %}
+        {% if logo_extension == '.svg' or logo_extension == '.png' or logo_extension == '.jpg' or logo_extension == '.jpeg' or logo_extension == '.webp' or logo_extension == '.avif' %}
+          {% assign organization = site.data.worked_with | where: 'file', logo.name | first %}
+          {% unless organization %}
+          {% assign worked_with_count = worked_with_count | plus: 1 %}
+          {% include worked-with-logo.html logo=logo organization=organization %}
+          {% endunless %}
+        {% endif %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+<section class="worked-with" aria-labelledby="worked-with">
+  <h1 id="worked-with"><span aria-hidden="true">💼</span> Work &amp; Apprenticeships</h1>
+  {% if worked_with_count > 0 %}
+  <ul class="worked-with__logos" role="list">{{ worked_with_logos }}</ul>
+  {% else %}
+  <p class="worked-with__empty">Logos coming soon.</p>
+  {% endif %}
+</section>

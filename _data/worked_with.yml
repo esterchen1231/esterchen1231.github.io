@@ -1,0 +1,40 @@
+- file: Statistics-Canada.svg
+  name: Statistics Canada
+  detail: Canada
+  width: 1023
+  height: 133
+  source: https://www.statcan.gc.ca/en/start
+  asset_source: https://www150.statcan.gc.ca/n1/wet-boew4b/assets/sig-blk-en.svg
+
+- file: Museum-London.svg
+  name: Museum London
+  detail: London, Ontario, Canada
+  width: 153
+  height: 64
+  source: https://museumlondon.ca/
+  asset_source: https://museumlondon.ca/
+
+- file: New-World-Development.png
+  name: New World Development
+  detail: Hong Kong
+  width: 303
+  height: 52
+  source: https://nwd.com.hk/
+  asset_source: https://nwd.com.hk/logo.png
+
+- file: Johns-Hopkins-CTY.png
+  name: Johns Hopkins CTY
+  detail: Center for Talented Youth
+  background: navy
+  width: 380
+  height: 75
+  source: https://discovery.cty.jhu.edu/students/
+  asset_source: https://discovery.cty.jhu.edu/assets/images/logo-white.png
+
+- file: Goldman-Sachs.svg
+  name: Goldman Sachs
+  detail: New York headquarters
+  width: 86
+  height: 36
+  source: https://www.goldmansachs.com/
+  asset_source: https://cdn.gs.com/images/goldman-sachs/v1/gs-vertical-lg.svg

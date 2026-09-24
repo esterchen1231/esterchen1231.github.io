@@ -92,6 +92,76 @@
     button.textContent = paused ? "Resume photos" : "Pause photos";
   });
 
+  function setupPhotoDialog() {
+    var viewAll = gallery.querySelector(".beyond-work__view-all");
+    var dialog = document.getElementById("beyond-work-dialog");
+    if (!viewAll || !dialog || typeof dialog.showModal !== "function") return;
+
+    var grid = dialog.querySelector(".beyond-work__grid");
+    var closeButton = dialog.querySelector(".beyond-work__close");
+    var hover = window.matchMedia("(hover: hover) and (pointer: fine)");
+    var hoverTimer;
+    var lastClosedAt = 0;
+    var populated = false;
+    var scrollPosition;
+
+    function cancelHover() {
+      window.clearTimeout(hoverTimer);
+    }
+
+    function openDialog() {
+      cancelHover();
+      if (dialog.open) return;
+
+      // Use each original once, never the decorative repeats from the moving rows.
+      if (!populated) {
+        originals.forEach(function (item) {
+          var copy = item.cloneNode(true);
+          copy.querySelector("img").loading = "eager";
+          grid.appendChild(copy);
+        });
+        populated = true;
+      }
+
+      scrollPosition = { left: window.scrollX, top: window.scrollY };
+      gallery.classList.add("is-dialog-open");
+      document.documentElement.classList.add("has-photo-dialog");
+      viewAll.setAttribute("aria-expanded", "true");
+      dialog.showModal();
+    }
+
+    viewAll.hidden = false;
+    viewAll.setAttribute("aria-expanded", "false");
+    viewAll.addEventListener("click", openDialog);
+    viewAll.addEventListener("pointerenter", function (event) {
+      if (!hover.matches || event.pointerType !== "mouse" || Date.now() - lastClosedAt < 500) return;
+      // A short dwell avoids opening the window while the pointer passes by.
+      hoverTimer = window.setTimeout(openDialog, 350);
+    });
+    viewAll.addEventListener("pointerleave", function () {
+      cancelHover();
+    });
+    viewAll.addEventListener("blur", cancelHover);
+
+    closeButton.addEventListener("click", function () { dialog.close(); });
+    dialog.addEventListener("click", function (event) {
+      if (event.target !== dialog) return;
+      var bounds = dialog.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right ||
+          event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+    });
+    dialog.addEventListener("close", function () {
+      cancelHover();
+      // Closing with Escape must not reopen the window beneath a stationary pointer.
+      lastClosedAt = Date.now();
+      document.documentElement.classList.remove("has-photo-dialog");
+      gallery.classList.remove("is-dialog-open");
+      viewAll.setAttribute("aria-expanded", "false");
+      viewAll.focus({ preventScroll: true });
+      if (scrollPosition) window.scrollTo({ left: scrollPosition.left, top: scrollPosition.top, behavior: "instant" });
+    });
+  }
+
   function scheduleRebuild() {
     window.cancelAnimationFrame(resizeFrame);
     resizeFrame = window.requestAnimationFrame(rebuild);
@@ -99,6 +169,7 @@
 
   // The gallery is usable before enhancement and whenever reduced motion is on.
   rebuild();
+  setupPhotoDialog();
 
   // Transformed copies can remain outside the browser's native lazy-load area.
   // Load every photo once the gallery approaches the viewport, including repeats.

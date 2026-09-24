@@ -18,11 +18,12 @@
   {% endfor %}
 {% endcapture %}
 <section class="beyond-work" aria-labelledby="beyond-work-title">
-  <h1 id="beyond-work-title">Beyond work</h1>
+  <h1 id="beyond-work-title"><span aria-hidden="true">🌿</span> Beyond work</h1>
   <p>Outside the lab, Ester recharges by skiing <small class="beyond-work__aside">(a leg injury taught her that slopes have rush hour, too)</small>, hiking, playing electric guitar, and practicing latte art <small class="beyond-work__aside">(preferably with matcha)</small>.</p>
   {% if beyond_work_count > 0 %}
   <div class="beyond-work__gallery" data-beyond-work>
     <div class="beyond-work__controls">
+      <button class="beyond-work__view-all" type="button" aria-haspopup="dialog" aria-controls="beyond-work-dialog" hidden><svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="12.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="2.5" y="12.5" width="5" height="5" rx="1"></rect><rect x="12.5" y="12.5" width="5" height="5" rx="1"></rect></svg>View all photos</button>
       <button class="beyond-work__pause" type="button" hidden>Pause photos</button>
     </div>
     <div class="beyond-work__rows">
@@ -33,5 +34,12 @@
       </div>
     </div>
   </div>
+  <dialog id="beyond-work-dialog" class="beyond-work__dialog" aria-labelledby="beyond-work-dialog-title">
+    <div class="beyond-work__dialog-header">
+      <h2 id="beyond-work-dialog-title"><span aria-hidden="true">🌿</span> Beyond work</h2>
+      <button class="beyond-work__close" type="button" aria-label="Close photo gallery" autofocus><span aria-hidden="true">×</span></button>
+    </div>
+    <ul class="beyond-work__grid" role="list" tabindex="0" aria-label="All personal photos"></ul>
+  </dialog>
   {% endif %}
 </section>

@@ -1,12 +1,13 @@
 .publication-list {
   margin: 1rem 0 1.75rem;
+  container-type: inline-size;
 }
 
 .publication {
   display: grid;
-  grid-template-columns: minmax(170px, 25%) minmax(0, 1fr);
-  align-items: start;
-  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0.8rem;
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--site-border);
 
@@ -14,19 +15,15 @@
   &:last-child { border-bottom: 0; padding-bottom: 0; }
 
   &__figure {
-    margin-top: 0.2rem;
-    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    margin: 0;
+    padding: 1rem;
     border: 1px solid var(--site-border);
     border-radius: 4px;
-    background: #fff;
-  }
-
-  &__figure img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: contain;
+    background: var(--site-surface);
   }
 
   &__body { min-width: 0; }
@@ -171,15 +168,155 @@
   }
 }
 
-@media (max-width: 700px) {
-  .publication {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.8rem;
+.publication-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  max-width: 24rem;
+  min-height: 240px;
+  color: var(--site-text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: unquote("max(14px, 0.8rem)");
+  line-height: 1.3;
+  text-align: center;
 
-    &__figure {
-      width: 100%;
-      max-width: 360px;
-      margin: 0;
+  svg {
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &__hub,
+  &__node,
+  &__task,
+  &__training-path {
+    min-width: 0;
+    border-radius: 0.45rem;
+  }
+
+  &__hub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    padding: 0.7rem 0.6rem;
+    font-size: unquote("max(16px, 0.9rem)");
+    text-align: left;
+  }
+
+  &__hub svg { width: 2rem; height: 2rem; }
+
+  &__pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  &__node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.6rem 0.3rem;
+    font-weight: 600;
+  }
+
+  &__node--blue { background: var(--site-powder-blue); }
+  &__node--lilac { background: var(--site-lilac); }
+  &__node--mint { background: var(--site-mint); }
+  &__node--peach { background: var(--site-peach); }
+
+  &__task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.65rem 0.4rem;
+    border: 1px solid var(--site-border);
+    text-align: left;
+  }
+
+  &__task > span { min-width: 0; }
+
+  &__detail {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: unquote("max(13px, 0.75rem)");
+    font-weight: 400;
+  }
+
+  &__line {
+    display: block;
+    width: 1px;
+    height: 1rem;
+    flex: 0 0 auto;
+    margin: 0 auto;
+    background: var(--site-muted);
+  }
+
+  &__split {
+    position: relative;
+    display: block;
+    height: 1.3rem;
+    flex: 0 0 auto;
+    margin: 0 25%;
+    background: linear-gradient(var(--site-muted), var(--site-muted)) center top / 1px 50% no-repeat;
+
+    &::after {
+      position: absolute;
+      inset: 50% -0.16rem 0;
+      border: 1px solid var(--site-muted);
+      border-bottom: 0;
+      border-radius: 0.2rem 0.2rem 0 0;
+      content: "";
     }
+  }
+
+  &__split--up { transform: rotate(180deg); }
+
+  &__training-paths {
+    display: grid;
+    gap: 0.35rem;
+    border-left: 1px solid var(--site-muted);
+    margin-left: 0.25rem;
+    padding-left: 0.65rem;
+  }
+
+  &__training-path {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.45rem 0.6rem;
+    font-weight: 600;
+    text-align: left;
+
+    &::before {
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      width: 0.65rem;
+      border-top: 1px solid var(--site-muted);
+      content: "";
+    }
+  }
+}
+
+// Use the available content width, including space taken by the profile sidebar.
+@container (min-width: 720px) {
+  .publication {
+    grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
+    gap: 1.25rem;
+
+    &__figure { min-height: 0; }
   }
 }

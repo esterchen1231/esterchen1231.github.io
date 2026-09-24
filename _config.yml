@@ -70,6 +70,7 @@ exclude:
   - "*.code-workspace"
   - scripts
   - run_server.sh
+  - images/worked-with/README.md
   - google_scholar_crawler
   - "*.sublime-project"
   - "*.sublime-workspace"

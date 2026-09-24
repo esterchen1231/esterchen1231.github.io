@@ -19,11 +19,11 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Thanks for stopping by! Ester Chen is a Ph.D. student in Computing and Information Sciences at Rochester Institute of Technology, working with Prof. Hidy Kong. She is also a member of the [Center for Accessibility and Inclusion Research (CAIR)](https://www.rit.edu/cair/).
+Thanks for stopping by! Ester Chen is a Ph.D. student in Computing and Information Sciences at Rochester Institute of Technology, working with Prof. Hidy Kong. She is a member of the [Center for Accessibility and Inclusion Research (CAIR)](https://www.rit.edu/cair/).
 
-Her research in **human-computer interaction and responsible technology** examines how people interpret digital information, decide when to rely on automated systems, and maintain control over their decisions. Her work spans visual misinformation, trust in automated advice, and ownership in data analysis and knowledge work. Her publications include papers in **ACM CHI, ACM CSCW, and AAAI ICWSM**.
+Her research in **human-computer interaction** examines visual misinformation, trust in automated advice, and ownership in data analysis and knowledge work. Her publications include papers in **ACM CHI, ACM CSCW, and AAAI ICWSM**.
 
-She is interested in **accessible design and algorithmic accountability**. Her goal is to develop **responsible assistive technologies** that help people understand and question algorithmic systems through visual and interactive tools, with an emphasis on **accessibility, autonomy, and well-being**.
+She is interested in **accessible design and algorithmic accountability**, aiming to develop **responsible assistive technologies** that support autonomy and well-being. She is also exploring the **interplay of AI and visualization (AI4Vis and Vis4AI)** as a potential direction for her doctoral research.
 
 <div class="news" data-news>
   <div class="news__header">
@@ -123,5 +123,7 @@ She is interested in **accessible design and algorithmic accountability**. Her g
 - *2020.11*, [PatternedScience, Geospatial Data Analytics](https://www.patterned.science/), Montreal, Quebec.
 - *2020.07*, [K11 Concepts, Digital Transformation](https://www.k11musea.com/), Tsim Sha Tsui, Hong Kong.
 - *2020.05*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York. -->
+
+{% include worked-with.html %}
 
 {% include beyond-work.html %}

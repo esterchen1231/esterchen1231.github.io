@@ -1,0 +1,66 @@
+{% capture diagram_person %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="9" r="5"></circle><path d="M6 28v-3a10 10 0 0 1 20 0v3M11 23h10"></path></svg>{% endcapture %}
+{% capture diagram_assistant %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="6" y="8" width="20" height="18" rx="5"></rect><path d="M16 3v5M2 15v5M30 15v5M12 21h8"></path><circle cx="11" cy="15" r="1"></circle><circle cx="21" cy="15" r="1"></circle></svg>{% endcapture %}
+{% capture diagram_document %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M8 3h11l6 6v20H8ZM19 3v7h6M12 15h9M12 20h9M12 25h5"></path></svg>{% endcapture %}
+{% capture diagram_clock %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="12"></circle><path d="M16 8v8l6 4"></path></svg>{% endcapture %}
+{% capture diagram_eye %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M2 16s5-9 14-9 14 9 14 9-5 9-14 9S2 16 2 16Z"></path><circle cx="16" cy="16" r="4"></circle></svg>{% endcapture %}
+{% capture diagram_map %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="11" y="11" width="10" height="10" rx="2"></rect><path d="M16 11V5M11 16H5M21 16h6M16 21v6"></path><circle cx="16" cy="3" r="2"></circle><circle cx="3" cy="16" r="2"></circle><circle cx="29" cy="16" r="2"></circle><circle cx="16" cy="29" r="2"></circle></svg>{% endcapture %}
+{% capture diagram_shield %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="m16 3 11 4v9c0 6-5 10-11 13C10 26 5 22 5 16V7ZM11 16l4 4 7-8"></path></svg>{% endcapture %}
+{% capture diagram_risk %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="m16 4 13 23H3ZM16 12v7"></path><circle cx="16" cy="23" r=".8"></circle></svg>{% endcapture %}
+{% capture diagram_face %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M8 3H3v5M24 3h5v5M3 24v5h5M29 24v5h-5"></path><ellipse cx="16" cy="16" rx="8" ry="10"></ellipse><path d="M12 13h1M19 13h1M12 20q4 4 8 0"></path></svg>{% endcapture %}
+{% capture diagram_generate %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="3" y="8" width="21" height="21" rx="3"></rect><path d="m4 24 6-7 5 5 4-4 5 5M25 2v9M21 6h9"></path><circle cx="10" cy="13" r="1.5"></circle></svg>{% endcapture %}
+{% capture diagram_combine %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"></rect><rect x="11" y="11" width="18" height="18" rx="3"></rect><path d="M16 20h8M20 16v8"></path></svg>{% endcapture %}
+{% capture diagram_confidence %}<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M7 24H4a13 13 0 1 1 24 0h-3M16 5v3M6 11l3 2M26 11l-3 2M16 21l7-8"></path><circle cx="16" cy="21" r="3"></circle></svg>{% endcapture %}
+{% capture diagram_split %}<span class="publication-diagram__split" aria-hidden="true"></span>{% endcapture %}
+{% capture diagram_line %}<span class="publication-diagram__line" aria-hidden="true"></span>{% endcapture %}
+
+{% case include.paper.id %}
+{% when 'qda-assistance' %}
+<div class="publication-diagram publication-diagram--qda" role="img" aria-label="AI-assisted qualitative analysis: researchers delegate selected tasks to an AI assistant while balancing efficiency and ownership of interpretation.">
+  <div class="publication-diagram__hub publication-diagram__node--lilac">{{ diagram_person }}<strong>Researcher-led<br>analysis</strong></div>
+  {{ diagram_line }}
+  <div class="publication-diagram__task">{{ diagram_assistant }}<span><strong>AI assistant</strong><span class="publication-diagram__detail">Delegate selected tasks</span></span></div>
+  {{ diagram_split }}
+  <div class="publication-diagram__pair">
+    <div class="publication-diagram__node publication-diagram__node--mint">{{ diagram_clock }}<span>Efficiency</span></div>
+    <div class="publication-diagram__node publication-diagram__node--peach">{{ diagram_document }}<span>Ownership</span></div>
+  </div>
+</div>
+{% when 'scenario-based-design' %}
+<div class="publication-diagram publication-diagram--scenarios" role="img" aria-label="A framework for scenario-based design with four dimensions: who creates scenarios, how they are experienced, when they are used, and what they explore.">
+  <div class="publication-diagram__pair">
+    <div class="publication-diagram__node publication-diagram__node--lilac">{{ diagram_person }}<span>Who creates?</span></div>
+    <div class="publication-diagram__node publication-diagram__node--mint">{{ diagram_eye }}<span>How experienced?</span></div>
+  </div>
+  <span class="publication-diagram__split publication-diagram__split--up" aria-hidden="true"></span>
+  <div class="publication-diagram__hub publication-diagram__node--blue">{{ diagram_map }}<strong>Scenario-based<br>design</strong></div>
+  {{ diagram_split }}
+  <div class="publication-diagram__pair">
+    <div class="publication-diagram__node publication-diagram__node--peach">{{ diagram_clock }}<span>When used?</span></div>
+    <div class="publication-diagram__node publication-diagram__node--lilac">{{ diagram_document }}<span>What explored?</span></div>
+  </div>
+</div>
+{% when 'deepfake-reliance' %}
+<div class="publication-diagram publication-diagram--reliance" role="img" aria-label="A study of reliance on AI advice in deepfake detection, examining reported AI performance, risk perception, and trust. Trust and following AI advice were measured separately; connections show research topics, not causal effects.">
+  <div class="publication-diagram__pair">
+    <div class="publication-diagram__node publication-diagram__node--blue">{{ diagram_confidence }}<span>Reported AI<br>performance</span></div>
+    <div class="publication-diagram__node publication-diagram__node--peach">{{ diagram_risk }}<span>Risk<br>perception</span></div>
+  </div>
+  <span class="publication-diagram__split publication-diagram__split--up" aria-hidden="true"></span>
+  <div class="publication-diagram__hub publication-diagram__node--mint">{{ diagram_face }}<strong>Reliance on<br>AI advice</strong></div>
+  {{ diagram_line }}
+  <div class="publication-diagram__task publication-diagram__node--lilac">{{ diagram_shield }}<span><strong>Trust in AI</strong><span class="publication-diagram__detail">Measured separately from reliance</span></span></div>
+</div>
+{% when 'deepfake-training' %}
+<div class="publication-diagram publication-diagram--training" role="img" aria-label="Three user-training strategies for detecting AI-generated faces: artifact cues, generation experience, and combined training. The study assessed face detection and decision confidence.">
+  <div class="publication-diagram__training-paths">
+    <div class="publication-diagram__training-path publication-diagram__node--blue">{{ diagram_eye }}<span>Artifact cues</span></div>
+    <div class="publication-diagram__training-path publication-diagram__node--lilac">{{ diagram_generate }}<span>Generation experience</span></div>
+    <div class="publication-diagram__training-path publication-diagram__node--peach">{{ diagram_combine }}<span>Combined training</span></div>
+  </div>
+  {{ diagram_split }}
+  <div class="publication-diagram__pair">
+    <div class="publication-diagram__node publication-diagram__node--mint">{{ diagram_face }}<span>Face detection</span></div>
+    <div class="publication-diagram__node publication-diagram__node--mint">{{ diagram_confidence }}<span>Decision confidence</span></div>
+  </div>
+</div>
+{% endcase %}
