@@ -11,7 +11,15 @@
       <p class="publication__authors">{{ paper.authors | markdownify | remove: '<p>' | remove: '</p>' | strip | replace: '<strong>E. Chen', self_author_open }} <span class="publication__author-count">{{ author_count }} author{% if author_count != 1 %}s{% endif %}</span></p>
       <p class="publication__venue"><code>{{ paper.venue }}</code>{% if paper.note %}<span class="publication__note">{{ paper.note }}</span>{% endif %}</p>
       <p class="publication__summary">{{ paper.summary | escape }}</p>
-      <p class="publication__keywords">{{ paper.keywords | escape }}</p>
+      {% assign keywords = paper.keywords | split: ',' %}
+      <ul class="publication__keywords" aria-label="Keywords" role="list">
+        {% for keyword in keywords %}
+        {% assign keyword_text = keyword | strip %}
+        {% if keyword_text != '' %}
+        <li class="publication__keyword"><svg class="publication__keyword-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 3h7l7 7-7 7-7-7Z"></path><circle cx="6.5" cy="6.5" r="1"></circle></svg><span>{{ keyword_text | escape }}</span></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
       <a class="publication__link" href="{{ paper.url }}" aria-label="{{ paper.link_label | escape }}: {{ paper.title | escape }}">{{ paper.link_label }}</a>
     </div>
   </article>

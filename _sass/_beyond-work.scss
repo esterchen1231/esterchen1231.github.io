@@ -3,8 +3,14 @@
   margin-top: 2rem;
   min-width: 0;
 
+  &__aside {
+    font-size: 0.85em;
+    color: inherit;
+    vertical-align: baseline;
+  }
+
   &__gallery {
-    --photo-height: 180px;
+    --photo-height: 144px;
     --photo-gap: 14px;
     min-width: 0;
     max-width: 100%;
@@ -126,7 +132,7 @@
 
 @media (max-width: 600px) {
   .beyond-work__gallery {
-    --photo-height: 145px;
+    --photo-height: 116px;
     --photo-gap: 10px;
   }
 }

@@ -24,7 +24,7 @@ author:
   name             : "Ester Chen"
   avatar           : "images/android-chrome-512x512.png"
   bio              :
-  location         : "Ester is primarily based in Toronto, ON and Miami, FL, but is open to relocating."
+  location         : "trt | roc | mia"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=cBErukUAAAAJ"
@@ -66,6 +66,10 @@ include:
   - files
 exclude:
   - docs
+  - AGENTS.md
+  - "*.code-workspace"
+  - scripts
+  - run_server.sh
   - google_scholar_crawler
   - "*.sublime-project"
   - "*.sublime-workspace"

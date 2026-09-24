@@ -106,11 +106,44 @@
   }
 
   .publication__keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
     margin: 0 0 0.65rem;
-    color: var(--site-muted);
-    font-size: 0.74rem;
-    font-style: italic;
-    line-height: 1.5;
+    padding: 0;
+    list-style: none;
+    font-size: 0.8rem;
+    font-style: normal;
+    line-height: 1.4;
+  }
+
+  .publication__keyword {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.3rem;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    background: var(--site-powder-blue);
+    color: var(--site-text);
+    font-weight: 500;
+  }
+
+  &__keyword span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  &__keyword-icon {
+    width: 1em;
+    height: 1em;
+    flex: 0 0 auto;
+    margin-top: 0.2em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.4;
+    stroke-linejoin: round;
   }
 
   a.publication__link {

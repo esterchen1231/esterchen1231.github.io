@@ -1,3 +1,48 @@
+# Local site builds and dependency caches
 _site/
-push.sh
+.jekyll-cache/
+.jekyll-metadata
+.jekyll-assets-cache/
+.sass-cache/
+.asset-cache/
+.bundle/
+vendor/bundle/
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Machine-specific and editor files
 .DS_Store
+Thumbs.db
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.idea/
+*.swp
+*.swo
+*.log
+
+# Local agent instructions, planning notes, and browser artifacts
+AGENTS.md
+.agents/
+.codex/
+.superpowers/
+.playwright-cli/
+playwright-report/
+test-results/
+docs/superpowers/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+push.sh
