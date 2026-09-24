@@ -1,29 +1,42 @@
 name: Get Citation Data
 
-on: 
- page_build: 
- schedule:
-  - cron:  '0 8 * * *'
+on:
+  page_build:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: google-scholar-stats
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-    - uses: actions/checkout@v2
-    - name: Install Reqs
-      run: |
-        sudo apt-get install python3-setuptools
-    - name: Run
-      run: |
-        cd ./google_scholar_crawler
-        pip3 install -r requirements.txt
-        python3 main.py
-        cd ./results
-        git init
-        git config --local user.name "${GITHUB_ACTOR}"
-        export remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
-        git add *.json
-        git commit -m "Updated Citation Data"
-        git push "${remote_repo}" HEAD:google-scholar-stats --force
-      env: 
-        GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: google_scholar_crawler/requirements.txt
+
+      - name: Install dependencies
+        run: python -m pip install -r google_scholar_crawler/requirements.txt
+
+      - name: Test citation data processing
+        run: python -m unittest discover -s google_scholar_crawler -p 'test_*.py'
+
+      - name: Fetch citation data
+        working-directory: google_scholar_crawler
+        run: python main.py
+        env:
+          GOOGLE_SCHOLAR_ID: ${{ vars.GOOGLE_SCHOLAR_ID || secrets.GOOGLE_SCHOLAR_ID || 'cBErukUAAAAJ' }}
+
+      - name: Publish citation data
+        run: bash google_scholar_crawler/publish_results.sh

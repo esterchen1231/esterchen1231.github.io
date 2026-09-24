@@ -8,7 +8,7 @@
 
 - file: Museum-London.svg
   name: Museum London
-  detail: London, Ontario, Canada
+  detail: Canada
   width: 153
   height: 64
   source: https://museumlondon.ca/
@@ -16,7 +16,7 @@
 
 - file: New-World-Development.png
   name: New World Development
-  detail: Hong Kong
+  detail: Mainland China and Hong Kong
   width: 303
   height: 52
   source: https://nwd.com.hk/
@@ -24,7 +24,7 @@
 
 - file: Johns-Hopkins-CTY.png
   name: Johns Hopkins CTY
-  detail: Center for Talented Youth
+  detail: US
   background: navy
   width: 380
   height: 75
@@ -33,8 +33,17 @@
 
 - file: Goldman-Sachs.svg
   name: Goldman Sachs
-  detail: New York headquarters
+  detail: US
   width: 86
   height: 36
   source: https://www.goldmansachs.com/
   asset_source: https://cdn.gs.com/images/goldman-sachs/v1/gs-vertical-lg.svg
+
+- file: Patterned-Science.png
+  name: Patterned Science
+  detail: Canada
+  background: charcoal
+  width: 233
+  height: 60
+  source: https://www.patterned.science/
+  asset_source: https://www.patterned.science/assets/img/patterned-science-logo-yellow.png

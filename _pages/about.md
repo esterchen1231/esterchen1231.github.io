@@ -19,11 +19,11 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Thanks for stopping by! Ester Chen is a Ph.D. student in Computing and Information Sciences at Rochester Institute of Technology, working with Prof. Hidy Kong. She is a member of the [Center for Accessibility and Inclusion Research (CAIR)](https://www.rit.edu/cair/).
+Thanks for stopping by! Ester Chen is a Ph.D. student in Computing and Information Sciences at Rochester Institute of Technology. She works with Prof. Hidy Kong and is a member of the [Center for Accessibility and Inclusion Research (CAIR)](https://www.rit.edu/cair/).
 
 Her research in **human-computer interaction** examines visual misinformation, trust in automated advice, and ownership in data analysis and knowledge work. Her publications include papers in **ACM CHI, ACM CSCW, and AAAI ICWSM**.
 
-She is interested in **accessible design and algorithmic accountability**, aiming to develop **responsible assistive technologies** that support autonomy and well-being. She is also exploring the **interplay of AI and visualization (AI4Vis and Vis4AI)** as a potential direction for her doctoral research.
+She is interested in **accessible design and algorithmic accountability**, and hopes to develop **responsible assistive technologies** that support autonomy and well-being. For her doctoral research, she is exploring the **interplay of AI and visualization (AI4Vis and Vis4AI)** as one possible direction.
 
 <div class="news" data-news>
   <div class="news__header">
@@ -46,7 +46,7 @@ She is interested in **accessible design and algorithmic accountability**, aimin
       <em>2026.04</em>: 🎉 Full Paper was accepted for presentation at <strong>ACM CSCW 2026</strong> in Salt Lake City, USA 🇺🇸. | <a href="https://doi.org/10.1145/3816977">"Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis"</a>
     </li>
     <li style="margin-bottom: 10px;">
-      <em>2026.03</em>: 💡 Selected as an <a href="https://www.rit.edu/nrtai/" title="RIT AWARE-AI NSF Research Traineeship (NRT)">NSF AWARE-AI Research Trainee</a> (August 2026–August 2027) to develop accessible HCI methods and investigate human–AI/robot interaction.
+      <em>2026.03</em>: 💡 Selected as an <a href="https://www.rit.edu/nrtai/" title="RIT AWARE-AI NSF Research Traineeship (NRT)">NSF AWARE-AI Research Trainee</a> (August 2026 to August 2027) to develop accessible HCI methods and study how people interact with AI and robots.
     </li>
     <li style="margin-bottom: 10px;">
       <em>2026.01</em>: 🎉 Full Paper was accepted for presentation at <strong>ACM CHI 2026</strong> in Barcelona, Spain 🇪🇸. | <a href="https://doi.org/10.1145/3772318.3790899">"What Happened to Scenario-Based Design in HCI?: A Scoping Review"</a>
@@ -61,7 +61,7 @@ She is interested in **accessible design and algorithmic accountability**, aimin
       <em>2025.06</em>: 🎉 Full Paper was accepted for presentation at <strong>ACM CSCW 2025</strong> in Bergen, Norway 🇳🇴. | <a href="https://doi.org/10.1145/3757588">"Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI Systems"</a>
     </li>
     <li style="margin-bottom: 10px;">
-      <em>2025.05</em>: 📖 Successfully passed my Ph.D. Qualifying Exam. Many thanks to Dr. Hidy Kong, and my examining committee -- Dr. Roshan L. Peiris, Dr. Ji Hwan Park, and Dr. Garreth W. Tigwell for their time and valuable insights.
+      <em>2025.05</em>: 📖 Passed my Ph.D. qualifying exam. Thank you to Dr. Hidy Kong and my examining committee (Dr. Roshan L. Peiris, Dr. Ji Hwan Park, and Dr. Garreth W. Tigwell) for their time and insights.
     </li>
   </ul>
 
@@ -73,10 +73,10 @@ She is interested in **accessible design and algorithmic accountability**, aimin
       <em>2024.11</em>: 🎉 Full Paper was accepted for presentation at <strong>AAAI ICWSM 2025</strong> in Copenhagen, Denmark 🇩🇰. | <a href="https://doi.org/10.1609/icwsm.v19i1.35821">"A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces"</a>
     </li>
     <li style="margin-bottom: 10px;">
-      <em>2024.08</em>: 📖 Joined RIT to pursue a Ph.D. in Computing and Information Sciences (CIS).
+      <em>2024.08</em>: 📖 Started my Ph.D. in Computing and Information Sciences (CIS) at RIT.
     </li> 
     <li style="margin-bottom: 10px;">
-      <em>2024.05</em>: 🎓 Graduated from Penn State with an M.Sc. in Informatics under the supervision of Dr. John M. Carroll, with guidance and support from my committee members, Dr. Dongwon Lee, Dr. Aiping Xiong, and Dr. Nicole Kreisberg.
+      <em>2024.05</em>: 🎓 Completed my M.Sc. in Informatics at Penn State, supervised by Dr. John M. Carroll. Thank you to my committee members, Dr. Dongwon Lee, Dr. Aiping Xiong, and Dr. Nicole Kreisberg, for their guidance and support.
     </li>
   </ul>
 

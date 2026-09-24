@@ -3,9 +3,8 @@
 {% assign fallback_name = include.logo.basename | replace: '-', ' ' | replace: '_', ' ' | strip %}
 {% assign organization_name = include.organization.name | default: fallback_name %}
 <li class="worked-with__logo">
-  <div class="worked-with__artwork{% if include.organization.background == 'navy' %} worked-with__artwork--navy{% endif %}">
+  <div class="worked-with__artwork{% if include.organization.background == 'navy' %} worked-with__artwork--navy{% elsif include.organization.background == 'charcoal' %} worked-with__artwork--charcoal{% endif %}">
     <img src="{{ logo_directory | append: logo_filename | escape }}" alt="{{ organization_name | escape }}"{% if include.organization.width %} width="{{ include.organization.width }}" height="{{ include.organization.height }}"{% endif %} loading="lazy" decoding="async">
   </div>
-  <div class="worked-with__name">{{ organization_name | escape }}</div>
   {% if include.organization.detail %}<div class="worked-with__detail">{{ include.organization.detail | escape }}</div>{% endif %}
 </li>

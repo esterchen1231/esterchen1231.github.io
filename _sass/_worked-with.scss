@@ -41,18 +41,11 @@
     }
 
     &--navy { background: #002d72; }
-  }
-
-  &__name {
-    margin-top: 0.5rem;
-    color: var(--site-text);
-    font-size: 0.86rem;
-    font-weight: 600;
-    line-height: 1.35;
+    &--charcoal { background: #212529; }
   }
 
   &__detail {
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
     color: var(--site-muted);
     font-size: 0.75rem;
     line-height: 1.4;

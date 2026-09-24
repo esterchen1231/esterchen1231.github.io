@@ -9,15 +9,15 @@ author_profile: false
   <header class="booking-hero">
     <p class="booking-eyebrow">Availability</p>
     <h1>Book a meeting</h1>
-    <p class="booking-intro">This calendar shows Ester's availability for the coming weeks.</p>
+    <p class="booking-intro">See Ester's availability for the coming weeks and request a time by email.</p>
   </header>
 
   <section class="booking-panel" aria-label="Availability controls">
     <div>
       <h2>Weekly availability</h2>
       <p>
-        <strong>Ester's current local time is America/New_York time.</strong> Requested slots are marked as
-        pending in this browser while your email request is open.
+        <strong>Ester's calendar uses New York time.</strong> Choose a display time zone below.
+        Requested times stay marked as pending in this browser.
       </p>
     </div>
 
@@ -35,8 +35,8 @@ author_profile: false
         </label>
 
         <label class="booking-control">
-          <span>View timezone</span>
-          <select id="booking-timezone-select" aria-label="Select display timezone"></select>
+          <span>Display time zone</span>
+          <select id="booking-timezone-select" aria-label="Select display time zone"></select>
         </label>
       </div>
 
@@ -57,7 +57,7 @@ author_profile: false
   <div id="booking-request-status" class="booking-request-status" role="status" aria-live="polite"></div>
 
   <div id="booking-error" class="booking-error" role="status" hidden>
-    Availability is not available right now. Please email Ester to propose a meeting time.
+    The calendar couldn't load. Email Ester to suggest a meeting time.
   </div>
 
   <section class="booking-calendar-shell" aria-label="Weekly availability calendar">
@@ -72,8 +72,8 @@ author_profile: false
 
   <footer class="booking-contact">
     <p>
-      Feel free to click an open time on the calendar, and an email request will be drafted automatically.
-      If none of these times work for you, you can also email
+      Click an open time to draft an email request.
+      If none of these times work, email
       <a href="mailto:esterchen1@acm.org?subject=Meeting%20request%20with%20Ester" target="_self">esterchen1@acm.org</a>
       with a few alternatives.
     </p>
@@ -809,7 +809,7 @@ author_profile: false
       activeTooltipBlock = blockElement;
       blockTooltipLabelElement.textContent = label;
       blockTooltipRangeElement.textContent = rangeLabel;
-      blockTooltipTimezoneElement.textContent = "Timezone: " + selectedTimezone;
+      blockTooltipTimezoneElement.textContent = "Time zone: " + selectedTimezone;
       blockElement.setAttribute("aria-describedby", blockTooltipElement.id);
       blockTooltipElement.hidden = false;
       positionBlockTooltip(blockElement);
@@ -1115,12 +1115,12 @@ author_profile: false
       var body = [
         "Hi Ester,",
         "",
-        "I would like to request a meeting for:",
+        "I'd like to meet at the following time:",
         "",
         "New York time: " + sourceRange,
-        "My display timezone (" + selectedTimezone + "): " + viewerRange,
+        "Selected time zone (" + selectedTimezone + "): " + viewerRange,
         "",
-        "Please let me know if this still works for you.",
+        "Would this time work for you?",
         "",
         "Thanks!"
       ].join("\n");
@@ -1207,12 +1207,12 @@ author_profile: false
       }
 
       if (slotStartMinutes < visibleStartMinutes || slotEndMinutes > visibleEndMinutes || slotEndMinutes <= slotStartMinutes) {
-        setStatus("Please choose a time inside the visible schedule window.");
+        setStatus("Choose a time within the hours shown.");
         return;
       }
 
       if (!isSlotAvailable(day.dateText, slotStartMinutes, slotEndMinutes, data)) {
-        setStatus("That time overlaps an unavailable block. Please choose another open time.");
+        setStatus("That time is unavailable. Please choose another open time.");
         return;
       }
 
@@ -1226,7 +1226,7 @@ author_profile: false
       pendingRequests.push(pendingBlock);
       savePendingRequests(data);
       renderCalendar(data, selectedTimezone);
-      setStatus("Opening an email request for " + formatLocalRange(
+      setStatus("Opening an email draft for " + formatLocalRange(
         zonedTimeToDate(pendingBlock.date, pendingBlock.start, data.source_timezone || "America/New_York"),
         zonedTimeToDate(pendingBlock.date, pendingBlock.end, data.source_timezone || "America/New_York"),
         selectedTimezone

@@ -33,7 +33,18 @@ AGENTS.md
 .playwright-cli/
 playwright-report/
 test-results/
-docs/superpowers/
+outputs/
+
+# Local documentation and development helpers (not used by the published site)
+/README.md
+/docs/
+/images/beyond-work/README.md
+/images/publications/README.md
+/images/worked-with/README.md
+/run_server.sh
+
+# Upstream template sponsorship metadata (not used by the published site)
+/.github/FUNDING.yml
 
 # Local configuration and credentials
 .env

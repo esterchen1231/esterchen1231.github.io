@@ -69,8 +69,8 @@
     while (rows.firstChild) rows.removeChild(rows.firstChild);
 
     // Keep short galleries compact and distribute larger collections evenly
-    // across three rows. CSS reverses the middle row's direction.
-    var rowCount = Math.min(3, Math.max(1, Math.floor(originals.length / 3)));
+    // across two rows. CSS reverses the second row's direction.
+    var rowCount = Math.min(2, Math.max(1, Math.floor(originals.length / 3)));
     var offset = 0;
     for (var index = 0; index < rowCount; index += 1) {
       var rowSize = Math.ceil((originals.length - offset) / (rowCount - index));
