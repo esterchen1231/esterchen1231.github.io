@@ -50,3 +50,33 @@ The existing rollover script continues to shift the template dates and `week_sta
 - Recurrence patterns other than weekly.
 - Per-entry recurrence overrides.
 - Changes to the booking page layout or styling.
+
+## September 23, 2026: runtime rollover correction
+
+The recurring weekly template remains in `_data/meeting_unavailability.yml`.
+The user supplied a replacement schedule and explicitly confirmed removal of
+the old Friday entries. Times remain in `America/New_York`.
+
+Browser verification exposed a stale-build problem: with a September 21 base
+week and a simulated November 4 visit, the calendar displayed October 5–11.
+The scheduled workflow advances source dates but does not itself publish a new
+site build. [GitHub documents that pushes using `GITHUB_TOKEN` do not trigger
+Pages builds](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+
+For weekly templates, normalize the saved base week and configured block dates
+forward to the current Monday in the source timezone when the page loads. Shift
+whole calendar weeks, preserving local start and end times through daylight
+saving changes. Do not move future templates backward, mutate source data,
+repeat pending requests, or change exact-date mode. Keep the three-week view.
+
+The homepage card uses the same effective week as the booking page. Its static
+fallback label is “Week of”; at runtime, the current week is labeled “This
+week”. This replaces the misleading “Next week” label on a current-week card.
+
+Verification passed: Jekyll build, focused Node regression checks, and browser
+checks covering current dates, a Tokyo-Monday/New-York-Sunday boundary, New York
+Monday, and a stale November visit after the daylight saving transition. All six
+configured blocks repeat at the correct local times across three visible weeks,
+Friday remains open, and the homepage dates agree with the booking calendar.
+An existing browser-local pending request keeps its original date and time and
+does not repeat into the next week.

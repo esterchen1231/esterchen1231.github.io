@@ -1,0 +1,19 @@
+{% capture self_author_open %}<strong class="publication__author-self"><svg class="publication__author-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="6.5" r="3"></circle><path d="M4.5 17v-1.5a5.5 5.5 0 0 1 11 0V17"></path></svg>E. Chen{% endcapture %}
+<div class="publication-list" role="list">
+  {% for paper in site.data.publications %}
+  {% assign author_count = paper.authors | split: ',' | size %}
+  <article class="publication" role="listitem" aria-labelledby="publication-{{ paper.id }}">
+    <div class="publication__figure">
+      <img src="{{ paper.image | relative_url }}" alt="{{ paper.image_alt | escape }}" width="{{ paper.image_width }}" height="{{ paper.image_height }}" loading="lazy" decoding="async">
+    </div>
+    <div class="publication__body">
+      <h3 class="publication__title" id="publication-{{ paper.id }}"><a href="{{ paper.url }}">{{ paper.title | escape }}</a></h3>
+      <p class="publication__authors">{{ paper.authors | markdownify | remove: '<p>' | remove: '</p>' | strip | replace: '<strong>E. Chen', self_author_open }} <span class="publication__author-count">{{ author_count }} author{% if author_count != 1 %}s{% endif %}</span></p>
+      <p class="publication__venue"><code>{{ paper.venue }}</code>{% if paper.note %}<span class="publication__note">{{ paper.note }}</span>{% endif %}</p>
+      <p class="publication__summary">{{ paper.summary | escape }}</p>
+      <p class="publication__keywords">{{ paper.keywords | escape }}</p>
+      <a class="publication__link" href="{{ paper.url }}" aria-label="{{ paper.link_label | escape }}: {{ paper.title | escape }}">{{ paper.link_label }}</a>
+    </div>
+  </article>
+  {% endfor %}
+</div>

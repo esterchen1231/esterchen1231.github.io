@@ -1,0 +1,31 @@
+- school: Rochester Institute of Technology
+  qualification: Ph.D. student in Computing and Information Sciences
+  department: Golisano College of Computing and Information Sciences
+  country: United States
+  date: August 2024–Present
+  tone: orange
+  icon: graduation
+
+- school: Penn State University
+  qualification: M.Sc. in Informatics
+  department: College of Information Sciences and Technology
+  country: United States
+  date: May 2024
+  tone: blue
+  icon: graduation
+
+- school: University of Western Ontario
+  qualification: B.Sc. in Mathematics
+  department: Department of Mathematics
+  country: Canada
+  date: June 2021
+  tone: lilac
+  icon: graduation
+
+- school: University of Warwick
+  qualification: Exchange student
+  department: Department of Computer Science
+  country: United Kingdom
+  date: September 2019
+  tone: purple
+  icon: globe

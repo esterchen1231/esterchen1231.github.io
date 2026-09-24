@@ -46,7 +46,7 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    border-bottom: 1px #efefef solid;
+    border-bottom: 1px var(--site-border) solid;
     padding: 2em 0 2em 0;
     
 
@@ -57,7 +57,7 @@
         order: 2;
         img {
             max-width: 400px;
-            box-shadow: 3px 3px 6px #888;
+            box-shadow: 3px 3px 6px var(--site-shadow);
             object-fit: cover;
         }
     }
@@ -97,14 +97,21 @@ h1:before, .anchor:before {
     margin-top: -$scroll_offset;
 }
 
+// Keep Education deep links below the fixed navigation bar.
+#education,
+#-education,
+#-educations {
+  scroll-margin-top: 4rem;
+}
+
 .badge {
     padding-left: 1rem;
     padding-right: 1rem;
     position: absolute;
     margin-top: .5em;
     margin-left: -.5em;
-    color: white;
-    background-color: #00369f;
+    color: var(--site-author-text);
+    background-color: var(--site-author-bg);
     font-size: .8em;
 }
 
@@ -113,42 +120,63 @@ h1:before, .anchor:before {
    ========================================================================== */
 
 :root {
-  --site-bg: #fff;
+  color-scheme: light;
+  --site-bg: #f5f6fa;
   --site-surface: #fff;
-  --site-panel: #fafafa;
-  --site-text: #494e52;
-  --site-muted: #6f777d;
-  --site-border: #f2f3f3;
-  --site-link: #224b8d;
-  --site-link-hover: #1a386a;
-  --site-masthead-bg: #fff;
-  --site-nav-button: #7a8288;
-  --site-icon: #5a6268;
-  --site-code-bg: #fafafa;
-  --site-code-text: #494e52;
-  --site-code-border: #f2f3f3;
-  --site-shadow: rgba(0, 0, 0, 0.12);
-  --site-card-shadow: rgba(42, 63, 95, 0.08);
+  --site-panel: #eef1f7;
+  --site-text: #303b4b;
+  --site-muted: #606b7a;
+  --site-border: #cbd2df;
+  --site-link: #465d84;
+  --site-link-hover: #634f83;
+  --site-masthead-bg: #f2f5fa;
+  --site-powder-blue: #ddeaf5;
+  --site-lilac: #e7e0f3;
+  --site-mint: #deeee8;
+  --site-peach: #f7e5db;
+  --site-nav-button: var(--site-powder-blue);
+  --site-icon: #596b86;
+  --site-news-bg: #eef4fa;
+  --site-busy-bg: var(--site-mint);
+  --site-busy-border: #7aab98;
+  --site-author-bg: var(--site-lilac);
+  --site-author-text: #4b4268;
+  --site-author-border: #9a8db8;
+  --site-code-bg: var(--site-peach);
+  --site-code-text: #73503c;
+  --site-code-border: #ddbdac;
+  --site-shadow: rgba(48, 59, 75, 0.12);
+  --site-card-shadow: rgba(48, 59, 75, 0.055);
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
-  --site-bg: #101318;
-  --site-surface: #171b22;
-  --site-panel: #1d232b;
-  --site-text: #dde3ea;
-  --site-muted: #aab3bf;
-  --site-border: #343c48;
-  --site-link: #8ab4ff;
-  --site-link-hover: #bed6ff;
-  --site-masthead-bg: #151a21;
-  --site-nav-button: #596678;
-  --site-icon: #d6dde7;
-  --site-code-bg: #263242;
-  --site-code-text: #eef4fb;
-  --site-code-border: #536174;
+  --site-bg: #181d27;
+  --site-surface: #202530;
+  --site-panel: #282f3c;
+  --site-text: #e8ebf2;
+  --site-muted: #b5bdcc;
+  --site-border: #495363;
+  --site-link: #b8cee9;
+  --site-link-hover: #d4c5eb;
+  --site-masthead-bg: #202530;
+  --site-powder-blue: #33455b;
+  --site-lilac: #403b53;
+  --site-mint: #304940;
+  --site-peach: #4a3b36;
+  --site-nav-button: var(--site-powder-blue);
+  --site-icon: #c1cee0;
+  --site-news-bg: #273447;
+  --site-busy-bg: var(--site-mint);
+  --site-busy-border: #85b6a3;
+  --site-author-bg: var(--site-lilac);
+  --site-author-text: #e2d8f4;
+  --site-author-border: #a598c4;
+  --site-code-bg: var(--site-peach);
+  --site-code-text: #eed3c2;
+  --site-code-border: #987967;
   --site-shadow: rgba(0, 0, 0, 0.42);
-  --site-card-shadow: rgba(0, 0, 0, 0.28);
+  --site-card-shadow: rgba(0, 0, 0, 0.2);
 }
 
 html,
@@ -173,6 +201,20 @@ a,
 a:hover,
 .page__content a:hover {
   color: var(--site-link-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--site-link);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--site-lilac);
+  color: var(--site-text);
 }
 
 .masthead {
@@ -205,12 +247,44 @@ a:hover,
 
 .greedy-nav button {
   background-color: var(--site-nav-button);
+  color: var(--site-text);
+}
+
+.greedy-nav .navicon,
+.greedy-nav .navicon:before,
+.greedy-nav .navicon:after {
+  background: var(--site-text);
+}
+
+.greedy-nav .close .navicon {
+  background: transparent;
+}
+
+.greedy-nav .visible-links a:before {
+  background: var(--site-lilac);
 }
 
 .greedy-nav .hidden-links {
   background: var(--site-surface);
   border-color: var(--site-border);
   box-shadow: 0 8px 24px var(--site-shadow);
+}
+
+.greedy-nav .hidden-links a:hover {
+  background: var(--site-powder-blue);
+  color: var(--site-link-hover);
+}
+
+.greedy-nav .hidden-links:before {
+  border-color: var(--site-border) transparent;
+}
+
+.greedy-nav .hidden-links:after {
+  border-color: var(--site-surface) transparent;
+}
+
+.greedy-nav .hidden-links li {
+  border-bottom-color: var(--site-border);
 }
 
 .theme-toggle {
@@ -233,6 +307,7 @@ a:hover,
 
 .theme-toggle:hover,
 .theme-toggle:focus {
+  background: var(--site-lilac);
   border-color: var(--site-link);
   color: var(--site-link-hover);
 }
@@ -302,6 +377,10 @@ a:hover,
   border-color: var(--site-surface) transparent;
 }
 
+.author__urls:before {
+  border-color: var(--site-border) transparent;
+}
+
 [data-theme="dark"] .social-icons .fa,
 [data-theme="dark"] .social-icons .fas,
 [data-theme="dark"] .social-icons .fab,
@@ -352,6 +431,7 @@ td > code {
 .author-booking-card__dates,
 .author-booking-card__days span {
   color: var(--site-muted);
+  border-color: var(--site-border);
 }
 
 .author-booking-card__calendar,
@@ -361,7 +441,7 @@ td > code {
 }
 
 .news-scrollbox {
-  background-color: var(--site-panel) !important;
+  background-color: var(--site-news-bg) !important;
   border-color: var(--site-border) !important;
   color: var(--site-text);
 }
@@ -369,6 +449,93 @@ td > code {
 .news-scrollbox h4 {
   color: var(--site-text) !important;
   border-bottom-color: var(--site-border) !important;
+}
+
+.news__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 1em 0 0.75rem;
+}
+
+.page__content .news__header h1 {
+  margin: 0;
+}
+
+.news__filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin: 0;
+
+  label {
+    margin: 0;
+    color: var(--site-text);
+    font-size: 0.85em;
+    font-weight: 600;
+  }
+
+  select {
+    width: auto;
+    max-width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--site-border);
+    border-radius: 6px;
+    background-color: var(--site-lilac);
+    color: var(--site-text);
+    font: inherit;
+    font-size: 0.85em;
+  }
+}
+
+.news__filter[hidden],
+.news__year[hidden] {
+  display: none;
+}
+
+.news__filter select:focus-visible,
+.news-scrollbox:focus-visible {
+  outline: 2px solid var(--site-link);
+  outline-offset: 3px;
+}
+
+.news-scrollbox[data-news-filtered="true"] {
+  max-height: none !important;
+  overflow-y: visible !important;
+}
+
+.news__year h4 {
+  margin-top: 0;
+}
+
+.page__footer {
+  background: var(--site-panel);
+  border-top-color: var(--site-border);
+  color: var(--site-muted);
+}
+
+.page__footer .fas,
+.page__footer .fab,
+.page__footer .far,
+.page__footer .fal {
+  color: var(--site-muted);
+}
+
+.btn,
+.btn--inverse {
+  background: var(--site-powder-blue);
+  color: var(--site-text) !important;
+}
+
+.btn:hover,
+.btn--inverse:hover {
+  background: var(--site-lilac);
+  color: var(--site-text) !important;
 }
 
 @media (max-width: 720px) {
@@ -452,66 +619,17 @@ td > code {
 }
 
 /* ==========================================================================
-   Miami Beach theme for pages using the shared site layout
+   Cool paper surfaces and macaron accents for the shared site layout
    ========================================================================== */
 
 body.main-layout-page {
-  --site-bg: #f4fffc;
-  --site-surface: #fffdf7;
-  --site-panel: #eafaf7;
-  --site-text: #123b52;
-  --site-muted: #527383;
-  --site-border: #b9dedc;
-  --site-link: #b43f3c;
-  --site-link-hover: #8f302f;
-  --site-masthead-bg: rgba(255, 253, 247, 0.92);
-  --site-nav-button: #2bbab2;
-  --site-icon: #176f73;
-  --site-code-bg: #fff0e9;
-  --site-code-text: #713d38;
-  --site-code-border: #efc6b9;
-  --site-shadow: rgba(13, 83, 91, 0.18);
-  --site-card-shadow: rgba(20, 104, 114, 0.12);
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 93% 5%, rgba(97, 211, 207, 0.34), transparent 28rem),
-    radial-gradient(circle at 4% 25%, rgba(255, 151, 126, 0.22), transparent 25rem),
-    linear-gradient(145deg, #fff9ec 0%, #f0fffb 52%, #fff1eb 100%);
-  background-attachment: fixed;
-}
-
-[data-theme="dark"] body.main-layout-page {
-  --site-bg: #0d242b;
-  --site-surface: #122f37;
-  --site-panel: #173c42;
-  --site-text: #e7f8f5;
-  --site-muted: #a9cbc9;
-  --site-border: #35656a;
-  --site-link: #ff9b88;
-  --site-link-hover: #ffc1b3;
-  --site-masthead-bg: rgba(13, 36, 43, 0.93);
-  --site-nav-button: #36aaa6;
-  --site-icon: #72d8d2;
-  --site-code-bg: #4a2d2d;
-  --site-code-text: #ffd8cf;
-  --site-code-border: #7b4b46;
-  --site-shadow: rgba(0, 0, 0, 0.42);
-  --site-card-shadow: rgba(0, 0, 0, 0.3);
-  background:
-    radial-gradient(circle at 93% 5%, rgba(32, 153, 158, 0.26), transparent 28rem),
-    radial-gradient(circle at 4% 25%, rgba(215, 101, 83, 0.2), transparent 25rem),
-    linear-gradient(145deg, #102630 0%, #0e292c 52%, #2b2023 100%);
-  background-attachment: fixed;
+  background: var(--site-bg);
 }
 
 body.main-layout-page .masthead {
-  background: linear-gradient(90deg, var(--site-masthead-bg), rgba(229, 252, 247, 0.88));
+  background: var(--site-masthead-bg);
   box-shadow: 0 7px 24px var(--site-card-shadow);
-  backdrop-filter: blur(12px);
-}
-
-[data-theme="dark"] body.main-layout-page .masthead {
-  background: linear-gradient(90deg, var(--site-masthead-bg), rgba(27, 57, 61, 0.9));
 }
 
 body.main-layout-page .greedy-nav {
@@ -527,13 +645,8 @@ body.main-layout-page:not(.main-layout-page--booking) .sidebar,
 body.main-layout-page:not(.main-layout-page--booking) .page__content {
   border: 1px solid var(--site-border);
   border-radius: 18px;
-  background: rgba(255, 253, 247, 0.9);
+  background: var(--site-surface);
   box-shadow: 0 18px 44px var(--site-card-shadow);
-}
-
-[data-theme="dark"] body.main-layout-page:not(.main-layout-page--booking) .sidebar,
-[data-theme="dark"] body.main-layout-page:not(.main-layout-page--booking) .page__content {
-  background: rgba(18, 47, 55, 0.92);
 }
 
 body.main-layout-page:not(.main-layout-page--booking) .sidebar {
@@ -552,7 +665,8 @@ body.main-layout-page .author__name {
 }
 
 body.main-layout-page .author__avatar img {
-  border-color: var(--site-border);
+  border-color: var(--site-author-border);
+  background: var(--site-lilac);
   box-shadow: 0 8px 22px var(--site-card-shadow);
 }
 
@@ -561,27 +675,43 @@ body.main-layout-page .author-booking-card__label {
 }
 
 body.main-layout-page .author-booking-card__action {
-  border-color: var(--site-link);
-  background: var(--site-link);
+  border-color: var(--site-border);
+  background: var(--site-powder-blue);
+  color: var(--site-text);
 }
 
 body.main-layout-page .author-booking-card:hover {
-  border-color: #2bbab2;
+  border-color: var(--site-link);
 }
 
 body.main-layout-page .author-booking-card:hover .author-booking-card__action {
-  border-color: #176f73;
-  background: #176f73;
+  border-color: var(--site-author-border);
+  background: var(--site-lilac);
+  color: var(--site-author-text);
 }
 
 body.main-layout-page .author-booking-card__busy {
-  border-color: #2bbab2;
-  background: #a8e9e3;
+  border-color: var(--site-busy-border);
+  background: var(--site-busy-bg);
+  box-shadow: none;
 }
 
-[data-theme="dark"] body.main-layout-page .author-booking-card__busy {
-  border-color: #42c9c0;
-  background: #145b61;
+body.main-layout-page .author-booking-card__grid {
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(14.285714% - 1px),
+      var(--site-border) calc(14.285714% - 1px),
+      var(--site-border) 14.285714%
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(33.333333% - 1px),
+      var(--site-border) calc(33.333333% - 1px),
+      var(--site-border) 33.333333%
+    );
 }
 
 @media (max-width: 720px) {
@@ -603,3 +733,7 @@ body.main-layout-page .author-booking-card__busy {
     padding: 1rem 0.9rem 1.5rem;
   }
 }
+
+@import "beyond-work";
+@import "publications";
+@import "education";

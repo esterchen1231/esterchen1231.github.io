@@ -1,0 +1,149 @@
+/* A small, quiet photo strip; the existing page provides the typography and color. */
+.beyond-work {
+  margin-top: 2rem;
+  min-width: 0;
+
+  &__gallery {
+    --photo-height: 180px;
+    --photo-gap: 14px;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__pause {
+    margin: 0 0 0.6rem;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--site-border);
+    border-radius: 4px;
+    color: var(--site-muted);
+    background: var(--site-surface);
+    font: inherit;
+    font-size: 0.75rem;
+    cursor: pointer;
+
+    &[hidden] {
+      display: none;
+    }
+
+    &:hover {
+      color: var(--site-text);
+      border-color: var(--site-muted);
+    }
+  }
+
+  &__row {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: 5px 0;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+
+    & + & {
+      margin-top: 4px;
+    }
+  }
+
+  &__pause:focus-visible,
+  &__row:focus-visible {
+    outline: 2px solid var(--site-link);
+    outline-offset: 3px;
+  }
+
+  &__track {
+    display: flex;
+    width: max-content;
+  }
+
+  ul.beyond-work__group {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: var(--photo-gap);
+    width: max-content;
+    margin: 0;
+    padding: 0 var(--photo-gap) 0 0;
+    list-style: none;
+  }
+
+  li.beyond-work__photo {
+    flex: 0 0 auto;
+    width: var(--photo-height);
+    height: var(--photo-height);
+    margin: 0;
+    overflow: hidden;
+    border-radius: 3px;
+    background: var(--site-panel);
+    user-select: none;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      margin: 0;
+      object-fit: cover;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      transition: transform 240ms ease;
+    }
+  }
+
+  &__gallery.is-animated &__row {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent);
+    mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent);
+  }
+
+  &__gallery.is-animated &__track {
+    animation: beyond-work-drift var(--photo-duration) linear infinite;
+  }
+
+  &__gallery.is-animated &__row:nth-child(even) &__track {
+    animation-direction: reverse;
+  }
+
+  &__gallery.is-paused &__track,
+  &__rows:focus-within &__track {
+    animation-play-state: paused;
+  }
+}
+
+@media (hover: hover) {
+  .beyond-work__rows:hover .beyond-work__track {
+    animation-play-state: paused;
+  }
+
+  .beyond-work__photo:hover img {
+    transform: scale(1.04);
+  }
+}
+
+@media (max-width: 600px) {
+  .beyond-work__gallery {
+    --photo-height: 145px;
+    --photo-gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beyond-work__gallery.is-animated .beyond-work__track {
+    animation: none;
+    transform: none;
+  }
+
+  .beyond-work li.beyond-work__photo img {
+    transition: none;
+    transform: none;
+  }
+}
+
+@keyframes beyond-work-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-1 * var(--photo-distance))); }
+}

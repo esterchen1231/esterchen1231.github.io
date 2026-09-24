@@ -1,0 +1,52 @@
+- id: qda-assistance
+  title: "Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis"
+  authors: 'A. Puranik, **E. Chen**, R. L. Peiris, H. Kong'
+  venue: ACM CSCW 2026
+  url: https://doi.org/10.1145/3816977
+  link_label: ACM Digital Library
+  summary: "We interviewed 16 qualitative researchers about AI-assisted analysis. Their preferences for delegation reflected trade-offs between efficiency, trust, and ownership of the interpretation."
+  keywords: Qualitative Data Analysis, Collaborative Coding, Degree of Delegation, Artificial Intelligence
+  image: /images/publications/qda-assistance.jpg
+  image_width: 1000
+  image_height: 510
+  image_alt: ChromaScribe interface with colored theme timelines, an audio player, and linked transcript panels
+
+- id: scenario-based-design
+  title: "What Happened to Scenario-Based Design in HCI?: A Scoping Review"
+  authors: 'J. M. Carroll, J. Jo, J. Kim, Y.-F. Lin, **E. Chen**'
+  venue: ACM CHI 2026
+  url: https://dl.acm.org/doi/abs/10.1145/3772318.3790899
+  link_label: ACM Digital Library
+  summary: "We reviewed 125 HCI papers and traced scenario-based design methods. Our framework maps who creates scenarios, how they are experienced, when they are used, and what they explore."
+  keywords: Design Envisionment, Design Thinking, Human-Computer Interaction, Participatory Design, Design Fiction
+  image: /images/publications/scenario-based-design.jpg
+  image_width: 1434
+  image_height: 639
+  image_alt: Family tree of scenario-based design methods organized by authorship, modality, design phase, and scope of inquiry
+
+- id: deepfake-reliance
+  title: "Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI Systems"
+  authors: 'Y. Zhou, **E. Chen**, M. Pisipati, A. Xiong, S. Rajtmajer'
+  venue: ACM CSCW 2025
+  url: https://dl.acm.org/doi/abs/10.1145/3757588
+  link_label: ACM Digital Library
+  summary: "We studied trust and reliance in deepfake detection with 390 participants. Reported AI performance shaped trust, but trust did not significantly predict following AI advice."
+  keywords: Deepfake, Human-AI Collaboration, Human-AI Decision Making, Trust
+  image: /images/publications/deepfake-reliance.jpg
+  image_width: 987
+  image_height: 534
+  image_alt: Deepfake detection experiment showing image sampling, algorithm prediction categories, and a participant judgment task
+
+- id: deepfake-training
+  title: "A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces"
+  authors: '**E. Chen\***, H. Seo, M. Ruffin, D. Lee, G. Wang, A. Xiong'
+  venue: AAAI ICWSM 2025
+  note: '*Co-first author'
+  url: https://doi.org/10.1609/icwsm.v19i1.35821
+  link_label: AAAI Proceedings
+  summary: "We compared three training strategies with 237 participants. Training improved synthetic-face detection and confidence, though additional artifact training could increase misclassification of real faces."
+  keywords: Deepfake Detection, Visual Misinformation, Human-in-the-Loop, Training Strategies
+  image: /images/publications/deepfake-training.jpg
+  image_width: 1000
+  image_height: 572
+  image_alt: Overview of artifact, generation, and combined training across three phases of a face detection study

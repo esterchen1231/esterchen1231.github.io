@@ -1,0 +1,135 @@
+.education-list {
+  --education-marker-size: 42px;
+  // School accents progress from dark to light in the displayed record order.
+  --education-orange: #985d36;
+  --education-blue: #9bb5d2;
+  --education-lilac: #cfbee2;
+  --education-purple: #eee6f5;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+
+  .education__item {
+    --education-accent: var(--education-lilac);
+    --education-ink: var(--site-text);
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--education-marker-size) minmax(0, 1fr);
+    gap: 1rem;
+    margin: 0;
+    padding: 0 0 1.5rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: var(--education-marker-size);
+      bottom: 0;
+      left: calc(var(--education-marker-size) / 2);
+      width: 1px;
+      background: var(--site-border);
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+
+      &::before { display: none; }
+    }
+
+    &--blue { --education-accent: var(--education-blue); }
+    &--orange {
+      --education-accent: var(--education-orange);
+      --education-ink: #fff;
+    }
+    &--purple { --education-accent: var(--education-purple); }
+    &--mint { --education-accent: var(--site-mint); }
+    &--peach { --education-accent: var(--site-peach); }
+  }
+
+  .education__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--education-marker-size);
+    height: var(--education-marker-size);
+    border: 1px solid var(--site-border);
+    border-radius: 10px;
+    background: var(--education-accent);
+    color: var(--education-ink);
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  }
+
+  .education__body { min-width: 0; }
+
+  .education__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.4rem 1rem;
+  }
+
+  .education__school {
+    margin: 0;
+    color: var(--site-text);
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+
+  .education__date {
+    flex: 0 0 auto;
+    margin-top: 0.1rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: var(--education-accent);
+    color: var(--education-ink);
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.5;
+  }
+
+  .education__qualification {
+    margin: 0.2rem 0;
+    color: var(--site-text);
+    font-size: 0.93rem;
+    line-height: 1.5;
+  }
+
+  .education__detail {
+    margin: 0;
+    color: var(--site-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+}
+
+[data-theme="dark"] .education-list {
+  --education-orange: #523823;
+  --education-blue: #3e5069;
+  --education-lilac: #635474;
+  --education-purple: #716280;
+}
+
+@media (max-width: 700px) {
+  .education-list {
+    --education-marker-size: 36px;
+
+    .education__item { gap: 0.75rem; }
+    .education__icon svg { width: 21px; height: 21px; }
+
+    .education__header {
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .education__date { margin-top: 0; }
+    .education__qualification { margin-top: 0.45rem; }
+  }
+}

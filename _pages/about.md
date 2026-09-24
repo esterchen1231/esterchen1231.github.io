@@ -3,6 +3,8 @@ permalink: /
 title: ""
 excerpt: ""
 author_profile: true
+beyond_work: true
+news_by_year: true
 redirect_from: 
   - /about/
   - /about.html
@@ -17,31 +19,42 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Thanks for stopping by!
+Thanks for stopping by! Ester Chen is a Ph.D. student in Computing and Information Sciences at Rochester Institute of Technology, working with Prof. Hidy Kong. She is also a member of the [Center for Accessibility and Inclusion Research (CAIR)](https://www.rit.edu/cair/).
 
-I am a second-year Ph.D. student in Computing & Information Sciences at Rochester Institute of Technology, working with Dr. Hidy Kong. I am affiliated with the Center for Accessibility and Inclusion Research (CAIR) and the Vis-Assistive Technology (Vis-AT) Research Group.
+Her research in **human-computer interaction and responsible technology** examines how people interpret digital information, decide when to rely on automated systems, and maintain control over their decisions. Her work spans visual misinformation, trust in automated advice, and ownership in data analysis and knowledge work. Her publications include papers in **ACM CHI, ACM CSCW, and AAAI ICWSM**.
 
-My research is at the intersection of Human-Computer Interaction (HCI), accessibility, and human-centered AI. I study how people understand, interact with, and rely on AI and robotic systems, particularly how they decide when to trust these systems and how much control to give them. My recent projects have examined how people detect deepfakes with AI support and how researchers use AI in qualitative data analysis. Across these settings, I am interested in how system performance, training, perceived risk, and trust affect people’s decisions, sense of ownership, and control over their work. I also explore how AI and robotic technologies can make data, visualizations, and interactive experiences more accessible and easier to use.
+She is interested in **accessible design and algorithmic accountability**. Her goal is to develop **responsible assistive technologies** that help people understand and question algorithmic systems through visual and interactive tools, with an emphasis on **accessibility, autonomy, and well-being**.
 
-Outside the lab, I recharge by skiing, hiking, and playing electric guitar.
+<div class="news" data-news>
+  <div class="news__header">
+  <h1 id="-news">🔥 News</h1>
+  <div class="news__filter" hidden>
+    <label for="news-year">View by year</label>
+    <select id="news-year" aria-controls="news-updates">
+      <option value="all">All years</option>
+    </select>
+    <span class="visually-hidden" data-news-status role="status" aria-atomic="true"></span>
+  </div>
+  </div>
 
-# 🔥 News
+<div id="news-updates" class="news-scrollbox" role="region" aria-label="News updates" tabindex="0" style="max-height: 350px; overflow-y: auto; border: 1px solid #eaeaea; padding: 15px; border-radius: 8px; background-color: #fafafa; margin-bottom: 20px; box-shadow: inset 0 0 5px rgba(0,0,0,0.02);">
 
-<div class="news-scrollbox" style="max-height: 350px; overflow-y: auto; border: 1px solid #eaeaea; padding: 15px; border-radius: 8px; background-color: #fafafa; margin-bottom: 20px; box-shadow: inset 0 0 5px rgba(0,0,0,0.02);">
-
+  <div class="news__year" data-news-year="2026">
   <h4 style="margin-top: 0; color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2026</h4>
   <ul style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
     <li style="margin-bottom: 10px;">
-      <em>2026.04</em>: 🎉 Full Paper was accepted for presentation at <strong>ACM CSCW 2026</strong> in Salt Lake City, USA 🇺🇸. | <a href="https://doi.org/10.1145/3816977">"Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis"</a> (DOI available; forthcoming October 2026)
+      <em>2026.04</em>: 🎉 Full Paper was accepted for presentation at <strong>ACM CSCW 2026</strong> in Salt Lake City, USA 🇺🇸. | <a href="https://doi.org/10.1145/3816977">"Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis"</a>
     </li>
     <li style="margin-bottom: 10px;">
-      <em>2026.03</em>: 💡 Selected as an NSF AWARE-AI Research Trainee (August 2026–August 2027) to develop accessible HCI methods and investigate human–AI/robot interaction.
+      <em>2026.03</em>: 💡 Selected as an <a href="https://www.rit.edu/nrtai/" title="RIT AWARE-AI NSF Research Traineeship (NRT)">NSF AWARE-AI Research Trainee</a> (August 2026–August 2027) to develop accessible HCI methods and investigate human–AI/robot interaction.
     </li>
     <li style="margin-bottom: 10px;">
       <em>2026.01</em>: 🎉 Full Paper was accepted for presentation at <strong>ACM CHI 2026</strong> in Barcelona, Spain 🇪🇸. | <a href="https://doi.org/10.1145/3772318.3790899">"What Happened to Scenario-Based Design in HCI?: A Scoping Review"</a>
     </li>
   </ul>
 
+  </div>
+  <div class="news__year" data-news-year="2025">
   <h4 style="color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2025</h4>
   <ul style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
     <li style="margin-bottom: 10px;">
@@ -52,6 +65,8 @@ Outside the lab, I recharge by skiing, hiking, and playing electric guitar.
     </li>
   </ul>
 
+  </div>
+  <div class="news__year" data-news-year="2024">
   <h4 style="color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2024</h4>
   <ul style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
     <li style="margin-bottom: 10px;">
@@ -65,6 +80,8 @@ Outside the lab, I recharge by skiing, hiking, and playing electric guitar.
     </li>
   </ul>
 
+  </div>
+  <div class="news__year" data-news-year="2023">
   <h4 style="color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2023</h4>
   <ul style="padding-left: 20px; margin-bottom: 10px; line-height: 1.6;">
     <li style="margin-bottom: 10px;">
@@ -72,48 +89,39 @@ Outside the lab, I recharge by skiing, hiking, and playing electric guitar.
     </li>
   </ul>
 
+  </div>
+</div>
 </div>
 
 # 📝 Publications 
 
 ### Peer-Reviewed Publications
 
-- **[Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis](https://doi.org/10.1145/3816977)**
-  <br> Anoushka Puranik, **Ester Chen**, Roshan L. Peiris, Hidy Kong
-  <br> `ACM CSCW 2026` | *Qualitative Data Analysis, Collaborative Coding, Degree of Delegation, Artificial Intelligence* [ACM Digital Library](https://doi.org/10.1145/3816977)
-
-- **[What Happened to Scenario-Based Design in HCI?: A Scoping Review](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)**
-  <br> John M. Carroll, Jeongwon Jo, Jiyoon Kim, Ya-Fang Lin, **Ester Chen**
-  <br> `ACM CHI 2026` | *Design Envisionment, Design Thinking, Human-Computer Interaction, Participatory Design, Design Fiction* | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3772318.3790899)
-
-- **[Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI Systems](https://dl.acm.org/doi/abs/10.1145/3757588)**
-  <br> Yingfan Zhou, **Ester Chen**, Manasa Pisipati, Aiping Xiong, Sarah Rajtmajer
-  <br> `ACM CSCW 2025` | *Deepfake, Human-AI Collaboration, Human-AI Decision Making, Trust* | [[ACM Digital Library]](https://dl.acm.org/doi/abs/10.1145/3757588)
-
-- **[A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces](https://doi.org/10.1609/icwsm.v19i1.35821)**
-  <br> **Ester Chen\***, Haeseung Seo, Margie Ruffin, Dongwon Lee, Gang Wang, Aiping Xiong (*\*Co-first author*)
-  <br> `AAAI ICWSM 2025` | *Deepfake Detection, Visual Misinformation, Human-in-the-Loop, Training Strategies* | [[DOI]](https://doi.org/10.1609/icwsm.v19i1.35821)
+{% include publications.html %}
 
 ---
 
 <!-- ### Preprints & Working Papers
 
 - **[Exploring the Use of Visualization and AI for Qualitative Data Analysis](#)**
-  <!-- <br> **Ester Chen**, Nikita Bhyri, Vidhi Rathod, Hidy Kong -->
+  <!-- <br> **E. Chen**, N. Bhyri, V. Rathod, H. Kong -->
   <!-- <br> `Under Review` *Expected Jun 2026* -->
 
 <!-- - **[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)** -->
-  <!-- <br> **Ester Chen**, Aboli Shete, Aditya Anavekar, Roshan L. Peiris, Hidy Kong -->
+  <!-- <br> **E. Chen**, A. Shete, A. Anavekar, R. L. Peiris, H. Kong -->
   <!-- <br> `Under Review` *Expected Jun 2026* --> 
 
-# 📖 Education
-- *August 2024–Present*, Ph.D. student in Computing and Information Sciences, Golisano College of Computing and Information Sciences, Rochester Institute of Technology, United States
-- *May 2024*, M.Sc. in Informatics, College of Information Sciences and Technology, Penn State University, United States
-- *June 2021*, B.Sc. in Mathematics, Department of Mathematics, University of Western Ontario, Canada
-- *September 2019*, Exchange student, Department of Computer Science, University of Warwick, United Kingdom
+<div class="anchor" id="-educations"></div>
+<div class="anchor" id="-education"></div>
+
+# 📖 Education {#education}
+
+{% include education.html %}
 
 <!-- # 💻 Apprenticeships
 
 - *2020.11*, [PatternedScience, Geospatial Data Analytics](https://www.patterned.science/), Montreal, Quebec.
 - *2020.07*, [K11 Concepts, Digital Transformation](https://www.k11musea.com/), Tsim Sha Tsui, Hong Kong.
 - *2020.05*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York. -->
+
+{% include beyond-work.html %}

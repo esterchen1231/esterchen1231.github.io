@@ -1,0 +1,152 @@
+.publication-list {
+  margin: 1rem 0 1.75rem;
+}
+
+.publication {
+  display: grid;
+  grid-template-columns: minmax(170px, 25%) minmax(0, 1fr);
+  align-items: start;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--site-border);
+
+  &:first-child { padding-top: 0; }
+  &:last-child { border-bottom: 0; padding-bottom: 0; }
+
+  &__figure {
+    margin-top: 0.2rem;
+    padding: 0.4rem;
+    border: 1px solid var(--site-border);
+    border-radius: 4px;
+    background: #fff;
+  }
+
+  &__figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+  }
+
+  &__body { min-width: 0; }
+
+  .publication__title {
+    margin: 0 0 0.45rem;
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  &__title a { text-decoration: none; }
+  &__title a:hover { text-decoration: underline; }
+
+  .publication__authors {
+    margin: 0 0 0.45rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  &__author-count {
+    display: inline-block;
+    margin-left: 0.3rem;
+    padding: 0.08em 0.55em;
+    border: 1px solid var(--site-border);
+    border-radius: 999px;
+    background: var(--site-mint);
+    color: var(--site-text);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.5;
+    white-space: nowrap;
+    vertical-align: baseline;
+  }
+
+  &__author-self {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    padding: 0.08em 0.42em;
+    border: 1px solid var(--site-author-border);
+    border-radius: 0.4em;
+    background: var(--site-author-bg);
+    color: var(--site-author-text);
+    line-height: 1.35;
+    white-space: nowrap;
+    vertical-align: baseline;
+  }
+
+  &__author-icon {
+    width: 0.95em;
+    height: 0.95em;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+  }
+
+  .publication__venue {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 0 0 0.6rem;
+    font-size: 0.84rem;
+  }
+
+  &__note {
+    color: var(--site-muted);
+    font-size: 0.75rem;
+  }
+
+  .publication__summary {
+    margin: 0 0 0.55rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .publication__keywords {
+    margin: 0 0 0.65rem;
+    color: var(--site-muted);
+    font-size: 0.74rem;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  a.publication__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--site-border);
+    border-radius: 4px;
+    background: var(--site-surface);
+    color: var(--site-link);
+    font-size: 0.75rem;
+    line-height: 1.4;
+    text-decoration: none;
+
+    &:hover {
+      border-color: var(--site-link);
+      background: var(--site-panel);
+    }
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--site-link);
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 700px) {
+  .publication {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.8rem;
+
+    &__figure {
+      width: 100%;
+      max-width: 360px;
+      margin: 0;
+    }
+  }
+}

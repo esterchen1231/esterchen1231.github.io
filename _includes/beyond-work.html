@@ -1,0 +1,37 @@
+{% assign beyond_work_files = site.static_files | sort: 'path' %}
+{% assign beyond_work_count = 0 %}
+{% capture beyond_work_photos %}
+  {% for photo in beyond_work_files %}
+    {% assign photo_relative_path = photo.path | remove_first: '/images/beyond-work/' %}
+    {% if photo.path contains '/images/beyond-work/' %}
+      {% unless photo_relative_path contains '/' %}
+        {% assign photo_extension = photo.extname | downcase %}
+        {% if photo_extension == '.jpg' or photo_extension == '.jpeg' or photo_extension == '.png' or photo_extension == '.webp' or photo_extension == '.avif' %}
+          {% assign beyond_work_count = beyond_work_count | plus: 1 %}
+          {% assign photo_name = photo.name | url_encode | replace: '+', '%20' %}
+          {% assign photo_directory = '/images/beyond-work/' | relative_url %}
+          {% assign photo_description = photo.basename | replace: '-', ' ' | replace: '_', ' ' | strip %}
+          <li class="beyond-work__photo"><img src="{{ photo_directory | append: photo_name | escape }}" alt="{{ photo_description | escape }}" loading="lazy" decoding="async" draggable="false"></li>
+        {% endif %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+<section class="beyond-work" aria-labelledby="beyond-work-title">
+  <h1 id="beyond-work-title">Beyond work</h1>
+  <p>Outside the lab, Ester recharges by skiing (a leg injury taught her that slopes have rush hour, too), hiking, playing electric guitar, and practicing latte art (preferably with matcha).</p>
+  {% if beyond_work_count > 0 %}
+  <div class="beyond-work__gallery" data-beyond-work>
+    <div class="beyond-work__controls">
+      <button class="beyond-work__pause" type="button" hidden>Pause photos</button>
+    </div>
+    <div class="beyond-work__rows">
+      <div class="beyond-work__row" tabindex="0" role="region" aria-label="Personal photos; scroll horizontally to see more">
+        <div class="beyond-work__track">
+          <ul class="beyond-work__group" role="list">{{ beyond_work_photos }}</ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</section>

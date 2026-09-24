@@ -1,0 +1,26 @@
+<ol class="education-list" role="list" aria-labelledby="education">
+  {% for entry in site.data.education %}
+  <li class="education__item education__item--{{ entry.tone }}">
+    <span class="education__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        {% if entry.icon == 'globe' %}
+        <circle cx="12" cy="12" r="9"></circle>
+        <ellipse cx="12" cy="12" rx="4" ry="9"></ellipse>
+        <path d="M3 12h18M5 6.5h14M5 17.5h14"></path>
+        {% else %}
+        <path d="m2 9 10-5 10 5-10 5L2 9Z"></path>
+        <path d="M6 11v6c3.5 2.7 8.5 2.7 12 0v-6M22 9v7"></path>
+        {% endif %}
+      </svg>
+    </span>
+    <div class="education__body">
+      <div class="education__header">
+        <h2 class="education__school">{{ entry.school | escape }}</h2>
+        <span class="education__date">{{ entry.date | escape }}</span>
+      </div>
+      <p class="education__qualification">{{ entry.qualification | escape }}</p>
+      <p class="education__detail">{{ entry.department | escape }}, {{ entry.country | escape }}</p>
+    </div>
+  </li>
+  {% endfor %}
+</ol>

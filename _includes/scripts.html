@@ -1,5 +1,14 @@
 <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+{% if page.permalink == "/" and site.data.meeting_unavailability %}
+<script src="{{ '/assets/js/meeting-schedule.js' | relative_url }}"></script>
+{% endif %}
+{% if page.beyond_work %}
+<script src="{{ '/assets/js/beyond-work.js' | relative_url }}" defer></script>
+{% endif %}
+{% if page.news_by_year %}
+<script src="{{ '/assets/js/news-by-year.js' | relative_url }}" defer></script>
+{% endif %}
 
 {% include analytics.html %}
 {% include fetch_google_scholar_stats.html %}
