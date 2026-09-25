@@ -1,0 +1,50 @@
+{% assign home_url = '/' | absolute_url %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": {{ home_url | append: '#website' | jsonify }},
+      "url": {{ home_url | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "description": {{ site.description | jsonify }}
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": {{ home_url | append: '#profile' | jsonify }},
+      "url": {{ home_url | jsonify }},
+      "name": {{ seo_title | jsonify }},
+      "isPartOf": { "@id": {{ home_url | append: '#website' | jsonify }} },
+      "mainEntity": { "@id": {{ home_url | append: '#person' | jsonify }} },
+      "mentions": [
+        {% for paper in site.data.publications %}
+        { "@id": {{ paper.doi | prepend: 'https://doi.org/' | jsonify }} }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": {{ home_url | append: '#person' | jsonify }},
+      "name": {{ site.author.name | jsonify }},
+      "url": {{ home_url | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Rochester Institute of Technology",
+        "url": "https://www.rit.edu/"
+      },
+      "sameAs": [
+        {{ site.author.googlescholar | jsonify }},
+        {{ site.author.orcid | jsonify }},
+        {{ site.author.dblp | jsonify }},
+        {{ site.author.github | prepend: 'https://github.com/' | jsonify }},
+        {{ site.author.linkedin | prepend: 'https://www.linkedin.com/in/' | jsonify }}
+      ]
+    }
+    {% for paper in site.data.publications %},
+    {% include scholarly-article.html paper=paper %}
+    {% endfor %}
+  ]
+}
+</script>

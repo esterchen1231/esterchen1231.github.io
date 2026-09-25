@@ -167,6 +167,12 @@
     stroke-linejoin: round;
   }
 
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
   a.publication__link {
     display: inline-flex;
     align-items: center;

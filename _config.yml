@@ -6,8 +6,11 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "EChen"
-description              : "CIS PhD Student"
+title                    : "Ester Chen"
+tagline                  : "CIS PhD Student"
+description              : "Ester Chen is a Ph.D. student at Rochester Institute of Technology (RIT), researching human-computer interaction, human-AI interaction, and visualization."
+url                      : "https://esterchen1231.github.io"
+baseurl                  : ""
 repository               : "esterchen1231/esterchen1231.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -44,8 +47,8 @@ author:
   impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : "esterchen"
-  dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
-  orcid            : # e.g., "https://orcid.org/xxxx"
+  dblp             : "https://dblp.org/pid/406/9469"
+  orcid            : "https://orcid.org/0009-0008-3583-6891"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username

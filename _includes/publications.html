@@ -1,4 +1,4 @@
-{% capture self_author_open %}<strong class="publication__author-self"><svg class="publication__author-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="6.5" r="3"></circle><path d="M4.5 17v-1.5a5.5 5.5 0 0 1 11 0V17"></path></svg>E. Chen{% endcapture %}
+{% capture self_author_open %}<strong class="publication__author-self"><svg class="publication__author-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="6.5" r="3"></circle><path d="M4.5 17v-1.5a5.5 5.5 0 0 1 11 0V17"></path></svg>Ester Chen{% endcapture %}
 <div class="publication-list" role="list">
   {% for paper in site.data.publications %}
   {% assign author_count = paper.authors | split: ',' | size %}
@@ -25,7 +25,15 @@
         {% endif %}
         {% endfor %}
       </ul>
-      <a class="publication__link" href="{{ paper.url }}" aria-label="{{ paper.link_label | escape }}: {{ paper.title | escape }}">{{ paper.link_label }}</a>
+      <div class="publication__links">
+        <a class="publication__link" href="{{ paper.url }}" aria-label="{{ paper.link_label | escape }}: {{ paper.title | escape }}">{{ paper.link_label }}</a>
+        {% if paper.pdf_url %}
+        <a class="publication__link" href="{{ paper.pdf_url }}" aria-label="Full text PDF: {{ paper.title | escape }}">Full text (PDF)</a>
+        {% endif %}
+        {% if paper.preprint_url %}
+        <a class="publication__link" href="{{ paper.preprint_url }}" aria-label="arXiv preprint: {{ paper.title | escape }}">Preprint (arXiv)</a>
+        {% endif %}
+      </div>
     </div>
   </article>
   {% endfor %}

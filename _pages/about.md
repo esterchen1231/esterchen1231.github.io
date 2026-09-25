@@ -1,7 +1,8 @@
 ---
 permalink: /
-title: ""
-excerpt: ""
+title: "Ester Chen"
+seo_title: "Ester Chen | CIS Ph.D. Student at RIT"
+last_modified_at: 2026-09-24
 author_profile: true
 beyond_work: true
 news_by_year: true
@@ -58,7 +59,7 @@ She is interested in **accessible design and algorithmic accountability**, and h
   <h4 style="color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2025</h4>
   <ul style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
     <li style="margin-bottom: 10px;">
-      <em>2025.06</em>: 🎉 Full Paper was accepted for presentation at <strong>ACM CSCW 2025</strong> in Bergen, Norway 🇳🇴. | <a href="https://doi.org/10.1145/3757588">"Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI Systems"</a>
+      <em>2025.06</em>: 🎉 Full Paper was accepted for presentation at <strong>ACM CSCW 2025</strong> in Bergen, Norway 🇳🇴. | <a href="https://doi.org/10.1145/3757588">"Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI System"</a>
     </li>
     <li style="margin-bottom: 10px;">
       <em>2025.05</em>: 📖 Passed my Ph.D. qualifying exam. Thank you to Dr. Hidy Kong and my examining committee (Dr. Roshan L. Peiris, Dr. Ji Hwan Park, and Dr. Garreth W. Tigwell) for their time and insights.
@@ -96,6 +97,8 @@ She is interested in **accessible design and algorithmic accountability**, and h
 # 📝 Publications 
 
 ### Peer-Reviewed Publications
+
+See [Google Scholar]({{ site.author.googlescholar }}) for the full publication list and citation counts.
 
 {% include publications.html %}
 
