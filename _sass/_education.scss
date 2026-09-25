@@ -110,7 +110,8 @@
   }
 }
 
-[data-theme="dark"] .education-list {
+[data-theme="dark"] .education-list,
+[data-theme="dusk"] .education-list {
   --education-orange: #523823;
   --education-blue: #3e5069;
   --education-lilac: #635474;

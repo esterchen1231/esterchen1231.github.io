@@ -1,4 +1,11 @@
 {% assign beyond_work_files = site.static_files | sort: 'path' %}
+{% assign beyond_work_curated_files = '' | split: ',' %}
+{% for entry in site.data.beyond_work %}
+  {% assign photo_path = '/images/beyond-work/' | append: entry.file %}
+  {% assign curated_photo = beyond_work_files | where: 'path', photo_path %}
+  {% assign beyond_work_curated_files = beyond_work_curated_files | concat: curated_photo %}
+{% endfor %}
+{% assign beyond_work_files = beyond_work_curated_files | concat: beyond_work_files | uniq: 'path' %}
 {% assign beyond_work_count = 0 %}
 {% capture beyond_work_photos %}
   {% for photo in beyond_work_files %}

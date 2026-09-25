@@ -1,0 +1,100 @@
+.theme-picker {
+  flex: 0 0 auto;
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  color: var(--site-muted);
+  font-family: inherit;
+}
+
+.theme-picker__track {
+  --theme-index: 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 44px);
+  padding: 4px;
+  border: 1px solid var(--site-border);
+  border-radius: 999px;
+  background: var(--site-panel);
+  isolation: isolate;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.theme-picker__indicator {
+  position: absolute;
+  z-index: -1;
+  top: 4px;
+  left: 4px;
+  width: 44px;
+  height: 44px;
+  box-sizing: border-box;
+  border: 1px solid var(--site-link);
+  border-radius: 50%;
+  background: var(--site-surface);
+  box-shadow: 0 2px 5px var(--site-card-shadow);
+  transform: translateX(calc(var(--theme-index) * 44px));
+  transition: transform 180ms ease;
+  pointer-events: none;
+}
+
+.theme-picker__option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--site-text);
+  font: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  span {
+    pointer-events: none;
+    transition: transform 180ms ease;
+  }
+
+  &:hover span { transform: translateY(-2px); }
+
+  &:focus-visible {
+    outline: 2px solid var(--site-link);
+    outline-offset: 3px;
+  }
+}
+
+.theme-picker__name {
+  min-height: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+}
+
+// The saved theme also positions the indicator before the script loads.
+[data-theme="dark"] .theme-picker__track { --theme-index: 1; }
+[data-theme="matcha"] .theme-picker__track { --theme-index: 2; }
+[data-theme="paper"] .theme-picker__track { --theme-index: 3; }
+[data-theme="dusk"] .theme-picker__track { --theme-index: 4; }
+
+@media (max-width: 720px) {
+  .theme-picker {
+    grid-template-columns: auto 48px;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-picker__indicator,
+  .theme-picker__option span {
+    transition: none;
+  }
+}

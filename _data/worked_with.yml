@@ -14,13 +14,14 @@
   source: https://museumlondon.ca/
   asset_source: https://museumlondon.ca/
 
-- file: New-World-Development.png
-  name: New World Development
-  detail: Mainland China and Hong Kong
-  width: 303
-  height: 52
-  source: https://nwd.com.hk/
-  asset_source: https://nwd.com.hk/logo.png
+- file: Patterned-Science.png
+  name: Patterned Science
+  detail: Canada
+  background: charcoal
+  width: 233
+  height: 60
+  source: https://www.patterned.science/
+  asset_source: https://www.patterned.science/assets/img/patterned-science-logo-yellow.png
 
 - file: Johns-Hopkins-CTY.png
   name: Johns Hopkins CTY
@@ -39,11 +40,10 @@
   source: https://www.goldmansachs.com/
   asset_source: https://cdn.gs.com/images/goldman-sachs/v1/gs-vertical-lg.svg
 
-- file: Patterned-Science.png
-  name: Patterned Science
-  detail: Canada
-  background: charcoal
-  width: 233
-  height: 60
-  source: https://www.patterned.science/
-  asset_source: https://www.patterned.science/assets/img/patterned-science-logo-yellow.png
+- file: New-World-Development.png
+  name: New World Development
+  detail: Mainland China and Hong Kong
+  width: 303
+  height: 52
+  source: https://nwd.com.hk/
+  asset_source: https://nwd.com.hk/logo.png

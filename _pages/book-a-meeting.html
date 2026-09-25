@@ -633,6 +633,60 @@ author_profile: false
     border-color: #424c5f;
   }
 
+  [data-theme="matcha"] .booking-page,
+  [data-theme="paper"] .booking-page,
+  [data-theme="dusk"] .booking-page {
+    --booking-ink: var(--site-text);
+    --booking-muted: var(--site-muted);
+    --booking-line: var(--site-border);
+    --booking-soft: var(--site-bg);
+    --booking-panel: var(--site-surface);
+    --booking-header: var(--site-panel);
+    --booking-hover: var(--site-panel);
+    --booking-blue: var(--site-mint);
+    --booking-blue-line: var(--site-busy-border);
+    --booking-blue-ink: var(--site-text);
+    --booking-pending: var(--site-lilac);
+    --booking-pending-line: var(--site-author-border);
+    --booking-pending-ink: var(--site-author-text);
+    --booking-focus: var(--site-link);
+    --booking-focus-ring: var(--site-shadow);
+    --booking-today: var(--site-peach);
+    --booking-today-line: var(--site-code-border);
+    --booking-today-ink: var(--site-code-text);
+    --booking-today-hover: var(--site-panel);
+    box-shadow: 0 22px 60px var(--site-card-shadow);
+  }
+
+  [data-theme="matcha"] .booking-error,
+  [data-theme="paper"] .booking-error,
+  [data-theme="dusk"] .booking-error {
+    background: var(--site-peach);
+    border-color: var(--site-code-border);
+    color: var(--site-code-text);
+  }
+
+  [data-theme="matcha"] .booking-block-tooltip,
+  [data-theme="paper"] .booking-block-tooltip,
+  [data-theme="dusk"] .booking-block-tooltip {
+    background: var(--booking-panel);
+    border-color: var(--booking-focus);
+    color: var(--booking-ink);
+    box-shadow: 0 12px 30px var(--site-shadow);
+  }
+
+  [data-theme="matcha"] .booking-block-tooltip strong,
+  [data-theme="paper"] .booking-block-tooltip strong,
+  [data-theme="dusk"] .booking-block-tooltip strong {
+    color: var(--booking-focus);
+  }
+
+  [data-theme="matcha"] .booking-block-tooltip small,
+  [data-theme="paper"] .booking-block-tooltip small,
+  [data-theme="dusk"] .booking-block-tooltip small {
+    color: var(--booking-muted);
+  }
+
   @media (max-width: 720px) {
     #main .page {
       padding-right: 0;

@@ -13,18 +13,8 @@ sitemap: false
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {% include seo.html %}
-    <script>
-      (function() {
-        var theme = "light";
-        try {
-          theme = localStorage.getItem("ester-theme") ||
-            (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        } catch (error) {
-          theme = "light";
-        }
-        document.documentElement.setAttribute("data-theme", theme);
-      })();
-    </script>
+    {% include theme-init.html %}
+    <link rel="stylesheet" href="{{ '/assets/css/theme-picker.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
     <style>
       :root {
         color-scheme: light;
@@ -52,6 +42,25 @@ sitemap: false
         --chip: #20283a;
         --nav-border: #44506a;
         --shadow: rgba(0, 0, 0, 0.28);
+      }
+
+      [data-theme="matcha"],
+      [data-theme="paper"],
+      [data-theme="dusk"] {
+        --ink: var(--site-text);
+        --muted: var(--site-muted);
+        --soft: var(--site-bg);
+        --panel: var(--site-surface);
+        --accent: var(--site-link);
+        --accent-dark: var(--site-link-hover);
+        --line: var(--site-border);
+        --chip: var(--site-panel);
+        --nav-border: var(--site-border);
+        --shadow: var(--site-card-shadow);
+      }
+
+      [data-theme="dusk"] {
+        color-scheme: dark;
       }
 
       * {
@@ -85,9 +94,14 @@ sitemap: false
 
       .hero-grid {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         gap: 28px;
         align-items: flex-start;
+      }
+
+      .hero-grid > div {
+        flex: 1 1 520px;
       }
 
       .eyebrow {
@@ -125,13 +139,19 @@ sitemap: false
         flex-wrap: wrap;
         justify-content: flex-end;
         gap: 8px;
+        flex: 0 1 300px;
+        align-items: center;
+      }
+
+      .nav .theme-picker {
+        flex: 0 0 auto;
       }
 
       .nav a,
       .button {
         border: 1px solid var(--nav-border);
         padding: 10px 13px;
-        color: #34313f;
+        color: var(--ink);
         font-size: 14px;
         font-weight: 700;
         transition:
@@ -157,53 +177,9 @@ sitemap: false
         border-color: var(--accent-dark);
       }
 
-      [data-theme="dark"] .nav a {
-        color: var(--ink);
-      }
-
-      [data-theme="dark"] .button {
-        color: #101318;
-      }
-
-      .theme-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border: 1px solid var(--nav-border);
-        background: var(--panel);
-        color: var(--accent);
-        cursor: pointer;
-        transition:
-          border-color 160ms ease,
-          color 160ms ease,
-          background 160ms ease;
-      }
-
-      .theme-toggle:hover,
-      .theme-toggle:focus {
-        border-color: var(--accent);
-        color: var(--accent-dark);
-      }
-
-      .theme-toggle__icon {
-        width: 18px;
-        height: 18px;
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 1.9;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-
-      .theme-toggle__icon--sun,
-      [data-theme="dark"] .theme-toggle__icon--moon {
-        display: none;
-      }
-
-      [data-theme="dark"] .theme-toggle__icon--sun {
-        display: block;
+      [data-theme="dark"] .button,
+      [data-theme="dusk"] .button {
+        color: var(--soft);
       }
 
       body.portfolio-locked {
@@ -292,8 +268,9 @@ sitemap: false
         opacity: 0.68;
       }
 
-      [data-theme="dark"] .portfolio-gate__submit {
-        color: #101318;
+      [data-theme="dark"] .portfolio-gate__submit,
+      [data-theme="dusk"] .portfolio-gate__submit {
+        color: var(--soft);
       }
 
       .portfolio-gate__error {
@@ -304,7 +281,8 @@ sitemap: false
         font-weight: 700;
       }
 
-      [data-theme="dark"] .portfolio-gate__error {
+      [data-theme="dark"] .portfolio-gate__error,
+      [data-theme="dusk"] .portfolio-gate__error {
         color: #ffaaa1;
       }
 
@@ -443,6 +421,11 @@ sitemap: false
           align-items: flex-start;
         }
 
+        .hero-grid > div,
+        .nav {
+          flex-basis: auto;
+        }
+
         .nav {
           justify-content: flex-start;
         }
@@ -545,15 +528,7 @@ sitemap: false
           <a href="https://scholar.google.com/citations?user=cBErukUAAAAJ">
             Scholar
           </a>
-          <button class="theme-toggle" type="button" aria-label="Switch to night mode" title="Switch theme">
-            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21 14.4A8.4 8.4 0 0 1 9.6 3a9 9 0 1 0 11.4 11.4z"></path>
-            </svg>
-            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="4"></circle>
-              <path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"></path>
-            </svg>
-          </button>
+          {% include theme-picker.html %}
         </nav>
       </div>
     </header>
@@ -677,7 +652,7 @@ sitemap: false
       </section>
     </main>
     </div>
-    <script src="/assets/js/theme-toggle.js"></script>
+    <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
     <script>
       (function() {
         "use strict";

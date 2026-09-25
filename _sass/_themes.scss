@@ -1,0 +1,137 @@
+:root {
+  color-scheme: light;
+  --site-bg: #f5f6fa;
+  --site-surface: #fff;
+  --site-panel: #eef1f7;
+  --site-text: #303b4b;
+  --site-muted: #606b7a;
+  --site-border: #cbd2df;
+  --site-link: #465d84;
+  --site-link-hover: #634f83;
+  --site-masthead-bg: #f2f5fa;
+  --site-powder-blue: #ddeaf5;
+  --site-lilac: #e7e0f3;
+  --site-mint: #deeee8;
+  --site-peach: #f7e5db;
+  --site-nav-button: var(--site-powder-blue);
+  --site-icon: #596b86;
+  --site-news-bg: #eef4fa;
+  --site-busy-bg: var(--site-mint);
+  --site-busy-border: #7aab98;
+  --site-author-bg: var(--site-lilac);
+  --site-author-text: #4b4268;
+  --site-author-border: #9a8db8;
+  --site-code-bg: var(--site-peach);
+  --site-code-text: #73503c;
+  --site-code-border: #ddbdac;
+  --site-shadow: rgba(48, 59, 75, 0.12);
+  --site-card-shadow: rgba(48, 59, 75, 0.055);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --site-bg: #181d27;
+  --site-surface: #202530;
+  --site-panel: #282f3c;
+  --site-text: #e8ebf2;
+  --site-muted: #b5bdcc;
+  --site-border: #495363;
+  --site-link: #b8cee9;
+  --site-link-hover: #d4c5eb;
+  --site-masthead-bg: #202530;
+  --site-powder-blue: #33455b;
+  --site-lilac: #403b53;
+  --site-mint: #304940;
+  --site-peach: #4a3b36;
+  --site-nav-button: var(--site-powder-blue);
+  --site-icon: #c1cee0;
+  --site-news-bg: #273447;
+  --site-busy-bg: var(--site-mint);
+  --site-busy-border: #85b6a3;
+  --site-author-bg: var(--site-lilac);
+  --site-author-text: #e2d8f4;
+  --site-author-border: #a598c4;
+  --site-code-bg: var(--site-peach);
+  --site-code-text: #eed3c2;
+  --site-code-border: #987967;
+  --site-shadow: rgba(0, 0, 0, 0.42);
+  --site-card-shadow: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="matcha"] {
+  color-scheme: light;
+  --site-bg: #edf2e5;
+  --site-surface: #fafcf5;
+  --site-panel: #e3ebd6;
+  --site-text: #303d2e;
+  --site-muted: #5c6b50;
+  --site-border: #bdcbae;
+  --site-link: #496337;
+  --site-link-hover: #304c25;
+  --site-masthead-bg: #e8efdd;
+  --site-powder-blue: #dce8cd;
+  --site-lilac: #e5e8cb;
+  --site-mint: #dbe9d5;
+  --site-peach: #efe7cd;
+  --site-icon: #536d42;
+  --site-news-bg: #eef3e5;
+  --site-busy-border: #839b70;
+  --site-author-text: #4c5730;
+  --site-author-border: #929f70;
+  --site-code-text: #625630;
+  --site-code-border: #c5b888;
+  --site-shadow: rgba(48, 61, 46, 0.12);
+  --site-card-shadow: rgba(48, 61, 46, 0.055);
+}
+
+[data-theme="paper"] {
+  color-scheme: light;
+  --site-bg: #f1ebe0;
+  --site-surface: #fffaf0;
+  --site-panel: #eae1d1;
+  --site-text: #493e32;
+  --site-muted: #72614d;
+  --site-border: #cfc1aa;
+  --site-link: #795b34;
+  --site-link-hover: #553e25;
+  --site-masthead-bg: #f4ecde;
+  --site-powder-blue: #e9dec9;
+  --site-lilac: #eae0d0;
+  --site-mint: #e2e5cf;
+  --site-peach: #f1decb;
+  --site-icon: #806847;
+  --site-news-bg: #f5eedf;
+  --site-busy-border: #929873;
+  --site-author-text: #685238;
+  --site-author-border: #b7a080;
+  --site-code-text: #795335;
+  --site-code-border: #c8a786;
+  --site-shadow: rgba(73, 62, 50, 0.12);
+  --site-card-shadow: rgba(73, 62, 50, 0.055);
+}
+
+[data-theme="dusk"] {
+  color-scheme: dark;
+  --site-bg: #343443;
+  --site-surface: #3f3e50;
+  --site-panel: #4b495e;
+  --site-text: #f2ecf5;
+  --site-muted: #cdc3d5;
+  --site-border: #747086;
+  --site-link: #e0c5ec;
+  --site-link-hover: #f6d5bd;
+  --site-masthead-bg: #3a394b;
+  --site-powder-blue: #50516c;
+  --site-lilac: #60546e;
+  --site-mint: #465b57;
+  --site-peach: #68534f;
+  --site-icon: #e3cfed;
+  --site-news-bg: #494658;
+  --site-busy-border: #9bb1a0;
+  --site-author-text: #f2dff5;
+  --site-author-border: #b6a0c5;
+  --site-code-text: #ffe1c8;
+  --site-code-border: #b99c89;
+  --site-shadow: rgba(20, 17, 30, 0.28);
+  --site-card-shadow: rgba(20, 17, 30, 0.14);
+}

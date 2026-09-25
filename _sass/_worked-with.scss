@@ -1,5 +1,5 @@
 #worked-with {
-  scroll-margin-top: 4rem;
+  scroll-margin-top: var(--site-header-offset);
 }
 
 .worked-with {
@@ -7,8 +7,8 @@
 
   .worked-with__logos {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.3rem;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.65rem;
     margin: 1.25rem 0 1.5rem;
     padding: 0;
     list-style: none;
@@ -25,8 +25,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90px;
-    padding: 14px;
+    height: 45px;
+    padding: 7px;
     border: 1px solid var(--site-border);
     border-radius: 5px;
     background: #fff;
@@ -35,7 +35,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      max-width: 260px;
+      max-width: 130px;
       margin: 0;
       object-fit: contain;
     }
@@ -60,13 +60,17 @@
 @media (max-width: 600px) {
   .worked-with {
     .worked-with__logos {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.6rem;
     }
 
     &__artwork {
-      height: 76px;
-      padding: 10px;
+      height: 38px;
+      padding: 5px;
+
+      img {
+        max-width: 100px;
+      }
     }
   }
 }
