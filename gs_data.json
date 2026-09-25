@@ -9,10 +9,10 @@
   "scholar_id": "cBErukUAAAAJ",
   "source": "AUTHOR_PROFILE_PAGE",
   "name": "Ester Chen",
-  "affiliation": "Rochester Institute of Technology",
+  "affiliation": "CIS Ph.D. Student, Rochester Institute of Technology",
   "organization": 6065046078371390943,
   "interests": [
-    "human-computer interaction",
+    "hci",
     "assistive technologies",
     "human-centered AI",
     "accessibility"
@@ -65,6 +65,17 @@
         "11846250086186042802"
       ]
     },
+    "cBErukUAAAAJ:d1gkVwhDpl0C": {
+      "container_type": "Publication",
+      "source": "AUTHOR_PUBLICATION_ENTRY",
+      "bib": {
+        "title": "Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis",
+        "pub_year": "2026"
+      },
+      "filled": false,
+      "author_pub_id": "cBErukUAAAAJ:d1gkVwhDpl0C",
+      "num_citations": 0
+    },
     "cBErukUAAAAJ:2osOgNQ5qMEC": {
       "container_type": "Publication",
       "source": "AUTHOR_PUBLICATION_ENTRY",
@@ -74,17 +85,6 @@
       },
       "filled": false,
       "author_pub_id": "cBErukUAAAAJ:2osOgNQ5qMEC",
-      "num_citations": 0
-    },
-    "cBErukUAAAAJ:d1gkVwhDpl0C": {
-      "container_type": "Publication",
-      "source": "AUTHOR_PUBLICATION_ENTRY",
-      "bib": {
-        "title": "Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis",
-        "pub_year": "2025"
-      },
-      "filled": false,
-      "author_pub_id": "cBErukUAAAAJ:d1gkVwhDpl0C",
       "num_citations": 0
     }
   },
@@ -97,5 +97,5 @@
     "2025": 3,
     "2026": 10
   },
-  "updated": "2026-09-24T15:47:33.329012+00:00"
+  "updated": "2026-09-25T18:45:22.997548+00:00"
 }
