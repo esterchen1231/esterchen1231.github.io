@@ -1,14 +1,37 @@
 {% assign worked_with_files = site.static_files | sort: 'path' %}
 {% assign worked_with_count = 0 %}
-{% capture worked_with_logos %}
-  {% for organization in site.data.worked_with %}
-    {% assign organization_path = '/images/worked-with/' | append: organization.file %}
-    {% assign organization_logo = site.static_files | where: 'path', organization_path | first %}
-    {% if organization_logo %}
-      {% assign worked_with_count = worked_with_count | plus: 1 %}
-      {% include worked-with-logo.html logo=organization_logo organization=organization %}
+{% assign worked_with_regions = site.data.worked_with | group_by: 'detail' %}
+{% capture worked_with_groups %}
+  {% for region in worked_with_regions %}
+    {% assign region_logo_count = 0 %}
+    {% capture region_logos %}
+      {% for organization in region.items %}
+        {% assign organization_path = '/images/worked-with/' | append: organization.file %}
+        {% assign organization_logo = site.static_files | where: 'path', organization_path | first %}
+        {% if organization_logo %}
+          {% assign worked_with_count = worked_with_count | plus: 1 %}
+          {% assign region_logo_count = region_logo_count | plus: 1 %}
+          {% include worked-with-logo.html logo=organization_logo organization=organization %}
+        {% endif %}
+      {% endfor %}
+    {% endcapture %}
+    {% if region_logo_count > 0 %}
+    <figure class="worked-with__region" style="--worked-with-count: {{ region_logo_count }};">
+      <ul class="worked-with__logos" role="list">{{ region_logos }}</ul>
+      {% if region.name != empty %}
+      <figcaption class="worked-with__region-caption">
+        <svg class="worked-with__brace" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path d="M1 1 Q1 8 8 8 H140 Q150 8 150 16 Q150 8 160 8 H292 Q299 8 299 1" vector-effect="non-scaling-stroke"></path>
+        </svg>
+        <span>{{ region.name | escape }}</span>
+      </figcaption>
+      {% endif %}
+    </figure>
     {% endif %}
   {% endfor %}
+{% endcapture %}
+{% assign worked_with_unlisted_count = 0 %}
+{% capture worked_with_unlisted_logos %}
   {% for logo in worked_with_files %}
     {% if logo.path contains '/images/worked-with/' %}
       {% assign logo_relative_path = logo.path | remove_first: '/images/worked-with/' %}
@@ -18,6 +41,7 @@
           {% assign organization = site.data.worked_with | where: 'file', logo.name | first %}
           {% unless organization %}
           {% assign worked_with_count = worked_with_count | plus: 1 %}
+          {% assign worked_with_unlisted_count = worked_with_unlisted_count | plus: 1 %}
           {% include worked-with-logo.html logo=logo organization=organization %}
           {% endunless %}
         {% endif %}
@@ -28,7 +52,10 @@
 <section class="worked-with" aria-labelledby="worked-with">
   <h1 id="worked-with"><span aria-hidden="true">💼</span> Work &amp; Apprenticeships</h1>
   {% if worked_with_count > 0 %}
-  <ul class="worked-with__logos" role="list">{{ worked_with_logos }}</ul>
+  <div class="worked-with__regions">{{ worked_with_groups }}</div>
+  {% if worked_with_unlisted_count > 0 %}
+  <ul class="worked-with__logos worked-with__logos--unlisted" role="list">{{ worked_with_unlisted_logos }}</ul>
+  {% endif %}
   {% else %}
   <p class="worked-with__empty">Logos coming soon.</p>
   {% endif %}
