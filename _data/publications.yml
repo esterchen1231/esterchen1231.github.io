@@ -1,3 +1,5 @@
+# Keywords are concise website topic tags grounded in each paper's author keywords
+# and text; they are not a verbatim export of publisher indexing metadata.
 - id: qda-assistance
   title: "Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis"
   authors: 'A. Puranik, **E. Chen**, R. L. Peiris, H. Kong'
@@ -19,7 +21,8 @@
   url: https://doi.org/10.1145/3816977
   link_label: ACM Digital Library
   summary: "We interviewed 16 qualitative researchers about AI-assisted analysis. Their preferences for delegation reflected trade-offs between efficiency, trust, and ownership of the interpretation."
-  keywords: Qualitative data analysis, AI-assisted qualitative coding, Task delegation to AI, Researcher ownership
+  # Author keywords: https://arxiv.org/html/2509.18297v2
+  keywords: Qualitative data analysis, Collaborative coding, Degree of delegation, Artificial intelligence
   image: /images/publications/qda-assistance.jpg
   image_width: 1000
   image_height: 510
@@ -44,7 +47,8 @@
   url: https://dl.acm.org/doi/abs/10.1145/3772318.3790899
   link_label: ACM Digital Library
   summary: "We reviewed 125 HCI papers and traced scenario-based design methods. Our framework maps who creates scenarios, how they are experienced, when they are used, and what they explore."
-  keywords: Scenario-based design, Scoping review, Participatory design, Design method selection
+  # Author-provided paper: https://drive.google.com/file/d/1P0Tdqk4TmhadkD0wwUWF9fd3rkoMmPd3/view
+  keywords: Scenario-based design, Scoping review, Participatory design, Design methods
   image: /images/publications/scenario-based-design.jpg
   image_width: 1434
   image_height: 639
@@ -71,7 +75,8 @@
   url: https://dl.acm.org/doi/abs/10.1145/3757588
   link_label: ACM Digital Library
   summary: "We studied trust and reliance in deepfake detection with 390 participants. Reported AI performance shaped trust, but trust did not significantly predict following AI advice."
-  keywords: AI-assisted deepfake detection, Trust in AI, Reliance on AI advice, Risk perception
+  # Author keywords and study constructs: https://arxiv.org/html/2508.01906v1
+  keywords: Deepfake detection, Human–AI decision-making, Trust in AI, Risk perception
   image: /images/publications/deepfake-reliance.jpg
   image_width: 987
   image_height: 534
@@ -100,7 +105,8 @@
   url: https://doi.org/10.1609/icwsm.v19i1.35821
   link_label: AAAI Proceedings
   summary: "We compared three training strategies with 237 participants. Training improved synthetic-face detection and confidence, though additional artifact training could increase misclassification of real faces."
-  keywords: Deepfake detection, AI-generated faces, User training, Decision confidence
+  # Abstract and learning framework (p. 374): https://ojs.aaai.org/index.php/ICWSM/article/download/35821/37975/39889
+  keywords: Deepfake detection, AI-synthesized faces, Perceptual learning, Decision confidence
   image: /images/publications/deepfake-training.jpg
   image_width: 1000
   image_height: 572
