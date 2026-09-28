@@ -26,3 +26,6 @@ unavailable:
   - date: "2026-09-24"
     start: "10:00"
     end: "11:00"
+  - date: "2026-09-24"
+    start: "13:30"
+    end: "15:30"
