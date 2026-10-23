@@ -18,7 +18,7 @@
     "accessibility"
   ],
   "email_domain": "@mail.rit.edu",
-  "citedby": 13,
+  "citedby": 17,
   "publications": {
     "cBErukUAAAAJ:u5HHmVD_uO8C": {
       "container_type": "Publication",
@@ -29,7 +29,7 @@
       },
       "filled": false,
       "author_pub_id": "cBErukUAAAAJ:u5HHmVD_uO8C",
-      "num_citations": 7,
+      "num_citations": 8,
       "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16546677937764824481",
       "cites_id": [
         "16546677937764824481"
@@ -44,7 +44,7 @@
       },
       "filled": false,
       "author_pub_id": "cBErukUAAAAJ:u-x6o8ySG0sC",
-      "num_citations": 4,
+      "num_citations": 6,
       "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=902841597809237401",
       "cites_id": [
         "902841597809237401"
@@ -59,7 +59,7 @@
       },
       "filled": false,
       "author_pub_id": "cBErukUAAAAJ:9yKSN-GCB0IC",
-      "num_citations": 2,
+      "num_citations": 3,
       "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=11846250086186042802",
       "cites_id": [
         "11846250086186042802"
@@ -88,14 +88,14 @@
       "num_citations": 0
     }
   },
-  "citedby5y": 13,
-  "hindex": 2,
-  "hindex5y": 2,
+  "citedby5y": 17,
+  "hindex": 3,
+  "hindex5y": 3,
   "i10index": 0,
   "i10index5y": 0,
   "cites_per_year": {
     "2025": 3,
-    "2026": 10
+    "2026": 14
   },
-  "updated": "2026-10-09T14:44:38.844912+00:00"
+  "updated": "2026-10-23T12:54:19.587326+00:00"
 }
