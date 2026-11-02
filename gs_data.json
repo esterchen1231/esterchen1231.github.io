@@ -18,7 +18,7 @@
     "accessibility"
   ],
   "email_domain": "@mail.rit.edu",
-  "citedby": 20,
+  "citedby": 21,
   "publications": {
     "cBErukUAAAAJ:u5HHmVD_uO8C": {
       "container_type": "Publication",
@@ -59,7 +59,7 @@
       },
       "filled": false,
       "author_pub_id": "cBErukUAAAAJ:9yKSN-GCB0IC",
-      "num_citations": 3,
+      "num_citations": 4,
       "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=11846250086186042802",
       "cites_id": [
         "11846250086186042802"
@@ -88,14 +88,14 @@
       "num_citations": 0
     }
   },
-  "citedby5y": 20,
+  "citedby5y": 21,
   "hindex": 3,
   "hindex5y": 3,
   "i10index": 0,
   "i10index5y": 0,
   "cites_per_year": {
     "2025": 3,
-    "2026": 17
+    "2026": 18
   },
-  "updated": "2026-10-29T14:42:42.037129+00:00"
+  "updated": "2026-11-02T17:30:19.191549+00:00"
 }
