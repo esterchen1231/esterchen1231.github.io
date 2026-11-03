@@ -235,7 +235,7 @@ sitemap: false
 
       .portfolio-gate__form input {
         width: 100%;
-        border: 1px solid var(--nav-border);
+        border: 1px solid var(--muted);
         background: var(--panel);
         color: var(--ink);
         font: inherit;
@@ -244,7 +244,8 @@ sitemap: false
 
       .portfolio-gate__form input:focus {
         border-color: var(--accent);
-        outline: 3px solid rgba(99, 91, 255, 0.18);
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
       }
 
       .portfolio-gate__submit {
@@ -261,6 +262,11 @@ sitemap: false
       .portfolio-gate__submit:focus {
         border-color: var(--accent-dark);
         background: var(--accent-dark);
+      }
+
+      .portfolio-gate__submit:focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
       }
 
       .portfolio-gate__submit:disabled {
@@ -495,7 +501,8 @@ sitemap: false
     </style>
   </head>
   <body class="portfolio-locked">
-    <section id="portfolio-gate" class="portfolio-gate" role="dialog" aria-modal="true" aria-labelledby="portfolio-gate-title">
+    <a id="portfolio-skip" class="skip-link" href="#portfolio-main" hidden>Skip to main content</a>
+    <main id="portfolio-gate" class="portfolio-gate" aria-labelledby="portfolio-gate-title">
       <div class="portfolio-gate__card">
         <p class="eyebrow">Private portfolio</p>
         <h1 id="portfolio-gate-title">Enter password</h1>
@@ -508,14 +515,14 @@ sitemap: false
         </form>
         <noscript><p class="portfolio-gate__error">JavaScript is required to unlock this portfolio.</p></noscript>
       </div>
-    </section>
+    </main>
 
     <div id="portfolio-content" hidden>
     <header class="hero">
       <div class="wrap hero-grid">
         <div>
           <p class="eyebrow">Product design portfolio</p>
-          <h1>Ester Chen</h1>
+          <h1 id="portfolio-title" tabindex="-1">Ester Chen</h1>
           <p class="intro">
             I'm a product designer and HCI researcher. I work on complex workflows,
             human-AI systems, information architecture, and practical tools for
@@ -533,7 +540,7 @@ sitemap: false
       </div>
     </header>
 
-    <main>
+    <main id="portfolio-main" tabindex="-1">
       <section class="wrap main-grid">
         <aside class="sticky">
           <p class="eyebrow">Design focus</p>
@@ -666,10 +673,12 @@ sitemap: false
         var submitButton = document.getElementById("portfolio-gate-submit");
         var errorElement = document.getElementById("portfolio-gate-error");
 
-        function unlockPortfolio() {
+        function unlockPortfolio(moveFocus) {
           gate.hidden = true;
           content.hidden = false;
           document.body.classList.remove("portfolio-locked");
+          document.getElementById("portfolio-skip").hidden = false;
+          if (moveFocus) document.getElementById("portfolio-title").focus();
         }
 
         function setError(message) {
@@ -720,7 +729,7 @@ sitemap: false
             } catch (error) {
               setError("");
             }
-            unlockPortfolio();
+            unlockPortfolio(true);
           }).catch(function() {
             setError("The password could not be verified. Please try again.");
           }).finally(function() {

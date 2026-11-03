@@ -41,12 +41,27 @@ author_profile: false
         </label>
       </div>
 
-      <div class="booking-week-nav" aria-label="Week navigation">
+      <div class="booking-week-nav" role="group" aria-label="Week navigation">
         <button type="button" id="booking-prev-week">Previous week</button>
         <span id="booking-week-range" class="booking-week-range" aria-live="polite"></span>
         <button type="button" id="booking-next-week">Next week</button>
       </div>
     </div>
+
+    <form id="booking-request-form" class="booking-request-form">
+      <p id="booking-request-help">Choose a date and start time in <span id="booking-request-timezone"></span>, or select an open time in the calendar.</p>
+      <div class="booking-request-fields">
+        <label class="booking-control">
+          <span>Date</span>
+          <input id="booking-request-date" type="date" required aria-describedby="booking-request-help booking-request-status">
+        </label>
+        <label class="booking-control">
+          <span>Start time</span>
+          <input id="booking-request-time" type="time" step="900" required aria-describedby="booking-request-help booking-request-status">
+        </label>
+        <button type="submit">Draft email request</button>
+      </div>
+    </form>
   </section>
 
   <section class="booking-legend" aria-label="Calendar legend">
@@ -61,7 +76,7 @@ author_profile: false
     The calendar couldn't load. Email Ester to suggest a meeting time.
   </div>
 
-  <section class="booking-calendar-shell" aria-label="Weekly availability calendar">
+  <section class="booking-calendar-shell" aria-label="Weekly availability calendar" tabindex="0">
     <div id="booking-calendar" class="booking-calendar"></div>
   </section>
 
@@ -73,7 +88,7 @@ author_profile: false
 
   <footer class="booking-contact">
     <p>
-      Click an open time to draft an email request.
+      Choose an open time to draft an email request.
       If none of these times work,
       <a href="mailto:esterchen1@acm.org?subject=Meeting%20request%20with%20Ester" target="_self">email Ester</a>
       with a few alternatives.
@@ -103,6 +118,7 @@ author_profile: false
   .booking-page {
     --booking-ink: #303b4b;
     --booking-muted: #606b7a;
+    --booking-essential-line: var(--booking-muted);
     --booking-line: #cbd2df;
     --booking-soft: #f5f6fa;
     --booking-panel: #ffffff;
@@ -207,7 +223,8 @@ author_profile: false
     font-weight: 700;
   }
 
-  .booking-control select {
+  .booking-control select,
+  .booking-control input {
     width: 100%;
     border: 1px solid var(--booking-line);
     border-radius: 6px;
@@ -218,9 +235,9 @@ author_profile: false
     padding: 0.62rem 0.68rem;
   }
 
-  .booking-control select:focus {
+  .booking-control select:focus-visible,
+  .booking-control input:focus-visible {
     border-color: var(--booking-focus);
-    outline: 3px solid var(--booking-focus-ring);
   }
 
   .booking-week-nav {
@@ -230,7 +247,8 @@ author_profile: false
     gap: 0.55rem;
   }
 
-  .booking-week-nav button {
+  .booking-week-nav button,
+  .booking-request-fields button {
     min-height: 2.45rem;
     border: 1px solid var(--booking-line);
     border-radius: 6px;
@@ -245,7 +263,9 @@ author_profile: false
   }
 
   .booking-week-nav button:hover:not(:disabled),
-  .booking-week-nav button:focus:not(:disabled) {
+  .booking-week-nav button:focus:not(:disabled),
+  .booking-request-fields button:hover,
+  .booking-request-fields button:focus {
     border-color: var(--booking-focus);
     background: var(--booking-pending);
     color: var(--booking-focus);
@@ -262,6 +282,35 @@ author_profile: false
     font-weight: 800;
     line-height: 1.25;
     text-align: center;
+  }
+
+  .booking-request-form {
+    margin-top: 1rem;
+  }
+
+  .booking-request-form p {
+    margin: 0 0 0.6rem;
+  }
+
+  .booking-request-fields {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 0.7rem;
+  }
+
+  .booking-request-fields .booking-control {
+    flex: 1 1 9rem;
+    min-width: 0;
+  }
+
+  .booking-request-fields input {
+    min-width: 0;
+    min-height: 2.6rem;
+  }
+
+  .booking-request-fields button {
+    min-height: 2.6rem;
   }
 
   .booking-legend {
@@ -283,18 +332,18 @@ author_profile: false
     display: inline-block;
     width: 0.95rem;
     height: 0.95rem;
-    border: 1px solid var(--booking-line);
+    border: 1px solid var(--booking-essential-line);
     border-radius: 4px;
     background: var(--booking-panel);
   }
 
   .booking-swatch--busy {
-    border-color: var(--booking-blue-line);
+    border-color: var(--booking-essential-line);
     background: var(--booking-blue);
   }
 
   .booking-swatch--pending {
-    border-color: var(--booking-pending-line);
+    border-color: var(--booking-essential-line);
     border-style: dashed;
     background: var(--booking-pending);
   }
@@ -336,16 +385,16 @@ author_profile: false
   .booking-corner,
   .booking-day-head {
     min-height: 86px;
-    border-bottom: 1px solid var(--booking-line);
+    border-bottom: 1px solid var(--booking-essential-line);
     background: var(--booking-header);
   }
 
   .booking-corner {
-    border-right: 1px solid var(--booking-line);
+    border-right: 1px solid var(--booking-essential-line);
   }
 
   .booking-day-head {
-    border-right: 1px solid var(--booking-line);
+    border-right: 1px solid var(--booking-essential-line);
     padding: 0.7rem 0.75rem;
   }
 
@@ -391,7 +440,7 @@ author_profile: false
   }
 
   .booking-time-axis {
-    border-right: 1px solid var(--booking-line);
+    border-right: 1px solid var(--booking-essential-line);
     background: var(--booking-soft);
   }
 
@@ -407,17 +456,20 @@ author_profile: false
     white-space: nowrap;
   }
 
+  .booking-time-label:first-child { transform: none; }
+  .booking-time-label:last-child { transform: translateY(-100%); }
+
   .booking-day-column {
-    border-right: 1px solid var(--booking-line);
+    border-right: 1px solid var(--booking-essential-line);
     cursor: pointer;
     background-color: var(--booking-panel);
     background-image:
       repeating-linear-gradient(
         to bottom,
         transparent,
-        transparent calc(12.5% - 1px),
-        var(--booking-line) calc(12.5% - 1px),
-        var(--booking-line) 12.5%
+        transparent calc(var(--booking-hour-step, 12.5%) - 1px),
+        var(--booking-essential-line) calc(var(--booking-hour-step, 12.5%) - 1px),
+        var(--booking-essential-line) var(--booking-hour-step, 12.5%)
       );
   }
 
@@ -426,16 +478,16 @@ author_profile: false
   }
 
   .booking-day-column--today {
-    border-left: 2px solid var(--booking-today-line);
-    border-right: 2px solid var(--booking-today-line);
+    border-left: 2px solid var(--booking-essential-line);
+    border-right: 2px solid var(--booking-essential-line);
     background-color: var(--booking-today);
     background-image:
       repeating-linear-gradient(
         to bottom,
         transparent,
-        transparent calc(12.5% - 1px),
-        var(--booking-today-line) calc(12.5% - 1px),
-        var(--booking-today-line) 12.5%
+        transparent calc(var(--booking-hour-step, 12.5%) - 1px),
+        var(--booking-essential-line) calc(var(--booking-hour-step, 12.5%) - 1px),
+        var(--booking-essential-line) var(--booking-hour-step, 12.5%)
       );
   }
 
@@ -448,7 +500,7 @@ author_profile: false
   }
 
   .booking-day-column--today:last-child {
-    border-right: 2px solid var(--booking-today-line);
+    border-right: 2px solid var(--booking-essential-line);
   }
 
   .booking-busy-block {
@@ -457,7 +509,7 @@ author_profile: false
     right: 0.45rem;
     min-height: 2.35rem;
     overflow: hidden;
-    border: 1px solid var(--booking-blue-line);
+    border: 1px solid var(--booking-essential-line);
     border-radius: 6px;
     background: var(--booking-blue);
     color: var(--booking-blue-ink);
@@ -473,12 +525,11 @@ author_profile: false
   .booking-busy-block:focus,
   .booking-busy-block:focus-within {
     border-color: var(--booking-focus);
-    outline: 3px solid var(--booking-focus-ring);
     z-index: 3;
   }
 
   .booking-busy-block--pending {
-    border-color: var(--booking-pending-line);
+    border-color: var(--booking-essential-line);
     border-style: dashed;
     background: var(--booking-pending);
     color: var(--booking-pending-ink);
@@ -510,10 +561,10 @@ author_profile: false
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1.35rem;
-    height: 1.35rem;
-    border: 1px solid var(--booking-pending-line);
-    border-radius: 999px;
+    width: max(26px, 1.6rem);
+    height: max(26px, 1.6rem);
+    border: 1px solid var(--booking-essential-line);
+    border-radius: 2px;
     background: var(--booking-panel);
     color: var(--booking-pending-ink);
     font-size: 1rem;
@@ -527,6 +578,17 @@ author_profile: false
   .booking-delete-pending:focus {
     border-color: var(--booking-focus);
     color: var(--booking-focus);
+  }
+
+  .booking-control select:focus-visible,
+  .booking-control input:focus-visible,
+  .booking-week-nav button:focus-visible,
+  .booking-request-fields button:focus-visible,
+  .booking-calendar-shell:focus-visible,
+  .booking-busy-block:focus-visible,
+  .booking-delete-pending:focus-visible {
+    outline: 3px solid var(--booking-focus);
+    outline-offset: 3px;
   }
 
   .booking-empty {
@@ -576,7 +638,7 @@ author_profile: false
     padding: 0.72rem 0.82rem;
     font-size: 0.9rem;
     line-height: 1.35;
-    pointer-events: none;
+    pointer-events: auto;
   }
 
   .booking-block-tooltip[hidden] {
@@ -762,7 +824,7 @@ author_profile: false
   }
 </style>
 
-<script src="{{ '/assets/js/meeting-schedule.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/meeting-schedule.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 <script>
   (function () {
     "use strict";
@@ -775,6 +837,10 @@ author_profile: false
     var nextWeekButton = document.getElementById("booking-next-week");
     var weekRangeElement = document.getElementById("booking-week-range");
     var requestStatusElement = document.getElementById("booking-request-status");
+    var requestForm = document.getElementById("booking-request-form");
+    var requestDateInput = document.getElementById("booking-request-date");
+    var requestTimeInput = document.getElementById("booking-request-time");
+    var requestTimezoneElement = document.getElementById("booking-request-timezone");
     var errorElement = document.getElementById("booking-error");
     var blockTooltipElement = document.getElementById("booking-block-tooltip");
     var blockTooltipLabelElement = document.getElementById("booking-block-tooltip-label");
@@ -786,6 +852,8 @@ author_profile: false
     var slotIncrementMinutes = 30;
     var visibleWeekIndex = 0;
     var activeTooltipBlock = null;
+    var tooltipHideTimer = null;
+    var requestFormTimezone = null;
 
     var commonTimezones = [
       "America/New_York",
@@ -823,6 +891,20 @@ author_profile: false
       blockTooltipElement.hidden = true;
     }
 
+    function cancelTooltipHide() {
+      window.clearTimeout(tooltipHideTimer);
+    }
+
+    function scheduleTooltipHide() {
+      cancelTooltipHide();
+      tooltipHideTimer = window.setTimeout(function () {
+        if (activeTooltipBlock && !activeTooltipBlock.matches(":hover") &&
+            !activeTooltipBlock.contains(document.activeElement) && !blockTooltipElement.matches(":hover")) {
+          hideBlockTooltip();
+        }
+      }, 150);
+    }
+
     function positionBlockTooltip(blockElement) {
       if (!blockElement || activeTooltipBlock !== blockElement || blockTooltipElement.hidden) {
         return;
@@ -836,7 +918,7 @@ author_profile: false
       }
 
       var viewportPadding = 8;
-      var gap = 10;
+      var gap = 0;
       var left = blockRect.left + blockRect.width / 2 - tooltipRect.width / 2;
       left = Math.max(viewportPadding, Math.min(left, window.innerWidth - tooltipRect.width - viewportPadding));
 
@@ -857,6 +939,7 @@ author_profile: false
       if (!blockElement) {
         return;
       }
+      cancelTooltipHide();
       if (activeTooltipBlock && activeTooltipBlock !== blockElement) {
         hideBlockTooltip();
       }
@@ -873,30 +956,20 @@ author_profile: false
     function connectBlockTooltip(blockElement, label, rangeLabel, selectedTimezone) {
       var accessibleLabel = label + ". " + rangeLabel + ". Timezone: " + selectedTimezone + ".";
       blockElement.tabIndex = 0;
+      blockElement.setAttribute("role", "group");
       blockElement.setAttribute("aria-label", accessibleLabel);
 
       blockElement.addEventListener("mouseenter", function () {
         showBlockTooltip(blockElement, label, rangeLabel, selectedTimezone);
       });
       blockElement.addEventListener("mouseleave", function () {
-        if (!blockElement.contains(document.activeElement)) {
-          hideBlockTooltip(blockElement);
-        }
+        scheduleTooltipHide();
       });
       blockElement.addEventListener("focusin", function () {
         showBlockTooltip(blockElement, label, rangeLabel, selectedTimezone);
       });
       blockElement.addEventListener("focusout", function () {
-        window.setTimeout(function () {
-          if (!blockElement.contains(document.activeElement)) {
-            hideBlockTooltip(blockElement);
-          }
-        }, 0);
-      });
-      blockElement.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          hideBlockTooltip(blockElement);
-        }
+        scheduleTooltipHide();
       });
     }
 
@@ -1093,6 +1166,7 @@ author_profile: false
     }
 
     function removePendingRequest(block, data, selectedTimezone) {
+      var restoreCalendarFocus = calendarElement.contains(document.activeElement);
       pendingRequests = pendingRequests.filter(function (pendingBlock) {
         return !(
           pendingBlock.date === block.date &&
@@ -1102,6 +1176,9 @@ author_profile: false
       });
       savePendingRequests(data);
       renderCalendar(data, selectedTimezone);
+      if (restoreCalendarFocus) {
+        calendarElement.parentElement.focus();
+      }
       setStatus("Removed the pending request for " + formatLocalRange(
         zonedTimeToDate(block.date, block.start, data.source_timezone || "America/New_York"),
         zonedTimeToDate(block.date, block.end, data.source_timezone || "America/New_York"),
@@ -1242,37 +1319,30 @@ author_profile: false
       renderCalendar(data, selectedTimezone);
     }
 
-    function requestSlotFromClick(event, day, data, selectedTimezone) {
-      if (event.target.closest(".booking-busy-block")) {
-        return;
-      }
-
+    function requestSlot(dateText, slotStartMinutes, data, selectedTimezone) {
       var visibleStartMinutes = minutesFromTime(data.visible_start || "09:00");
       var visibleEndMinutes = minutesFromTime(data.visible_end || "17:00");
       var durationMinutes = Number(durationSelect.value) || 30;
-      var rect = event.currentTarget.getBoundingClientRect();
-      var clickedY = Math.max(0, Math.min(rect.height, event.clientY - rect.top));
-      var clickedMinutes = visibleStartMinutes + (clickedY / rect.height) * (visibleEndMinutes - visibleStartMinutes);
-      var slotStartMinutes = visibleStartMinutes + Math.floor((clickedMinutes - visibleStartMinutes) / slotIncrementMinutes) * slotIncrementMinutes;
       var slotEndMinutes = slotStartMinutes + durationMinutes;
-
-      if (slotEndMinutes > visibleEndMinutes) {
-        slotStartMinutes = visibleEndMinutes - durationMinutes;
-        slotEndMinutes = visibleEndMinutes;
-      }
+      var weekStart = addDays(data.week_start, visibleWeekIndex * 7);
 
       if (slotStartMinutes < visibleStartMinutes || slotEndMinutes > visibleEndMinutes || slotEndMinutes <= slotStartMinutes) {
-        setStatus("Choose a time within the hours shown.");
-        return;
+        setStatus("Choose a time within the hours shown in the calendar, including the full meeting length.");
+        return false;
       }
 
-      if (!isSlotAvailable(day.dateText, slotStartMinutes, slotEndMinutes, data)) {
+      if (dateText < weekStart || dateText > addDays(weekStart, 6)) {
+        setStatus("Choose a date in the week shown, or change the week above.");
+        return false;
+      }
+
+      if (!isSlotAvailable(dateText, slotStartMinutes, slotEndMinutes, data)) {
         setStatus("That time is unavailable. Please choose another open time.");
-        return;
+        return false;
       }
 
       var pendingBlock = {
-        date: day.dateText,
+        date: dateText,
         start: timeFromMinutes(slotStartMinutes),
         end: timeFromMinutes(slotEndMinutes),
         label: "Request pending",
@@ -1290,6 +1360,51 @@ author_profile: false
       setTimeout(function () {
         window.location.href = createMailtoUrl(pendingBlock, data, selectedTimezone);
       }, 0);
+      return true;
+    }
+
+    function requestSlotFromClick(event, day, data, selectedTimezone) {
+      if (event.target.closest(".booking-busy-block")) {
+        return;
+      }
+      var visibleStartMinutes = minutesFromTime(data.visible_start || "09:00");
+      var visibleEndMinutes = minutesFromTime(data.visible_end || "17:00");
+      var durationMinutes = Number(durationSelect.value) || 30;
+      var rect = event.currentTarget.getBoundingClientRect();
+      var clickedY = Math.max(0, Math.min(rect.height, event.clientY - rect.top));
+      var clickedMinutes = visibleStartMinutes + (clickedY / rect.height) * (visibleEndMinutes - visibleStartMinutes);
+      var slotStartMinutes = visibleStartMinutes + Math.floor((clickedMinutes - visibleStartMinutes) / slotIncrementMinutes) * slotIncrementMinutes;
+      slotStartMinutes = Math.min(slotStartMinutes, visibleEndMinutes - durationMinutes);
+      requestSlot(day.dateText, slotStartMinutes, data, selectedTimezone);
+    }
+
+    function getTimeTextInTimezone(date, timezone) {
+      return formatDate(date, timezone, { hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
+    }
+
+    function updateRequestForm(days, selectedTimezone) {
+      requestTimezoneElement.textContent = selectedTimezone;
+      requestDateInput.min = getDateTextInTimezone(days[0].dayStart, selectedTimezone);
+      requestDateInput.max = getDateTextInTimezone(days[days.length - 1].dayEnd, selectedTimezone);
+      requestTimeInput.setAttribute("value", getTimeTextInTimezone(days[0].dayStart, selectedTimezone));
+      if (requestFormTimezone !== selectedTimezone || !requestDateInput.value ||
+          requestDateInput.value < requestDateInput.min || requestDateInput.value > requestDateInput.max) {
+        requestDateInput.value = requestDateInput.min;
+        requestTimeInput.value = getTimeTextInTimezone(days[0].dayStart, selectedTimezone);
+      }
+      requestFormTimezone = selectedTimezone;
+    }
+
+    function requestSlotFromForm(data, selectedTimezone) {
+      var startDate = zonedTimeToDate(requestDateInput.value, requestTimeInput.value, selectedTimezone);
+      if (!startDate || getDateTextInTimezone(startDate, selectedTimezone) !== requestDateInput.value ||
+          getTimeTextInTimezone(startDate, selectedTimezone) !== requestTimeInput.value) {
+        setStatus("Choose a valid date and start time in " + selectedTimezone + ".");
+        return;
+      }
+      var sourceTimezone = data.source_timezone || "America/New_York";
+      requestSlot(getDateTextInTimezone(startDate, sourceTimezone),
+        minutesFromTime(getTimeTextInTimezone(startDate, sourceTimezone)), data, selectedTimezone);
     }
 
     function uniqueList(values) {
@@ -1375,6 +1490,8 @@ author_profile: false
         return;
       }
 
+      calendarElement.style.setProperty("--booking-hour-step", (6000 / (visibleEndMinutes - visibleStartMinutes)) + "%");
+
       var days = [];
       for (var index = 0; index < 7; index += 1) {
         var dateText = addDays(weekStart, index);
@@ -1395,6 +1512,7 @@ author_profile: false
       errorElement.hidden = true;
       calendarElement.innerHTML = "";
       updateWeekControls(data, weekStart, sourceTimezone);
+      updateRequestForm(days, selectedTimezone);
 
       var grid = document.createElement("div");
       grid.className = "booking-grid";
@@ -1440,6 +1558,7 @@ author_profile: false
         if (day.dateText === todayDateText) {
           column.className += " booking-day-column--today";
         }
+        column.setAttribute("role", "group");
         column.setAttribute("aria-label", "Availability for " + formatSourceDay(day.dateText, sourceTimezone));
         column.addEventListener("click", function (event) {
           requestSlotFromClick(event, day, data, selectedTimezone);
@@ -1548,12 +1667,25 @@ author_profile: false
       setStatus("");
     });
 
+    requestForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      requestSlotFromForm(bookingData, timezoneSelect.value || sourceTimezone);
+    });
+
+    blockTooltipElement.addEventListener("mouseenter", cancelTooltipHide);
+    blockTooltipElement.addEventListener("mouseleave", scheduleTooltipHide);
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        hideBlockTooltip();
+      }
+    });
+
     window.addEventListener("scroll", function () {
-      hideBlockTooltip();
+      positionBlockTooltip(activeTooltipBlock);
     }, true);
 
     window.addEventListener("resize", function () {
-      hideBlockTooltip();
+      positionBlockTooltip(activeTooltipBlock);
     });
   }());
 </script>

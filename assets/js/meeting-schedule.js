@@ -85,7 +85,8 @@
     var isCurrentWeek = data.week_start === currentMonday(data.source_timezone || "America/New_York");
     card.querySelector(".author-booking-card__label").textContent = isCurrentWeek ? "This week" : "Week of";
     card.querySelector(".author-booking-card__dates").textContent = range;
-    card.setAttribute("aria-label", "Book a meeting: " + range);
+    // Let the visible text supply the name, including the current week and action.
+    card.removeAttribute("aria-label");
   }
 
   root.MeetingSchedule = { normalize: normalize };
