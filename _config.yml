@@ -68,6 +68,7 @@ include:
   - _pages
   - files
 exclude:
+  - NOTICE.md
   - docs
   - AGENTS.md
   - "*.code-workspace"

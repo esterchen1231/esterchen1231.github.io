@@ -36,6 +36,7 @@ test-results/
 outputs/
 
 # Local documentation and development helpers (not used by the published site)
+*.md
 /README.md
 /docs/
 /images/beyond-work/README.md

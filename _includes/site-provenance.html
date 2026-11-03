@@ -1,0 +1,10 @@
+{% assign provenance = site.data.site_provenance %}
+<meta name="author" content="{{ provenance.creator | escape }}">
+<meta name="dcterms.creator" content="{{ provenance.creator | escape }}">
+<meta name="dcterms.source" content="{{ provenance.source | escape }}">
+<meta name="dcterms.identifier" content="{{ provenance.identifier | escape }}">
+<meta name="dcterms.rights" content="{{ provenance.notice | escape }}">
+<link rel="author" href="{{ provenance.source | escape }}">
+<link rel="describedby" type="application/json" href="{{ '/assets/site-provenance.json' | relative_url }}">
+<script type="application/json" id="site-design-provenance">{{ provenance | jsonify }}</script>
+<script src="{{ '/assets/js/site-provenance.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

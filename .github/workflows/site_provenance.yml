@@ -1,0 +1,46 @@
+name: Verify Site Provenance
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_data/site_provenance.json"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_pages/product-design.html"
+      - "_pages/book-a-meeting.html"
+      - "_sass/**"
+      - "assets/css/**"
+      - "assets/js/**"
+      - "assets/site-provenance.json"
+      - "scripts/site_provenance.js"
+      - "_pages/site-provenance.html"
+      - ".github/workflows/site_provenance.yml"
+  pull_request:
+    paths:
+      - "_data/site_provenance.json"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_pages/product-design.html"
+      - "_pages/book-a-meeting.html"
+      - "_sass/**"
+      - "assets/css/**"
+      - "assets/js/**"
+      - "assets/site-provenance.json"
+      - "scripts/site_provenance.js"
+      - "_pages/site-provenance.html"
+      - ".github/workflows/site_provenance.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source fingerprints
+        run: node scripts/site_provenance.js --check
+      - name: Check provenance script syntax
+        run: node --check assets/js/site-provenance.js

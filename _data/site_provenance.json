@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "identifier": "urn:uuid:f251cb52-f09b-4058-9b32-db14d90da5d1",
+  "creator": "Ester Chen",
+  "source": "https://esterchen1231.github.io/",
+  "repository": "https://github.com/esterchen1231/esterchen1231.github.io",
+  "authorized_hosts": ["esterchen1231.github.io"],
+  "notice": "Original personal website additions by Ester Chen. Upstream software and third-party assets retain their existing licenses and attribution."
+}

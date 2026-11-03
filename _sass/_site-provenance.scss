@@ -1,0 +1,19 @@
+// The credit only exists on unrecognized hosts. The original site has no new UI.
+.site-source-credit {
+  box-sizing: border-box;
+  clear: both;
+  width: calc(100% - 40px);
+  max-width: 1220px;
+  margin: 1.5rem auto;
+  padding: 1rem 0;
+  border-top: 1px solid var(--site-border, #d9dfda);
+  color: var(--site-muted, #626d69);
+  font: 14px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  p { margin: 0; }
+  a {
+    color: var(--site-link, #3e6167);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
