@@ -17,6 +17,8 @@
 {% endif %}
 <meta name="robots" content="{{ page.robots | default: 'index, follow, max-image-preview:large' | escape_once }}">
 
+{% include site-provenance.html %}
+
 {% assign seo_author = page.author | default: page.author[0] | default: site.author[0] %}
 {% if seo_author %}
   {% if seo_author.twitter %}
