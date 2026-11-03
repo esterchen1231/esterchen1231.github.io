@@ -13,7 +13,10 @@
   color: var(--site-text);
   border: 2px solid var(--site-link);
   border-radius: 3px;
-  font: 600 1rem/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
 
   &:focus {
     transform: none;
@@ -76,6 +79,7 @@ body.main-layout-page--booking .booking-request-fields button {
   *::after {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
