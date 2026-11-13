@@ -1,0 +1,13 @@
+<script>
+  (function() {
+    var themes = ["light", "dark", "matcha", "paper", "dusk"];
+    var theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    try {
+      var savedTheme = localStorage.getItem("ester-theme");
+      if (themes.indexOf(savedTheme) !== -1) theme = savedTheme;
+    } catch (error) {
+      // Keep the system preference when browser storage is unavailable.
+    }
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>

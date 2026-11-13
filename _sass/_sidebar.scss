@@ -1,0 +1,412 @@
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+
+/*
+   Default
+   ========================================================================== */
+
+.sidebar {
+  -webkit-transform: translate3d(0, 0 , 0);
+          transform: translate3d(0, 0 , 0);
+
+  @include clearfix();
+  margin-bottom: 1em;
+
+  @include breakpoint($large) {
+    @include span(2 of 12);
+    opacity: 1;
+    -webkit-transition: opacity 0.2s ease-in-out;
+            transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+
+  @include breakpoint($x-large) {
+    padding-right: 0;
+  }
+
+  h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+    font-family: $sans-serif-narrow;
+  }
+
+  h3, h4 {
+    font-size: $type-size-5;
+  }
+
+  p, li {
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    line-height: 1.5;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.sidebar__right {
+  margin-bottom: 1em;
+
+  @include breakpoint($large) {
+    position: relative;
+    float: right;
+    width: $right-sidebar-width-narrow;
+    margin-left: span(0.5 of 12);
+    z-index: 10;
+  }
+
+  @include breakpoint($x-large) {
+    width: $right-sidebar-width;
+  }
+}
+
+/*
+   Author profile and links
+   ========================================================================== */
+.profile_box{
+  @include breakpoint($large) {
+    display: block;
+  }
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+}
+
+.author__avatar {
+  display: table-cell;
+  vertical-align: top;
+  width: 75px;
+  // set width only, for non-square avatars
+  // height: 36px;
+
+  @include breakpoint($large) {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+
+  img {
+    max-width: 175px;
+    min-width: 75px;
+    border-radius: 50%;
+
+    @include breakpoint($large) {
+      padding: 5px;
+      border: 1px solid $border-color;
+    }
+  }
+}
+
+.author__content {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 10px;
+  min-width: 120px;
+  // padding-right: 25px;
+  line-height: 1;
+
+  @include breakpoint($large) {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.author__name {
+  margin: 0;
+
+  @include breakpoint($large) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.sidebar .author__name {
+  @include breakpoint($medium) {
+    font-size: $type-size-3;
+  }
+  font-family: $sans-serif;
+  font-size: $type-size-4;
+}
+
+.author__bio {
+  margin: 0;
+
+  @include breakpoint($large) {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.author__urls-wrapper {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  font-family: $sans-serif;
+  z-index: 10;
+  position: relative;
+  margin-left: auto;
+  cursor: pointer;
+
+  li:last-child {
+    a {
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint($large) {
+    display: block;
+  }
+
+  button {
+    margin-bottom: 0;
+    width: 120px;
+    padding: 0.5em;
+    @include breakpoint($large) {
+      display: none;
+    }
+  }
+}
+
+.author__urls {
+  display: none;
+  position: absolute;
+  right: 0;
+  margin-top: 15px;
+  padding: 10px;
+  list-style-type: none;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background: #fff;
+  z-index: -1;
+  box-shadow: 0 0 10px rgba(#000, 0.25);
+  cursor: default;
+
+  @include breakpoint($large) {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  &:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -11px;
+    left: calc(50% - 10px);
+    width: 0;
+    border-style: solid;
+    border-width: 0 10px 10px;
+    border-color: $border-color transparent;
+    z-index: 0;
+
+    @include breakpoint($large) {
+      display: none;
+    }
+  }
+
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 10px);
+    width: 0;
+    border-style: solid;
+    border-width: 0 10px 10px;
+    border-color: #fff transparent;
+    z-index: 1;
+
+    @include breakpoint($large) {
+      display: none;
+    }
+  }
+
+  li {
+    white-space: nowrap;
+  }
+
+  a {
+    display: block;
+    margin-bottom: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: inherit;
+    font-size: $type-size-5;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.author__urls_sm{
+  padding: .25em;
+  font-size: 1.75em;
+  display: block;
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @include breakpoint($large) {
+    display: none;
+  }
+}
+
+.author-booking-card {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #d9dfeb;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(42, 63, 95, 0.08);
+  color: #222533;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include breakpoint($large) {
+    display: block;
+  }
+
+  &:hover {
+    border-color: #79c7f2;
+    text-decoration: none;
+
+    .author-booking-card__action {
+      background: #245ed2;
+      border-color: #245ed2;
+    }
+  }
+}
+
+.author-booking-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.author-booking-card__label {
+  display: block;
+  color: #2f6fed;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.author-booking-card__title {
+  display: block;
+  margin-top: 0.22rem;
+  color: #222533;
+  font-size: 0.98rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.author-booking-card__dates {
+  display: block;
+  flex: 0 0 auto;
+  color: #5f6677;
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.author-booking-card__calendar {
+  display: block;
+  margin-top: 0.7rem;
+  overflow: hidden;
+  border: 1px solid #d9dfeb;
+  border-radius: 6px;
+  background: #fbfdff;
+}
+
+.author-booking-card__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid #d9dfeb;
+  background: #f7f9fd;
+}
+
+.author-booking-card__days span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.25rem;
+  border-left: 1px solid #e3e8f1;
+  color: #5f6677;
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1;
+
+  &:first-child {
+    border-left: 0;
+  }
+}
+
+.author-booking-card__grid {
+  position: relative;
+  display: block;
+  height: 8.25rem;
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(14.285714% - 1px),
+      #e3e8f1 calc(14.285714% - 1px),
+      #e3e8f1 14.285714%
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(33.333333% - 1px),
+      #edf1f6 calc(33.333333% - 1px),
+      #edf1f6 33.333333%
+    );
+}
+
+.author-booking-card__busy {
+  position: absolute;
+  top: var(--top);
+  left: calc((100% / 7) * var(--day) + 0.1rem);
+  width: calc((100% / 7) - 0.2rem);
+  height: max(0.62rem, var(--height));
+  border: 1px solid #79c7f2;
+  border-radius: 3px;
+  background: #bde7ff;
+  box-shadow: 0 1px 2px rgba(47, 111, 237, 0.12);
+}
+
+.author-booking-card__action {
+  display: block;
+  margin-top: 0.65rem;
+  padding: 0.42rem 0.5rem;
+  border: 1px solid #2f6fed;
+  border-radius: 6px;
+  background: #2f6fed;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+}

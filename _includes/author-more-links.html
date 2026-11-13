@@ -1,0 +1,13 @@
+{% if author.dblp or author.orcid %}
+<details class="author-more">
+  <summary class="author-more__toggle" aria-label="More profiles" title="More profiles"><span aria-hidden="true">⋯</span></summary>
+  <div class="author-more__panel">
+    {% if author.dblp %}
+      <a href="{{ author.dblp }}"><i class="ai ai-dblp ai-fw" aria-hidden="true"></i> <span>DBLP</span></a>
+    {% endif %}
+    {% if author.orcid %}
+      <a href="{{ author.orcid }}"><i class="ai ai-orcid-square ai-fw" aria-hidden="true"></i> <span>ORCID</span></a>
+    {% endif %}
+  </div>
+</details>
+{% endif %}

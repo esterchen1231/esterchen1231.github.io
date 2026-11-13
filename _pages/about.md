@@ -1,0 +1,128 @@
+---
+permalink: /
+title: "Ester Chen"
+seo_title: "Ester Chen | CIS Ph.D. Student at RIT"
+last_modified_at: 2026-09-24
+author_profile: true
+beyond_work: true
+news_by_year: true
+redirect_from: 
+  - /about/
+  - /about.html
+---
+
+<span class='anchor' id='about-me'></span>
+
+Thanks for stopping by! Ester Chen is a Ph.D. student in Computing and Information Sciences at Rochester Institute of Technology. She works with Prof. Hidy Kong and is a member of the [Center for Accessibility and Inclusion Research (CAIR)](https://www.rit.edu/cair/).
+
+Her research in <mark class="research-highlight"><strong>human-computer interaction</strong></mark> examines visual misinformation, trust in automated advice, and ownership in data analysis and knowledge work. Her publications include papers in <mark class="research-highlight"><strong>ACM CHI, ACM CSCW, and AAAI ICWSM</strong></mark>.
+
+She is interested in accessible design and algorithmic accountability and hopes to develop responsible assistive technologies that support autonomy and well-being. For her doctoral research, she is exploring the interplay of AI and visualization (AI4Vis and Vis4AI) as one possible direction.
+
+<div class="news" data-news>
+  <div class="news__header">
+  <h1 id="-news">🔥 News</h1>
+  <div class="news__filter" hidden>
+    <label for="news-year">View by year</label>
+    <select id="news-year" aria-controls="news-updates">
+      <option value="all">All years</option>
+    </select>
+    <span class="visually-hidden" data-news-status role="status" aria-atomic="true"></span>
+  </div>
+  </div>
+
+<div id="news-updates" class="news-scrollbox" role="region" aria-label="News updates" tabindex="0" style="max-height: 350px; overflow-y: auto; border: 1px solid #eaeaea; padding: 15px; border-radius: 8px; background-color: #fafafa; margin-bottom: 20px; box-shadow: inset 0 0 5px rgba(0,0,0,0.02);">
+
+  <div class="news__year" data-news-year="2026">
+  <h4 style="margin-top: 0; color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2026</h4>
+  <ul style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
+    <li style="margin-bottom: 10px;">
+      <em>2026.11</em>: 🎉 Received an award for the <strong>Agentic Visualization</strong> research proposal through AWARE-AI’s student seed funding competition (NSF Award No. DGE-2125362).
+    </li>
+    <li style="margin-bottom: 10px;">
+      <em>2026.08</em>: 💡 Started as an <a href="https://www.rit.edu/nrtai/" title="RIT AWARE-AI NSF Research Traineeship (NRT)">NSF AWARE-AI Research Trainee</a> in the 2026–2027 cohort to develop accessible HCI methods and study how people interact socially with robots.
+    </li>
+    <li style="margin-bottom: 10px;">
+      <em>2026.04</em>: 🎉 Our full paper was accepted for presentation at <strong>ACM CSCW 2026</strong> in Salt Lake City, USA 🇺🇸. | <a href="https://doi.org/10.1145/3816977">"Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis"</a>
+    </li>
+    <li style="margin-bottom: 10px;">
+      <em>2026.01</em>: 🎉 Our full paper was accepted for presentation at <strong>ACM CHI 2026</strong> in Barcelona, Spain 🇪🇸. | <a href="https://doi.org/10.1145/3772318.3790899">"What Happened to Scenario-Based Design in HCI?: A Scoping Review"</a>
+    </li>
+  </ul>
+
+  </div>
+  <div class="news__year" data-news-year="2025">
+  <h4 style="color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2025</h4>
+  <ul style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
+    <li style="margin-bottom: 10px;">
+      <em>2025.06</em>: 🎉 Our full paper was accepted for presentation at <strong>ACM CSCW 2025</strong> in Bergen, Norway 🇳🇴. | <a href="https://doi.org/10.1145/3757588">"Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI System"</a>
+    </li>
+    <li style="margin-bottom: 10px;">
+      <em>2025.05</em>: 📖 Passed my Ph.D. qualifying exam. Thank you to Dr. Hidy Kong and my examining committee (Dr. Roshan L. Peiris, Dr. Ji Hwan Park, and Dr. Garreth W. Tigwell) for their time and insights.
+    </li>
+  </ul>
+
+  </div>
+  <div class="news__year" data-news-year="2024">
+  <h4 style="color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2024</h4>
+  <ul style="padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
+    <li style="margin-bottom: 10px;">
+      <em>2024.11</em>: 🎉 Our full paper was accepted for presentation at <strong>AAAI ICWSM 2025</strong> in Copenhagen, Denmark 🇩🇰. | <a href="https://doi.org/10.1609/icwsm.v19i1.35821">"A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces"</a>
+    </li>
+    <li style="margin-bottom: 10px;">
+      <em>2024.08</em>: 📖 Started my Ph.D. in Computing and Information Sciences (CIS) at RIT.
+    </li> 
+    <li style="margin-bottom: 10px;">
+      <em>2024.05</em>: 🎓 Completed my M.Sc. in Informatics at Penn State, supervised by Dr. John M. Carroll. Thank you to my committee members, Dr. Dongwon Lee, Dr. Aiping Xiong, and Dr. Nicole Kreisberg, for their guidance and support.
+    </li>
+  </ul>
+
+  </div>
+  <div class="news__year" data-news-year="2023">
+  <h4 style="color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px;">2023</h4>
+  <ul style="padding-left: 20px; margin-bottom: 10px; line-height: 1.6;">
+    <li style="margin-bottom: 10px;">
+      <em>2023.09</em>: 💡 Our poster and abstract were accepted for presentation at <strong>ANFA 2023</strong> in San Diego, USA 🇺🇸. | <a href="https://forums.anfarch.org/d/105-keerthana-g-swati-c-ester-c-impact-of-virtual-reality-navigation-on-emo">"Impact of Virtual Reality Navigation on Emotional Responses to Virtual Architectural Environments."</a>
+    </li>
+  </ul>
+
+  </div>
+</div>
+</div>
+
+# 📝 Publications 
+
+### Peer-Reviewed Publications
+
+See [Google Scholar]({{ site.author.googlescholar }}) for the full publication list and citation counts.
+
+{% include publications.html %}
+
+---
+
+<!-- ### Preprints & Working Papers
+
+- **[Exploring the Use of Visualization and AI for Qualitative Data Analysis](#)**
+  <!-- <br> **E. Chen**, N. Bhyri, V. Rathod, H. Kong -->
+  <!-- <br> `Under Review` *Expected Jun 2026* -->
+
+<!-- - **[A Comparative Study of Static, Scrollytelling, and Chatbot Visualization Onboarding Techniques for UX Designers](#)** -->
+  <!-- <br> **E. Chen**, A. Shete, A. Anavekar, R. L. Peiris, H. Kong -->
+  <!-- <br> `Under Review` *Expected Jun 2026* --> 
+
+<div class="anchor" id="-educations"></div>
+<div class="anchor" id="-education"></div>
+
+# 📖 Education {#education}
+
+{% include education.html %}
+
+<!-- # 💻 Apprenticeships
+
+- *2020.11*, [PatternedScience, Geospatial Data Analytics](https://www.patterned.science/), Montreal, Quebec.
+- *2020.07*, [K11 Concepts, Digital Transformation](https://www.k11musea.com/), Tsim Sha Tsui, Hong Kong.
+- *2020.05*, [Goldman Sachs, Undergrad Summer Program](https://www.goldmansachs.com/), New York, New York. -->
+
+{% include worked-with.html %}
+
+{% include beyond-work.html %}

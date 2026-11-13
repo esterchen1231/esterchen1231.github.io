@@ -1,0 +1,1695 @@
+---
+permalink: /book-a-meeting/
+title: "Book a meeting"
+excerpt: "View Ester Chen's weekly availability."
+description: "View Ester Chen's availability and request a meeting with the RIT human-computer interaction researcher."
+author_profile: false
+---
+
+<div class="booking-page">
+  <header class="booking-hero">
+    <p class="booking-eyebrow">Availability</p>
+    <h1>Book a meeting</h1>
+    <p class="booking-intro">See Ester's availability for the coming weeks and request a time by email.</p>
+  </header>
+
+  <section class="booking-panel" aria-label="Availability controls">
+    <div>
+      <h2>Weekly availability</h2>
+      <p>
+        <strong>Ester's calendar uses New York time.</strong> Choose a display time zone below.
+        Requested times stay marked as pending in this browser.
+      </p>
+    </div>
+
+    <div class="booking-toolbar">
+      <div class="booking-controls">
+        <label class="booking-control">
+          <span>Meeting length</span>
+          <select id="booking-duration-select" aria-label="Select meeting length">
+            <option value="30">30 minutes</option>
+            <option value="45">45 minutes</option>
+            <option value="60">60 minutes</option>
+            <option value="90">90 minutes</option>
+            <option value="120">120 minutes</option>
+          </select>
+        </label>
+
+        <label class="booking-control">
+          <span>Display time zone</span>
+          <select id="booking-timezone-select" aria-label="Select display time zone"></select>
+        </label>
+      </div>
+
+      <div class="booking-week-nav" role="group" aria-label="Week navigation">
+        <button type="button" id="booking-prev-week">Previous week</button>
+        <span id="booking-week-range" class="booking-week-range" aria-live="polite"></span>
+        <button type="button" id="booking-next-week">Next week</button>
+      </div>
+    </div>
+
+    <form id="booking-request-form" class="booking-request-form">
+      <p id="booking-request-help">Choose a date and start time in <span id="booking-request-timezone"></span>, or select an open time in the calendar.</p>
+      <div class="booking-request-fields">
+        <label class="booking-control">
+          <span>Date</span>
+          <input id="booking-request-date" type="date" required aria-describedby="booking-request-help booking-request-status">
+        </label>
+        <label class="booking-control">
+          <span>Start time</span>
+          <input id="booking-request-time" type="time" step="900" required aria-describedby="booking-request-help booking-request-status">
+        </label>
+        <button type="submit">Draft email request</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="booking-legend" aria-label="Calendar legend">
+    <span><i class="booking-swatch booking-swatch--busy" aria-hidden="true"></i>Unavailable</span>
+    <span><i class="booking-swatch booking-swatch--pending" aria-hidden="true"></i>Request pending</span>
+    <span><i class="booking-swatch booking-swatch--available" aria-hidden="true"></i>Available</span>
+  </section>
+
+  <div id="booking-request-status" class="booking-request-status" role="status" aria-live="polite"></div>
+
+  <div id="booking-error" class="booking-error" role="status" hidden>
+    The calendar couldn't load. Email Ester to suggest a meeting time.
+  </div>
+
+  <section class="booking-calendar-shell" aria-label="Weekly availability calendar" tabindex="0">
+    <div id="booking-calendar" class="booking-calendar"></div>
+  </section>
+
+  <div id="booking-block-tooltip" class="booking-block-tooltip" role="tooltip" hidden>
+    <strong id="booking-block-tooltip-label"></strong>
+    <span id="booking-block-tooltip-range"></span>
+    <small id="booking-block-tooltip-timezone"></small>
+  </div>
+
+  <footer class="booking-contact">
+    <p>
+      Choose an open time to draft an email request.
+      If none of these times work,
+      <a href="mailto:esterchen1@acm.org?subject=Meeting%20request%20with%20Ester" target="_self">email Ester</a>
+      with a few alternatives.
+    </p>
+  </footer>
+</div>
+
+<script type="application/json" id="booking-data">
+{{ site.data.meeting_unavailability | jsonify }}
+</script>
+
+<style>
+  #main {
+    max-width: 1320px;
+  }
+
+  #main .page {
+    width: 100%;
+    padding-right: 1rem;
+  }
+
+  #main .page__inner-wrap,
+  #main .page__content {
+    width: 100%;
+  }
+
+  .booking-page {
+    --booking-ink: #303b4b;
+    --booking-muted: #5e6978;
+    --booking-essential-line: var(--booking-muted);
+    --booking-line: #cbd2df;
+    --booking-soft: #f5f6fa;
+    --booking-panel: #ffffff;
+    --booking-header: #ddeaf5;
+    --booking-hover: #edf2f8;
+    --booking-blue: #deeee8;
+    --booking-blue-line: #7aab98;
+    --booking-blue-ink: #2b5547;
+    --booking-pending: #e7e0f3;
+    --booking-pending-line: #9a8db8;
+    --booking-pending-ink: #4b4268;
+    --booking-focus: #465d84;
+    --booking-focus-ring: rgba(70, 93, 132, 0.2);
+    --booking-today: #f5edcd;
+    --booking-today-line: #b7a874;
+    --booking-today-ink: #685735;
+    --booking-today-hover: #eee3b9;
+    color: var(--booking-ink);
+    width: min(1120px, calc(100vw - 5rem));
+    max-width: none;
+    margin-left: 0;
+    margin-right: auto;
+    border: 1px solid var(--booking-line);
+    border-radius: 22px;
+    background: var(--booking-soft);
+    box-shadow: 0 22px 60px rgba(48, 59, 75, 0.07);
+    padding: 1.3rem 1.35rem 4rem;
+  }
+
+  .booking-hero {
+    margin-bottom: 1.4rem;
+    padding: 0.5rem 0 1.1rem;
+    border-bottom: 1px solid var(--booking-line);
+  }
+
+  .booking-eyebrow {
+    margin-bottom: 0.4rem;
+    color: var(--booking-focus);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .booking-page h1 {
+    margin: 0 0 0.75rem;
+    border: 0;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.02;
+  }
+
+  .booking-intro {
+    max-width: 760px;
+    color: var(--booking-muted);
+    font-size: 1.04rem;
+    line-height: 1.65;
+  }
+
+  .booking-panel {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1.4rem 0 1rem;
+    border: 1px solid var(--booking-line);
+    border-radius: 8px;
+    background: var(--booking-panel);
+    box-shadow: 0 16px 36px rgba(48, 59, 75, 0.05);
+    padding: 1.05rem 1.1rem;
+  }
+
+  .booking-panel h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1.2rem;
+  }
+
+  .booking-panel p {
+    margin: 0;
+    color: var(--booking-muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .booking-toolbar {
+    display: grid;
+    gap: 0.7rem;
+    min-width: min(480px, 100%);
+  }
+
+  .booking-controls {
+    display: grid;
+    grid-template-columns: minmax(130px, 0.7fr) minmax(220px, 1.3fr);
+    gap: 0.7rem;
+    min-width: 0;
+  }
+
+  .booking-control {
+    display: grid;
+    gap: 0.35rem;
+    color: var(--booking-muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .booking-control select,
+  .booking-control input {
+    width: 100%;
+    border: 1px solid var(--booking-line);
+    border-radius: 6px;
+    background: var(--booking-panel);
+    color: var(--booking-ink);
+    font: inherit;
+    font-weight: 600;
+    padding: 0.62rem 0.68rem;
+  }
+
+  .booking-control select:focus-visible,
+  .booking-control input:focus-visible {
+    border-color: var(--booking-focus);
+  }
+
+  .booking-week-nav {
+    display: grid;
+    grid-template-columns: max-content minmax(10rem, 1fr) max-content;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .booking-week-nav button,
+  .booking-request-fields button {
+    min-height: 2.45rem;
+    border: 1px solid var(--booking-line);
+    border-radius: 6px;
+    background: var(--booking-panel);
+    color: var(--booking-ink);
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 800;
+    line-height: 1.1;
+    padding: 0.55rem 0.75rem;
+    cursor: pointer;
+  }
+
+  .booking-week-nav button:hover:not(:disabled),
+  .booking-week-nav button:focus:not(:disabled),
+  .booking-request-fields button:hover,
+  .booking-request-fields button:focus {
+    border-color: var(--booking-focus);
+    background: var(--booking-pending);
+    color: var(--booking-focus);
+  }
+
+  .booking-week-nav button:disabled {
+    cursor: not-allowed;
+    opacity: 0.48;
+  }
+
+  .booking-week-range {
+    color: var(--booking-ink);
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .booking-request-form {
+    margin-top: 1rem;
+  }
+
+  .booking-request-form p {
+    margin: 0 0 0.6rem;
+  }
+
+  .booking-request-fields {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 0.7rem;
+  }
+
+  .booking-request-fields .booking-control {
+    flex: 1 1 9rem;
+    min-width: 0;
+  }
+
+  .booking-request-fields input {
+    min-width: 0;
+    min-height: 2.6rem;
+  }
+
+  .booking-request-fields button {
+    min-height: 2.6rem;
+  }
+
+  .booking-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin: 1.05rem 0 0.85rem;
+    color: var(--booking-muted);
+    font-size: 0.9rem;
+  }
+
+  .booking-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .booking-swatch {
+    display: inline-block;
+    width: 0.95rem;
+    height: 0.95rem;
+    border: 1px solid var(--booking-essential-line);
+    border-radius: 4px;
+    background: var(--booking-panel);
+  }
+
+  .booking-swatch--busy {
+    border-color: var(--booking-essential-line);
+    background: var(--booking-blue);
+  }
+
+  .booking-swatch--pending {
+    border-color: var(--booking-essential-line);
+    border-style: dashed;
+    background: var(--booking-pending);
+  }
+
+  .booking-request-status {
+    min-height: 1.4rem;
+    margin: 0 0 0.65rem;
+    color: var(--booking-muted);
+    font-size: 0.86rem;
+  }
+
+  .booking-error {
+    border: 1px solid #c39b8c;
+    border-radius: 8px;
+    background: #f7e5db;
+    color: #754b3b;
+    padding: 0.85rem 1rem;
+  }
+
+  .booking-calendar-shell {
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--booking-line);
+    border-radius: 8px;
+    background: var(--booking-panel);
+    box-shadow: 0 14px 34px rgba(48, 59, 75, 0.07);
+  }
+
+  .booking-calendar {
+    min-width: 1120px;
+  }
+
+  .booking-grid {
+    display: grid;
+    grid-template-columns: 88px repeat(7, minmax(132px, 1fr));
+  }
+
+  .booking-corner,
+  .booking-day-head {
+    min-height: 86px;
+    border-bottom: 1px solid var(--booking-essential-line);
+    background: var(--booking-header);
+  }
+
+  .booking-corner {
+    border-right: 1px solid var(--booking-essential-line);
+  }
+
+  .booking-day-head {
+    border-right: 1px solid var(--booking-essential-line);
+    padding: 0.7rem 0.75rem;
+  }
+
+  .booking-day-head:last-child {
+    border-right: 0;
+  }
+
+  .booking-day-name {
+    display: block;
+    color: var(--booking-ink);
+    font-size: 1.02rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .booking-day-local {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--booking-muted);
+    font-size: 0.78rem;
+    line-height: 1.28;
+  }
+
+  .booking-today-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.45rem;
+    border: 1px solid var(--booking-today-line);
+    border-radius: 999px;
+    background: var(--booking-panel);
+    color: var(--booking-today-ink);
+    font-size: 0.68rem;
+    font-weight: 800;
+    line-height: 1;
+    padding: 0.24rem 0.42rem;
+    text-transform: uppercase;
+  }
+
+  .booking-time-axis,
+  .booking-day-column {
+    position: relative;
+    height: 540px;
+  }
+
+  .booking-time-axis {
+    border-right: 1px solid var(--booking-essential-line);
+    background: var(--booking-soft);
+  }
+
+  .booking-time-label {
+    position: absolute;
+    right: 0.45rem;
+    transform: translateY(-50%);
+    color: var(--booking-muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .booking-time-label:first-child { transform: none; }
+  .booking-time-label:last-child { transform: translateY(-100%); }
+
+  .booking-day-column {
+    border-right: 1px solid var(--booking-essential-line);
+    cursor: pointer;
+    background-color: var(--booking-panel);
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent calc(var(--booking-hour-step, 12.5%) - 1px),
+        var(--booking-essential-line) calc(var(--booking-hour-step, 12.5%) - 1px),
+        var(--booking-essential-line) var(--booking-hour-step, 12.5%)
+      );
+  }
+
+  .booking-day-column:hover {
+    background-color: var(--booking-hover);
+  }
+
+  .booking-day-column--today {
+    border-left: 2px solid var(--booking-essential-line);
+    border-right: 2px solid var(--booking-essential-line);
+    background-color: var(--booking-today);
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent calc(var(--booking-hour-step, 12.5%) - 1px),
+        var(--booking-essential-line) calc(var(--booking-hour-step, 12.5%) - 1px),
+        var(--booking-essential-line) var(--booking-hour-step, 12.5%)
+      );
+  }
+
+  .booking-day-column--today:hover {
+    background-color: var(--booking-today-hover);
+  }
+
+  .booking-day-column:last-child {
+    border-right: 0;
+  }
+
+  .booking-day-column--today:last-child {
+    border-right: 2px solid var(--booking-essential-line);
+  }
+
+  .booking-busy-block {
+    position: absolute;
+    left: 0.45rem;
+    right: 0.45rem;
+    min-height: 2.35rem;
+    overflow: hidden;
+    border: 1px solid var(--booking-essential-line);
+    border-radius: 6px;
+    background: var(--booking-blue);
+    color: var(--booking-blue-ink);
+    padding: 0.42rem 0.5rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1.18;
+    cursor: default;
+    box-shadow: 0 5px 12px rgba(48, 59, 75, 0.1);
+  }
+
+  .booking-busy-block:hover,
+  .booking-busy-block:focus,
+  .booking-busy-block:focus-within {
+    border-color: var(--booking-focus);
+    z-index: 3;
+  }
+
+  .booking-busy-block--pending {
+    border-color: var(--booking-essential-line);
+    border-style: dashed;
+    background: var(--booking-pending);
+    color: var(--booking-pending-ink);
+    padding-right: 2rem;
+  }
+
+  .booking-busy-block--pending strong,
+  .booking-busy-block--pending span {
+    max-width: calc(100% - 0.15rem);
+  }
+
+  .booking-busy-block strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .booking-busy-block span {
+    display: block;
+    margin-top: 0.18rem;
+  }
+
+  .booking-delete-pending {
+    position: absolute;
+    top: 0.22rem;
+    right: 0.22rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: max(26px, 1.6rem);
+    height: max(26px, 1.6rem);
+    border: 1px solid var(--booking-essential-line);
+    border-radius: 2px;
+    background: var(--booking-panel);
+    color: var(--booking-pending-ink);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .booking-delete-pending:hover,
+  .booking-delete-pending:focus {
+    border-color: var(--booking-focus);
+    color: var(--booking-focus);
+  }
+
+  .booking-control select:focus-visible,
+  .booking-control input:focus-visible,
+  .booking-week-nav button:focus-visible,
+  .booking-request-fields button:focus-visible,
+  .booking-calendar-shell:focus-visible,
+  .booking-busy-block:focus-visible,
+  .booking-delete-pending:focus-visible {
+    outline: 3px solid var(--booking-focus);
+    outline-offset: 3px;
+  }
+
+  .booking-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0.75rem;
+    color: var(--booking-muted);
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .booking-day-column--today .booking-empty {
+    color: var(--booking-today-ink);
+  }
+
+  .booking-contact {
+    margin: 1.25rem 0 4.5rem;
+    border: 1px solid var(--booking-line);
+    border-left: 3px solid var(--booking-focus);
+    border-radius: 8px;
+    background: var(--booking-panel);
+    padding: 0.9rem 1rem;
+    color: var(--booking-muted);
+  }
+
+  .booking-contact p {
+    margin: 0;
+  }
+
+  .booking-contact a {
+    color: var(--booking-focus);
+    font-weight: 700;
+  }
+
+  .booking-block-tooltip {
+    position: fixed;
+    z-index: 1000;
+    display: grid;
+    gap: 0.28rem;
+    width: max-content;
+    max-width: min(22rem, calc(100vw - 1rem));
+    border: 1px solid #606b7a;
+    border-radius: 10px;
+    background: #303b4b;
+    box-shadow: 0 12px 30px rgba(24, 29, 39, 0.24);
+    color: #e8ebf2;
+    padding: 0.72rem 0.82rem;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    pointer-events: auto;
+  }
+
+  .booking-block-tooltip[hidden] {
+    display: none;
+  }
+
+  .booking-block-tooltip strong,
+  .booking-block-tooltip span,
+  .booking-block-tooltip small {
+    display: block;
+  }
+
+  .booking-block-tooltip strong {
+    color: #deeee8;
+    font-size: 0.94rem;
+  }
+
+  .booking-block-tooltip small {
+    color: #ddeaf5;
+    font-size: 0.75rem;
+  }
+
+  [data-theme="dark"] .booking-page {
+    --booking-ink: #e8ebf2;
+    --booking-muted: #b5bdcc;
+    --booking-line: #424c5f;
+    --booking-soft: #181d27;
+    --booking-panel: #202530;
+    --booking-header: #282f3c;
+    --booking-hover: #282f3c;
+    --booking-blue: #2a433d;
+    --booking-blue-line: #7aab98;
+    --booking-blue-ink: #cfe8dd;
+    --booking-pending: #3b344f;
+    --booking-pending-line: #9a8db8;
+    --booking-pending-ink: #e4dbf1;
+    --booking-focus: #b4c9e6;
+    --booking-focus-ring: rgba(180, 201, 230, 0.24);
+    --booking-today: #403a29;
+    --booking-today-line: #b7a874;
+    --booking-today-ink: #eee1b6;
+    --booking-today-hover: #4a4230;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.14);
+  }
+
+  [data-theme="dark"] .booking-error {
+    background: #46352f;
+    border-color: #a08072;
+    color: #f2d8cc;
+  }
+
+  [data-theme="dark"] .booking-block-tooltip {
+    background: #282f3c;
+    border-color: #424c5f;
+  }
+
+  [data-theme="matcha"] .booking-page,
+  [data-theme="paper"] .booking-page,
+  [data-theme="dusk"] .booking-page {
+    --booking-ink: var(--site-text);
+    --booking-muted: var(--site-muted);
+    --booking-line: var(--site-border);
+    --booking-soft: var(--site-bg);
+    --booking-panel: var(--site-surface);
+    --booking-header: var(--site-panel);
+    --booking-hover: var(--site-panel);
+    --booking-blue: var(--site-mint);
+    --booking-blue-line: var(--site-busy-border);
+    --booking-blue-ink: var(--site-text);
+    --booking-pending: var(--site-lilac);
+    --booking-pending-line: var(--site-author-border);
+    --booking-pending-ink: var(--site-author-text);
+    --booking-focus: var(--site-link);
+    --booking-focus-ring: var(--site-shadow);
+    --booking-today: var(--site-peach);
+    --booking-today-line: var(--site-code-border);
+    --booking-today-ink: var(--site-code-text);
+    --booking-today-hover: var(--site-panel);
+    box-shadow: 0 22px 60px var(--site-card-shadow);
+  }
+
+  [data-theme="matcha"] .booking-error,
+  [data-theme="paper"] .booking-error,
+  [data-theme="dusk"] .booking-error {
+    background: var(--site-peach);
+    border-color: var(--site-code-border);
+    color: var(--site-code-text);
+  }
+
+  [data-theme="matcha"] .booking-block-tooltip,
+  [data-theme="paper"] .booking-block-tooltip,
+  [data-theme="dusk"] .booking-block-tooltip {
+    background: var(--booking-panel);
+    border-color: var(--booking-focus);
+    color: var(--booking-ink);
+    box-shadow: 0 12px 30px var(--site-shadow);
+  }
+
+  [data-theme="matcha"] .booking-block-tooltip strong,
+  [data-theme="paper"] .booking-block-tooltip strong,
+  [data-theme="dusk"] .booking-block-tooltip strong {
+    color: var(--booking-focus);
+  }
+
+  [data-theme="matcha"] .booking-block-tooltip small,
+  [data-theme="paper"] .booking-block-tooltip small,
+  [data-theme="dusk"] .booking-block-tooltip small {
+    color: var(--booking-muted);
+  }
+
+  @media (max-width: 720px) {
+    #main .page {
+      padding-right: 0;
+    }
+
+    .booking-page {
+      width: 100%;
+      border-radius: 16px;
+      padding: 1rem 0.8rem 2.5rem;
+    }
+
+    .booking-page h1 {
+      font-size: clamp(1.85rem, 9vw, 2.45rem);
+    }
+
+    .booking-panel {
+      display: grid;
+      align-items: stretch;
+      padding: 0.95rem;
+    }
+
+    .booking-toolbar {
+      min-width: 0;
+    }
+
+    .booking-controls {
+      grid-template-columns: 1fr;
+      min-width: 0;
+    }
+
+    .booking-week-nav {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .booking-week-range {
+      grid-column: 1 / -1;
+      text-align: left;
+    }
+
+    .booking-legend {
+      gap: 0.65rem 0.9rem;
+      font-size: 0.86rem;
+    }
+
+    .booking-calendar {
+      min-width: 860px;
+    }
+
+    .booking-grid {
+      grid-template-columns: 72px repeat(7, minmax(112px, 1fr));
+    }
+
+    .booking-time-axis,
+    .booking-day-column {
+      height: 480px;
+    }
+
+    .booking-day-head {
+      min-height: 76px;
+      padding: 0.62rem;
+    }
+
+    .booking-day-name {
+      font-size: 0.96rem;
+    }
+
+    .booking-busy-block {
+      left: 0.35rem;
+      right: 0.35rem;
+      padding: 0.36rem 0.42rem;
+      font-size: 0.8rem;
+    }
+  }
+</style>
+
+<script src="{{ '/assets/js/meeting-schedule.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script>
+  (function () {
+    "use strict";
+
+    var dataElement = document.getElementById("booking-data");
+    var calendarElement = document.getElementById("booking-calendar");
+    var durationSelect = document.getElementById("booking-duration-select");
+    var timezoneSelect = document.getElementById("booking-timezone-select");
+    var prevWeekButton = document.getElementById("booking-prev-week");
+    var nextWeekButton = document.getElementById("booking-next-week");
+    var weekRangeElement = document.getElementById("booking-week-range");
+    var requestStatusElement = document.getElementById("booking-request-status");
+    var requestForm = document.getElementById("booking-request-form");
+    var requestDateInput = document.getElementById("booking-request-date");
+    var requestTimeInput = document.getElementById("booking-request-time");
+    var requestTimezoneElement = document.getElementById("booking-request-timezone");
+    var errorElement = document.getElementById("booking-error");
+    var blockTooltipElement = document.getElementById("booking-block-tooltip");
+    var blockTooltipLabelElement = document.getElementById("booking-block-tooltip-label");
+    var blockTooltipRangeElement = document.getElementById("booking-block-tooltip-range");
+    var blockTooltipTimezoneElement = document.getElementById("booking-block-tooltip-timezone");
+    var pendingRequests = [];
+    var pendingStoragePrefix = "ester-booking-pending:";
+    var pendingStorageWeekStart = null;
+    var slotIncrementMinutes = 30;
+    var visibleWeekIndex = 0;
+    var activeTooltipBlock = null;
+    var tooltipHideTimer = null;
+    var requestFormTimezone = null;
+
+    var commonTimezones = [
+      "America/New_York",
+      "America/Toronto",
+      "America/Chicago",
+      "America/Denver",
+      "America/Los_Angeles",
+      "Europe/London",
+      "Europe/Paris",
+      "Asia/Shanghai",
+      "Asia/Tokyo",
+      "Asia/Seoul",
+      "Asia/Singapore",
+      "Australia/Sydney",
+      "UTC"
+    ];
+
+    function showError() {
+      errorElement.hidden = false;
+      calendarElement.hidden = true;
+    }
+
+    function setStatus(message) {
+      requestStatusElement.textContent = message || "";
+    }
+
+    function hideBlockTooltip(blockElement) {
+      if (blockElement && activeTooltipBlock !== blockElement) {
+        return;
+      }
+      if (activeTooltipBlock) {
+        activeTooltipBlock.removeAttribute("aria-describedby");
+      }
+      activeTooltipBlock = null;
+      blockTooltipElement.hidden = true;
+    }
+
+    function cancelTooltipHide() {
+      window.clearTimeout(tooltipHideTimer);
+    }
+
+    function scheduleTooltipHide() {
+      cancelTooltipHide();
+      tooltipHideTimer = window.setTimeout(function () {
+        if (activeTooltipBlock && !activeTooltipBlock.matches(":hover") &&
+            !activeTooltipBlock.contains(document.activeElement) && !blockTooltipElement.matches(":hover")) {
+          hideBlockTooltip();
+        }
+      }, 150);
+    }
+
+    function positionBlockTooltip(blockElement) {
+      if (!blockElement || activeTooltipBlock !== blockElement || blockTooltipElement.hidden) {
+        return;
+      }
+
+      var blockRect = blockElement.getBoundingClientRect();
+      var tooltipRect = blockTooltipElement.getBoundingClientRect();
+      if (!blockRect.width || !blockRect.height || !tooltipRect.width || !tooltipRect.height) {
+        hideBlockTooltip(blockElement);
+        return;
+      }
+
+      var viewportPadding = 8;
+      var gap = 0;
+      var left = blockRect.left + blockRect.width / 2 - tooltipRect.width / 2;
+      left = Math.max(viewportPadding, Math.min(left, window.innerWidth - tooltipRect.width - viewportPadding));
+
+      var top = blockRect.top - tooltipRect.height - gap;
+      var placement = "top";
+      if (top < viewportPadding) {
+        top = blockRect.bottom + gap;
+        placement = "bottom";
+      }
+      top = Math.max(viewportPadding, Math.min(top, window.innerHeight - tooltipRect.height - viewportPadding));
+
+      blockTooltipElement.style.left = left + "px";
+      blockTooltipElement.style.top = top + "px";
+      blockTooltipElement.setAttribute("data-placement", placement);
+    }
+
+    function showBlockTooltip(blockElement, label, rangeLabel, selectedTimezone) {
+      if (!blockElement) {
+        return;
+      }
+      cancelTooltipHide();
+      if (activeTooltipBlock && activeTooltipBlock !== blockElement) {
+        hideBlockTooltip();
+      }
+
+      activeTooltipBlock = blockElement;
+      blockTooltipLabelElement.textContent = label;
+      blockTooltipRangeElement.textContent = rangeLabel;
+      blockTooltipTimezoneElement.textContent = "Time zone: " + selectedTimezone;
+      blockElement.setAttribute("aria-describedby", blockTooltipElement.id);
+      blockTooltipElement.hidden = false;
+      positionBlockTooltip(blockElement);
+    }
+
+    function connectBlockTooltip(blockElement, label, rangeLabel, selectedTimezone) {
+      var accessibleLabel = label + ". " + rangeLabel + ". Timezone: " + selectedTimezone + ".";
+      blockElement.tabIndex = 0;
+      blockElement.setAttribute("role", "group");
+      blockElement.setAttribute("aria-label", accessibleLabel);
+
+      blockElement.addEventListener("mouseenter", function () {
+        showBlockTooltip(blockElement, label, rangeLabel, selectedTimezone);
+      });
+      blockElement.addEventListener("mouseleave", function () {
+        scheduleTooltipHide();
+      });
+      blockElement.addEventListener("focusin", function () {
+        showBlockTooltip(blockElement, label, rangeLabel, selectedTimezone);
+      });
+      blockElement.addEventListener("focusout", function () {
+        scheduleTooltipHide();
+      });
+    }
+
+    function parseData() {
+      try {
+        return JSON.parse(dataElement.textContent || "{}") || {};
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function parseDate(dateText) {
+      var parts = String(dateText || "").split("-").map(Number);
+      if (parts.length !== 3 || parts.some(function (part) { return !Number.isFinite(part); })) {
+        return null;
+      }
+      return { year: parts[0], month: parts[1], day: parts[2] };
+    }
+
+    function parseTime(timeText) {
+      var parts = String(timeText || "").split(":").map(Number);
+      if (parts.length !== 2 || parts.some(function (part) { return !Number.isFinite(part); })) {
+        return null;
+      }
+      return { hour: parts[0], minute: parts[1] };
+    }
+
+    function addDays(dateText, amount) {
+      var parsed = parseDate(dateText);
+      if (!parsed) {
+        return null;
+      }
+      var date = new Date(Date.UTC(parsed.year, parsed.month - 1, parsed.day + amount));
+      return date.toISOString().slice(0, 10);
+    }
+
+    function minutesFromTime(timeText) {
+      var parsed = parseTime(timeText);
+      if (!parsed) {
+        return null;
+      }
+      return parsed.hour * 60 + parsed.minute;
+    }
+
+    function timeFromMinutes(totalMinutes) {
+      var hour = Math.floor(totalMinutes / 60);
+      var minute = totalMinutes % 60;
+      return String(hour).padStart(2, "0") + ":" + String(minute).padStart(2, "0");
+    }
+
+    function getTimezoneOffset(date, timezone) {
+      var formatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: timezone,
+        hour12: false,
+        hourCycle: "h23",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      });
+      var values = {};
+      formatter.formatToParts(date).forEach(function (part) {
+        if (part.type !== "literal") {
+          values[part.type] = Number(part.value);
+        }
+      });
+      var asUtc = Date.UTC(
+        values.year,
+        values.month - 1,
+        values.day,
+        values.hour,
+        values.minute,
+        values.second
+      );
+      return asUtc - date.getTime();
+    }
+
+    function zonedTimeToDate(dateText, timeText, timezone) {
+      var date = parseDate(dateText);
+      var time = parseTime(timeText);
+      if (!date || !time) {
+        return null;
+      }
+      var utcGuess = new Date(Date.UTC(date.year, date.month - 1, date.day, time.hour, time.minute));
+      var firstOffset = getTimezoneOffset(utcGuess, timezone);
+      var firstDate = new Date(utcGuess.getTime() - firstOffset);
+      var secondOffset = getTimezoneOffset(firstDate, timezone);
+      return new Date(utcGuess.getTime() - secondOffset);
+    }
+
+    function formatDate(date, timezone, options) {
+      return new Intl.DateTimeFormat("en-US", Object.assign({
+        timeZone: timezone
+      }, options)).format(date);
+    }
+
+    function formatTime(date, timezone) {
+      return formatDate(date, timezone, {
+        hour: "numeric",
+        minute: "2-digit"
+      });
+    }
+
+    function formatSourceDay(dateText, timezone) {
+      var start = zonedTimeToDate(dateText, "12:00", timezone);
+      return formatDate(start, timezone, {
+        weekday: "short",
+        month: "short",
+        day: "numeric"
+      });
+    }
+
+    function getDateTextInTimezone(date, timezone) {
+      var values = {};
+      new Intl.DateTimeFormat("en-US", {
+        timeZone: timezone,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).formatToParts(date).forEach(function (part) {
+        if (part.type !== "literal") {
+          values[part.type] = part.value;
+        }
+      });
+      return values.year + "-" + values.month + "-" + values.day;
+    }
+
+    function formatWeekRange(weekStart, timezone) {
+      var weekEnd = addDays(weekStart, 6);
+      var start = zonedTimeToDate(weekStart, "12:00", timezone);
+      var end = zonedTimeToDate(weekEnd, "12:00", timezone);
+      if (!start || !end) {
+        return "";
+      }
+      return formatDate(start, timezone, {
+        month: "short",
+        day: "numeric"
+      }) + " - " + formatDate(end, timezone, {
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+      });
+    }
+
+    function formatLocalRange(startDate, endDate, timezone) {
+      var startDay = formatDate(startDate, timezone, { weekday: "short", month: "short", day: "numeric" });
+      var endDay = formatDate(endDate, timezone, { weekday: "short", month: "short", day: "numeric" });
+      if (startDay === endDay) {
+        return startDay + ", " + formatTime(startDate, timezone) + "-" + formatTime(endDate, timezone);
+      }
+      return startDay + ", " + formatTime(startDate, timezone) + " - " + endDay + ", " + formatTime(endDate, timezone);
+    }
+
+    function getPendingStorageKey(data) {
+      return pendingStoragePrefix + String(pendingStorageWeekStart || data.week_start || "current-week");
+    }
+
+    function sanitizePendingRequest(block) {
+      if (!block || !block.date || !block.start || !block.end) {
+        return null;
+      }
+      if (minutesFromTime(block.start) === null || minutesFromTime(block.end) === null) {
+        return null;
+      }
+      return {
+        date: String(block.date),
+        start: String(block.start),
+        end: String(block.end),
+        label: "Request pending",
+        pending: true
+      };
+    }
+
+    function loadPendingRequests(data) {
+      try {
+        var stored = JSON.parse(sessionStorage.getItem(getPendingStorageKey(data)) || "[]");
+        if (!Array.isArray(stored)) {
+          return [];
+        }
+        return stored.map(sanitizePendingRequest).filter(Boolean);
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function savePendingRequests(data) {
+      try {
+        sessionStorage.setItem(getPendingStorageKey(data), JSON.stringify(pendingRequests));
+      } catch (error) {
+        return;
+      }
+    }
+
+    function removePendingRequest(block, data, selectedTimezone) {
+      var restoreCalendarFocus = calendarElement.contains(document.activeElement);
+      pendingRequests = pendingRequests.filter(function (pendingBlock) {
+        return !(
+          pendingBlock.date === block.date &&
+          pendingBlock.start === block.start &&
+          pendingBlock.end === block.end
+        );
+      });
+      savePendingRequests(data);
+      renderCalendar(data, selectedTimezone);
+      if (restoreCalendarFocus) {
+        calendarElement.parentElement.focus();
+      }
+      setStatus("Removed the pending request for " + formatLocalRange(
+        zonedTimeToDate(block.date, block.start, data.source_timezone || "America/New_York"),
+        zonedTimeToDate(block.date, block.end, data.source_timezone || "America/New_York"),
+        selectedTimezone
+      ) + ".");
+    }
+
+    function getConfiguredUnavailable(data) {
+      var unavailable = Array.isArray(data.unavailable) ? data.unavailable : [];
+      if (data.repeat_weekly !== true) {
+        return unavailable;
+      }
+
+      var weekCount = getVisibleWeekCount(data);
+      var calendarStart = addDays(data.week_start, 0);
+      var calendarEnd = addDays(data.week_start, weekCount * 7);
+      if (!calendarStart || !calendarEnd) {
+        return [];
+      }
+
+      var repeated = [];
+      unavailable.forEach(function (block) {
+        if (!block || !addDays(block.date, 0)) {
+          return;
+        }
+
+        for (var weekIndex = 0; weekIndex < weekCount; weekIndex += 1) {
+          var repeatedDate = addDays(block.date, weekIndex * 7);
+          if (repeatedDate >= calendarStart && repeatedDate < calendarEnd) {
+            repeated.push(Object.assign({}, block, { date: repeatedDate }));
+          }
+        }
+      });
+      return repeated;
+    }
+
+    function getMergedUnavailable(data) {
+      return getConfiguredUnavailable(data).concat(pendingRequests);
+    }
+
+    function slotOverlapsBlock(slotDate, slotStartMinutes, slotEndMinutes, block) {
+      if (!block || block.date !== slotDate) {
+        return false;
+      }
+      var blockStart = minutesFromTime(block.start);
+      var blockEnd = minutesFromTime(block.end);
+      if (blockStart === null || blockEnd === null || blockEnd <= blockStart) {
+        return false;
+      }
+      return slotStartMinutes < blockEnd && slotEndMinutes > blockStart;
+    }
+
+    function isSlotAvailable(slotDate, slotStartMinutes, slotEndMinutes, data) {
+      return !getMergedUnavailable(data).some(function (block) {
+        return slotOverlapsBlock(slotDate, slotStartMinutes, slotEndMinutes, block);
+      });
+    }
+
+    function createMailtoUrl(slot, data, selectedTimezone) {
+      var sourceTimezone = data.source_timezone || "America/New_York";
+      var startDate = zonedTimeToDate(slot.date, slot.start, sourceTimezone);
+      var endDate = zonedTimeToDate(slot.date, slot.end, sourceTimezone);
+      var sourceRange = formatLocalRange(startDate, endDate, sourceTimezone);
+      var viewerRange = formatLocalRange(startDate, endDate, selectedTimezone);
+      var subject = "Meeting request with Ester - " + sourceRange;
+      var body = [
+        "Hi Ester,",
+        "",
+        "I'd like to meet at the following time:",
+        "",
+        "New York time: " + sourceRange,
+        "Selected time zone (" + selectedTimezone + "): " + viewerRange,
+        "",
+        "Would this time work for you?",
+        "",
+        "Thanks!"
+      ].join("\n");
+
+      return "mailto:esterchen1@acm.org?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+
+    function getVisibleWeekCount(data) {
+      var configuredCount = Number(data.display_weeks);
+      if (Number.isFinite(configuredCount) && configuredCount > 0) {
+        return Math.max(1, Math.floor(configuredCount));
+      }
+      return 2;
+    }
+
+    function getWeekStartDateText(dateText) {
+      var parsed = parseDate(dateText);
+      if (!parsed) {
+        return null;
+      }
+      var date = new Date(Date.UTC(parsed.year, parsed.month - 1, parsed.day));
+      var daysSinceMonday = (date.getUTCDay() + 6) % 7;
+      return addDays(dateText, -daysSinceMonday);
+    }
+
+    function getInitialWeekIndex(data) {
+      var sourceTimezone = data.source_timezone || "America/New_York";
+      var baseWeekStart = getWeekStartDateText(data.week_start);
+      var currentDateText = getDateTextInTimezone(new Date(), sourceTimezone);
+      var currentWeekStart = getWeekStartDateText(currentDateText);
+      var baseDate = parseDate(baseWeekStart);
+      var currentDate = parseDate(currentWeekStart);
+      if (!baseDate || !currentDate) {
+        return 0;
+      }
+
+      var baseUtc = Date.UTC(baseDate.year, baseDate.month - 1, baseDate.day);
+      var currentUtc = Date.UTC(currentDate.year, currentDate.month - 1, currentDate.day);
+      var weekIndex = Math.floor((currentUtc - baseUtc) / (7 * 24 * 60 * 60 * 1000));
+      return Math.max(0, Math.min(weekIndex, getVisibleWeekCount(data) - 1));
+    }
+
+    function updateWeekControls(data, weekStart, sourceTimezone) {
+      var weekCount = getVisibleWeekCount(data);
+      if (weekRangeElement) {
+        weekRangeElement.textContent = formatWeekRange(weekStart, sourceTimezone);
+      }
+      if (prevWeekButton) {
+        prevWeekButton.disabled = visibleWeekIndex <= 0;
+      }
+      if (nextWeekButton) {
+        nextWeekButton.disabled = visibleWeekIndex >= weekCount - 1;
+      }
+    }
+
+    function setWeekIndex(nextIndex, data, selectedTimezone) {
+      var weekCount = getVisibleWeekCount(data);
+      var clampedIndex = Math.max(0, Math.min(nextIndex, weekCount - 1));
+      if (clampedIndex === visibleWeekIndex) {
+        return;
+      }
+      visibleWeekIndex = clampedIndex;
+      setStatus("");
+      renderCalendar(data, selectedTimezone);
+    }
+
+    function requestSlot(dateText, slotStartMinutes, data, selectedTimezone) {
+      var visibleStartMinutes = minutesFromTime(data.visible_start || "09:00");
+      var visibleEndMinutes = minutesFromTime(data.visible_end || "17:00");
+      var durationMinutes = Number(durationSelect.value) || 30;
+      var slotEndMinutes = slotStartMinutes + durationMinutes;
+      var weekStart = addDays(data.week_start, visibleWeekIndex * 7);
+
+      if (slotStartMinutes < visibleStartMinutes || slotEndMinutes > visibleEndMinutes || slotEndMinutes <= slotStartMinutes) {
+        setStatus("Choose a time within the hours shown in the calendar, including the full meeting length.");
+        return false;
+      }
+
+      if (dateText < weekStart || dateText > addDays(weekStart, 6)) {
+        setStatus("Choose a date in the week shown, or change the week above.");
+        return false;
+      }
+
+      if (!isSlotAvailable(dateText, slotStartMinutes, slotEndMinutes, data)) {
+        setStatus("That time is unavailable. Please choose another open time.");
+        return false;
+      }
+
+      var pendingBlock = {
+        date: dateText,
+        start: timeFromMinutes(slotStartMinutes),
+        end: timeFromMinutes(slotEndMinutes),
+        label: "Request pending",
+        pending: true
+      };
+      pendingRequests.push(pendingBlock);
+      savePendingRequests(data);
+      renderCalendar(data, selectedTimezone);
+      setStatus("Opening an email draft for " + formatLocalRange(
+        zonedTimeToDate(pendingBlock.date, pendingBlock.start, data.source_timezone || "America/New_York"),
+        zonedTimeToDate(pendingBlock.date, pendingBlock.end, data.source_timezone || "America/New_York"),
+        selectedTimezone
+      ) + ".");
+
+      setTimeout(function () {
+        window.location.href = createMailtoUrl(pendingBlock, data, selectedTimezone);
+      }, 0);
+      return true;
+    }
+
+    function requestSlotFromClick(event, day, data, selectedTimezone) {
+      if (event.target.closest(".booking-busy-block")) {
+        return;
+      }
+      var visibleStartMinutes = minutesFromTime(data.visible_start || "09:00");
+      var visibleEndMinutes = minutesFromTime(data.visible_end || "17:00");
+      var durationMinutes = Number(durationSelect.value) || 30;
+      var rect = event.currentTarget.getBoundingClientRect();
+      var clickedY = Math.max(0, Math.min(rect.height, event.clientY - rect.top));
+      var clickedMinutes = visibleStartMinutes + (clickedY / rect.height) * (visibleEndMinutes - visibleStartMinutes);
+      var slotStartMinutes = visibleStartMinutes + Math.floor((clickedMinutes - visibleStartMinutes) / slotIncrementMinutes) * slotIncrementMinutes;
+      slotStartMinutes = Math.min(slotStartMinutes, visibleEndMinutes - durationMinutes);
+      requestSlot(day.dateText, slotStartMinutes, data, selectedTimezone);
+    }
+
+    function getTimeTextInTimezone(date, timezone) {
+      return formatDate(date, timezone, { hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
+    }
+
+    function updateRequestForm(days, selectedTimezone) {
+      requestTimezoneElement.textContent = selectedTimezone;
+      requestDateInput.min = getDateTextInTimezone(days[0].dayStart, selectedTimezone);
+      requestDateInput.max = getDateTextInTimezone(days[days.length - 1].dayEnd, selectedTimezone);
+      requestTimeInput.setAttribute("value", getTimeTextInTimezone(days[0].dayStart, selectedTimezone));
+      if (requestFormTimezone !== selectedTimezone || !requestDateInput.value ||
+          requestDateInput.value < requestDateInput.min || requestDateInput.value > requestDateInput.max) {
+        requestDateInput.value = requestDateInput.min;
+        requestTimeInput.value = getTimeTextInTimezone(days[0].dayStart, selectedTimezone);
+      }
+      requestFormTimezone = selectedTimezone;
+    }
+
+    function requestSlotFromForm(data, selectedTimezone) {
+      var startDate = zonedTimeToDate(requestDateInput.value, requestTimeInput.value, selectedTimezone);
+      if (!startDate || getDateTextInTimezone(startDate, selectedTimezone) !== requestDateInput.value ||
+          getTimeTextInTimezone(startDate, selectedTimezone) !== requestTimeInput.value) {
+        setStatus("Choose a valid date and start time in " + selectedTimezone + ".");
+        return;
+      }
+      var sourceTimezone = data.source_timezone || "America/New_York";
+      requestSlot(getDateTextInTimezone(startDate, sourceTimezone),
+        minutesFromTime(getTimeTextInTimezone(startDate, sourceTimezone)), data, selectedTimezone);
+    }
+
+    function uniqueList(values) {
+      return values.filter(function (value, index, array) {
+        return value && array.indexOf(value) === index;
+      });
+    }
+
+    function getTimezoneOptions(sourceTimezone) {
+      var detected = "";
+      try {
+        detected = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      } catch (error) {
+        detected = "";
+      }
+
+      var supported = [];
+      if (Intl.supportedValuesOf) {
+        try {
+          supported = Intl.supportedValuesOf("timeZone");
+        } catch (error) {
+          supported = [];
+        }
+      }
+
+      var baseList = supported.length ? supported : commonTimezones;
+      return {
+        detected: detected,
+        values: uniqueList([detected, sourceTimezone, "UTC"].concat(baseList, commonTimezones)).sort()
+      };
+    }
+
+    function populateTimezoneSelect(sourceTimezone) {
+      var options = getTimezoneOptions(sourceTimezone);
+      timezoneSelect.innerHTML = "";
+      options.values.forEach(function (timezone) {
+        var option = document.createElement("option");
+        option.value = timezone;
+        option.textContent = timezone;
+        timezoneSelect.appendChild(option);
+      });
+      timezoneSelect.value = options.detected || sourceTimezone;
+      if (!timezoneSelect.value) {
+        timezoneSelect.value = sourceTimezone;
+      }
+    }
+
+    function buildHourLabels(visibleStartMinutes, visibleEndMinutes, weekStart, sourceTimezone, selectedTimezone) {
+      var labels = [];
+      for (var minute = visibleStartMinutes; minute <= visibleEndMinutes; minute += 60) {
+        var hour = Math.floor(minute / 60);
+        var minutePart = minute % 60;
+        var sourceTime = String(hour).padStart(2, "0") + ":" + String(minutePart).padStart(2, "0");
+        var instant = zonedTimeToDate(weekStart, sourceTime, sourceTimezone);
+        if (!instant) {
+          continue;
+        }
+        var label = document.createElement("span");
+        label.className = "booking-time-label";
+        label.style.top = ((minute - visibleStartMinutes) / (visibleEndMinutes - visibleStartMinutes) * 100) + "%";
+        label.textContent = formatTime(instant, selectedTimezone);
+        labels.push(label);
+      }
+      return labels;
+    }
+
+    function renderCalendar(data, selectedTimezone) {
+      hideBlockTooltip();
+      var sourceTimezone = data.source_timezone || "America/New_York";
+      var baseWeekStart = data.week_start;
+      var weekCount = getVisibleWeekCount(data);
+      visibleWeekIndex = Math.max(0, Math.min(visibleWeekIndex, weekCount - 1));
+      var weekStart = addDays(baseWeekStart, visibleWeekIndex * 7);
+      var visibleStart = data.visible_start || "09:00";
+      var visibleEnd = data.visible_end || "17:00";
+      var visibleStartMinutes = minutesFromTime(visibleStart);
+      var visibleEndMinutes = minutesFromTime(visibleEnd);
+      var unavailable = getMergedUnavailable(data);
+      var todayDateText = getDateTextInTimezone(new Date(), sourceTimezone);
+
+      if (!baseWeekStart || !weekStart || visibleStartMinutes === null || visibleEndMinutes === null || visibleEndMinutes <= visibleStartMinutes) {
+        showError();
+        return;
+      }
+
+      calendarElement.style.setProperty("--booking-hour-step", (6000 / (visibleEndMinutes - visibleStartMinutes)) + "%");
+
+      var days = [];
+      for (var index = 0; index < 7; index += 1) {
+        var dateText = addDays(weekStart, index);
+        var dayStart = zonedTimeToDate(dateText, visibleStart, sourceTimezone);
+        var dayEnd = zonedTimeToDate(dateText, visibleEnd, sourceTimezone);
+        if (!dateText || !dayStart || !dayEnd) {
+          showError();
+          return;
+        }
+        days.push({
+          dateText: dateText,
+          dayStart: dayStart,
+          dayEnd: dayEnd
+        });
+      }
+
+      calendarElement.hidden = false;
+      errorElement.hidden = true;
+      calendarElement.innerHTML = "";
+      updateWeekControls(data, weekStart, sourceTimezone);
+      updateRequestForm(days, selectedTimezone);
+
+      var grid = document.createElement("div");
+      grid.className = "booking-grid";
+
+      var corner = document.createElement("div");
+      corner.className = "booking-corner";
+      corner.setAttribute("aria-hidden", "true");
+      grid.appendChild(corner);
+
+      days.forEach(function (day) {
+        var header = document.createElement("div");
+        header.className = "booking-day-head";
+
+        var sourceLabel = document.createElement("span");
+        sourceLabel.className = "booking-day-name";
+        sourceLabel.textContent = formatSourceDay(day.dateText, sourceTimezone);
+
+        var localLabel = document.createElement("span");
+        localLabel.className = "booking-day-local";
+        localLabel.textContent = "Local: " + formatLocalRange(day.dayStart, day.dayEnd, selectedTimezone);
+
+        header.appendChild(sourceLabel);
+        header.appendChild(localLabel);
+        if (day.dateText === todayDateText) {
+          var todayBadge = document.createElement("span");
+          todayBadge.className = "booking-today-badge";
+          todayBadge.textContent = "Today in NY";
+          header.appendChild(todayBadge);
+        }
+        grid.appendChild(header);
+      });
+
+      var timeAxis = document.createElement("div");
+      timeAxis.className = "booking-time-axis";
+      buildHourLabels(visibleStartMinutes, visibleEndMinutes, weekStart, sourceTimezone, selectedTimezone).forEach(function (label) {
+        timeAxis.appendChild(label);
+      });
+      grid.appendChild(timeAxis);
+
+      days.forEach(function (day) {
+        var column = document.createElement("div");
+        column.className = "booking-day-column";
+        if (day.dateText === todayDateText) {
+          column.className += " booking-day-column--today";
+        }
+        column.setAttribute("role", "group");
+        column.setAttribute("aria-label", "Availability for " + formatSourceDay(day.dateText, sourceTimezone));
+        column.addEventListener("click", function (event) {
+          requestSlotFromClick(event, day, data, selectedTimezone);
+        });
+
+        var blocksForDay = unavailable.filter(function (block) {
+          return block && block.date === day.dateText;
+        });
+        var renderedBlocks = 0;
+
+        blocksForDay.forEach(function (block) {
+          var blockStart = zonedTimeToDate(block.date, block.start, sourceTimezone);
+          var blockEnd = zonedTimeToDate(block.date, block.end, sourceTimezone);
+          if (!blockStart || !blockEnd || blockEnd <= blockStart) {
+            return;
+          }
+
+          var clippedStart = new Date(Math.max(blockStart.getTime(), day.dayStart.getTime()));
+          var clippedEnd = new Date(Math.min(blockEnd.getTime(), day.dayEnd.getTime()));
+          if (clippedEnd <= clippedStart) {
+            return;
+          }
+
+          var dayDuration = day.dayEnd.getTime() - day.dayStart.getTime();
+          var top = (clippedStart.getTime() - day.dayStart.getTime()) / dayDuration * 100;
+          var height = (clippedEnd.getTime() - clippedStart.getTime()) / dayDuration * 100;
+          var label = block.label || "Busy";
+          var rangeLabel = formatLocalRange(blockStart, blockEnd, selectedTimezone);
+
+          var blockElement = document.createElement("div");
+          blockElement.className = "booking-busy-block" + (block.pending ? " booking-busy-block--pending" : "");
+          blockElement.style.top = top + "%";
+          blockElement.style.height = height + "%";
+          blockElement.innerHTML = "<strong></strong><span></span>";
+          blockElement.querySelector("strong").textContent = label;
+          blockElement.querySelector("span").textContent = rangeLabel;
+          connectBlockTooltip(blockElement, label, rangeLabel, selectedTimezone);
+          if (block.pending) {
+            var deleteButton = document.createElement("button");
+            deleteButton.type = "button";
+            deleteButton.className = "booking-delete-pending";
+            deleteButton.textContent = "×";
+            deleteButton.title = "Delete pending request";
+            deleteButton.setAttribute("aria-label", "Delete pending request for " + rangeLabel);
+            deleteButton.addEventListener("click", function (event) {
+              event.preventDefault();
+              event.stopPropagation();
+              removePendingRequest(block, data, selectedTimezone);
+            });
+            blockElement.appendChild(deleteButton);
+            blockElement.addEventListener("dblclick", function (event) {
+              event.preventDefault();
+              event.stopPropagation();
+              removePendingRequest(block, data, selectedTimezone);
+            });
+          }
+          blockElement.addEventListener("click", function (event) {
+            event.stopPropagation();
+          });
+          column.appendChild(blockElement);
+          renderedBlocks += 1;
+        });
+
+        if (!renderedBlocks) {
+          var empty = document.createElement("div");
+          empty.className = "booking-empty";
+          empty.textContent = "Open";
+          column.appendChild(empty);
+        }
+
+        grid.appendChild(column);
+      });
+
+      calendarElement.appendChild(grid);
+    }
+
+    var bookingData = parseData();
+    if (!bookingData) {
+      showError();
+      return;
+    }
+
+    // Keep existing requests tied to their saved dates and original storage key.
+    pendingStorageWeekStart = bookingData.week_start;
+    bookingData = window.MeetingSchedule.normalize(bookingData);
+
+    var sourceTimezone = bookingData.source_timezone || "America/New_York";
+    visibleWeekIndex = getInitialWeekIndex(bookingData);
+    pendingRequests = loadPendingRequests(bookingData);
+    populateTimezoneSelect(sourceTimezone);
+    renderCalendar(bookingData, timezoneSelect.value || sourceTimezone);
+
+    timezoneSelect.addEventListener("change", function () {
+      renderCalendar(bookingData, timezoneSelect.value || sourceTimezone);
+    });
+
+    prevWeekButton.addEventListener("click", function () {
+      setWeekIndex(visibleWeekIndex - 1, bookingData, timezoneSelect.value || sourceTimezone);
+    });
+
+    nextWeekButton.addEventListener("click", function () {
+      setWeekIndex(visibleWeekIndex + 1, bookingData, timezoneSelect.value || sourceTimezone);
+    });
+
+    durationSelect.addEventListener("change", function () {
+      setStatus("");
+    });
+
+    requestForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      requestSlotFromForm(bookingData, timezoneSelect.value || sourceTimezone);
+    });
+
+    blockTooltipElement.addEventListener("mouseenter", cancelTooltipHide);
+    blockTooltipElement.addEventListener("mouseleave", scheduleTooltipHide);
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        hideBlockTooltip();
+      }
+    });
+
+    window.addEventListener("scroll", function () {
+      positionBlockTooltip(activeTooltipBlock);
+    }, true);
+
+    window.addEventListener("resize", function () {
+      positionBlockTooltip(activeTooltipBlock);
+    });
+  }());
+</script>

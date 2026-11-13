@@ -1,0 +1,48 @@
+{% assign paper = include.paper %}
+{
+  "@type": "ScholarlyArticle",
+  "@id": {{ paper.doi | prepend: 'https://doi.org/' | jsonify }},
+  "url": {{ paper.doi | prepend: 'https://doi.org/' | jsonify }},
+  "name": {{ paper.title | jsonify }},
+  "headline": {{ paper.title | jsonify }},
+  "description": {{ paper.summary | jsonify }},
+  "datePublished": {{ paper.publication_date | jsonify }},
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": {{ paper.doi | jsonify }}
+  },
+  "author": [
+    {% for author_name in paper.author_names %}
+    {
+      "@type": "Person",
+      {% if author_name == site.author.name %}
+      "@id": {{ home_url | append: '#person' | jsonify }},
+      "sameAs": {{ site.author.orcid | jsonify }},
+      {% endif %}
+      "name": {{ author_name | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "name": {{ paper.publication_title | jsonify }}
+  },
+  "pagination": {{ paper.pages | jsonify }},
+  "keywords": {{ paper.keywords | jsonify }},
+  "mainEntityOfPage": {{ home_url | append: '#publication-' | append: paper.id | jsonify }}
+  {% if paper.preprint_url %},
+  "workExample": {
+    "@type": "ScholarlyArticle",
+    "url": {{ paper.preprint_url | jsonify }},
+    "creativeWorkStatus": "Preprint"
+  }
+  {% endif %}
+  {% if paper.pdf_url %},
+  "encoding": {
+    "@type": "MediaObject",
+    "contentUrl": {{ paper.pdf_url | jsonify }},
+    "encodingFormat": "application/pdf"
+  }
+  {% endif %}
+}

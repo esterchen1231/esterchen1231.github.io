@@ -1,0 +1,17 @@
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        <button type="button" aria-label="More navigation links" aria-expanded="false" aria-controls="site-nav-overflow"><div class="navicon" aria-hidden="true"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="{{ '/' | relative_url }}#about-me">Homepage</a></li>
+          {% for link in site.data.navigation.main %}
+            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+        <ul id="site-nav-overflow" class="hidden-links hidden"></ul>
+      </nav>
+      {% include theme-picker.html %}
+    </div>
+  </div>
+</div>

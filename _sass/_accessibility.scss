@@ -1,0 +1,86 @@
+// Keyboard access and control contrast without changing the page's visual layout.
+.skip-link {
+  position: fixed;
+  z-index: 10000;
+  top: 0.5rem;
+  left: 0.5rem;
+  max-width: calc(100% - 1rem);
+  padding: 0.75rem 1rem;
+  transform: translateY(-200%);
+  transition: none;
+  white-space: normal;
+  background: var(--site-surface);
+  color: var(--site-text);
+  border: 2px solid var(--site-link);
+  border-radius: 3px;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+
+  &:focus {
+    transform: none;
+    outline: 3px solid var(--site-link);
+    outline-offset: 2px;
+  }
+}
+
+a,
+button,
+input,
+select,
+textarea,
+summary,
+[tabindex] {
+  scroll-margin-top: var(--site-header-offset, 8rem);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible,
+#site-nav button:focus-visible {
+  outline: 3px solid var(--site-link);
+  outline-offset: 3px;
+}
+
+.theme-picker .theme-picker__indicator { border-color: var(--site-link); }
+
+body.main-layout-page .author-booking-card__busy { border-color: var(--site-muted); }
+
+#site-nav .hidden-links {
+  top: var(--site-nav-dropdown-top, 100%);
+  margin-top: 0;
+}
+
+body.main-layout-page .news__filter select,
+body.main-layout-page--booking .booking-control select,
+body.main-layout-page--booking .booking-control input,
+body.main-layout-page--booking .booking-week-nav button,
+body.main-layout-page--booking .booking-request-fields button {
+  border-color: var(--site-muted);
+}
+
+.author__urls_sm > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  min-height: 32px;
+  vertical-align: middle;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

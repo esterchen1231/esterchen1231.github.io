@@ -1,0 +1,113 @@
+# Keywords are concise website topic tags grounded in each paper's author keywords
+# and text; they are not a verbatim export of publisher indexing metadata.
+- id: qda-assistance
+  title: "Not a Collaborator or a Supervisor, but an Assistant: Striking the Balance Between Efficiency and Ownership in AI-incorporated Qualitative Data Analysis"
+  authors: 'A. Puranik, **E. Chen**, R. L. Peiris, H. Kong'
+  venue: ACM CSCW 2026
+  doi: "10.1145/3816977"
+  author_names:
+    - Anoushka Jagadeesh Puranik
+    - Ester Chen
+    - Roshan Peiris
+    - Ha-Kyung Hidy Kong
+  publication_date: "2026-09-23"
+  publication_title: Proceedings of the ACM on Human-Computer Interaction
+  volume: "10"
+  issue: "6"
+  pages: "1-25"
+  metadata_source: https://api.crossref.org/works/10.1145/3816977
+  preprint_url: https://arxiv.org/abs/2509.18297
+  pdf_url: https://dl.acm.org/doi/pdf/10.1145/3816977
+  url: https://doi.org/10.1145/3816977
+  link_label: ACM Digital Library
+  summary: "We interviewed 16 qualitative researchers about AI-assisted analysis. Their preferences for delegation reflected trade-offs between efficiency, trust, and ownership of the interpretation."
+  # Author keywords: https://arxiv.org/html/2509.18297v2
+  keywords: Qualitative data analysis, Collaborative coding, Degree of delegation, Artificial intelligence
+  image: /images/publications/qda-assistance.jpg
+  image_width: 1000
+  image_height: 510
+  image_alt: ChromaScribe interface with colored theme timelines, an audio player, and linked transcript panels
+
+- id: scenario-based-design
+  title: "What Happened to Scenario-Based Design in HCI?: A Scoping Review"
+  authors: 'J. M. Carroll, J. Jo, J. Kim, Y.-F. Lin, **E. Chen**'
+  venue: ACM CHI 2026
+  doi: "10.1145/3772318.3790899"
+  author_names:
+    - John M. Carroll
+    - Jeongwon Jo
+    - Jiyoon Kim
+    - Ya-Fang Lin
+    - Ester Chen
+  publication_date: "2026-04-13"
+  publication_title: Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems
+  pages: "1-29"
+  metadata_source: https://api.crossref.org/works/10.1145/3772318.3790899
+  pdf_url: https://dl.acm.org/doi/pdf/10.1145/3772318.3790899
+  url: https://dl.acm.org/doi/abs/10.1145/3772318.3790899
+  link_label: ACM Digital Library
+  summary: "We reviewed 125 HCI papers and traced scenario-based design methods. Our framework maps who creates scenarios, how they are experienced, when they are used, and what they explore."
+  # Author-provided paper: https://drive.google.com/file/d/1P0Tdqk4TmhadkD0wwUWF9fd3rkoMmPd3/view
+  keywords: Scenario-based design, Scoping review, Participatory design, Design methods
+  image: /images/publications/scenario-based-design.jpg
+  image_width: 1434
+  image_height: 639
+  image_alt: Family tree of scenario-based design methods organized by authorship, modality, design phase, and scope of inquiry
+
+- id: deepfake-reliance
+  title: "Effect of AI Performance, Risk Perception, and Trust on Human Dependence in Deepfake Detection AI System"
+  authors: 'Y. Zhou, **E. Chen**, M. Pisipati, A. Xiong, S. Rajtmajer'
+  venue: ACM CSCW 2025
+  doi: "10.1145/3757588"
+  author_names:
+    - Yingfan Zhou
+    - Ester Chen
+    - Manasa Pisipati
+    - Aiping Xiong
+    - Sarah Rajtmajer
+  publication_date: "2025-10-16"
+  publication_title: Proceedings of the ACM on Human-Computer Interaction
+  volume: "9"
+  issue: "7"
+  pages: "1-24"
+  metadata_source: https://api.crossref.org/works/10.1145/3757588
+  preprint_url: https://arxiv.org/abs/2508.01906
+  url: https://dl.acm.org/doi/abs/10.1145/3757588
+  link_label: ACM Digital Library
+  summary: "We studied trust and reliance in deepfake detection with 390 participants. Reported AI performance shaped trust, but trust did not significantly predict following AI advice."
+  # Author keywords and study constructs: https://arxiv.org/html/2508.01906v1
+  keywords: Deepfake detection, Human–AI decision-making, Trust in AI, Risk perception
+  image: /images/publications/deepfake-reliance.jpg
+  image_width: 987
+  image_height: 534
+  image_alt: Deepfake detection experiment showing image sampling, algorithm prediction categories, and a participant judgment task
+
+- id: deepfake-training
+  title: "A Study of Training Strategies on Enhancing Human Detection of AI-Synthesized Faces"
+  authors: '**E. Chen\***, H. Seo, M. Ruffin, D. Lee, G. Wang, A. Xiong'
+  venue: AAAI ICWSM 2025
+  doi: "10.1609/icwsm.v19i1.35821"
+  author_names:
+    - Ester Chen
+    - Haeseung Seo
+    - Margie Ruffin
+    - Dongwon Lee
+    - Gang Wang
+    - Aiping Xiong
+  publication_date: "2025-06-07"
+  publication_title: Proceedings of the International AAAI Conference on Web and Social Media
+  volume: "19"
+  issue: "1"
+  pages: "372-384"
+  metadata_source: https://ojs.aaai.org/index.php/ICWSM/article/view/35821
+  pdf_url: https://ojs.aaai.org/index.php/ICWSM/article/download/35821/37975
+  note: '*Co-first author'
+  url: https://doi.org/10.1609/icwsm.v19i1.35821
+  link_label: AAAI Proceedings
+  summary: "We compared three training strategies with 237 participants. Training improved synthetic-face detection and confidence, though additional artifact training could increase misclassification of real faces."
+  # Abstract and learning framework (p. 374): https://ojs.aaai.org/index.php/ICWSM/article/download/35821/37975/39889
+  keywords: Deepfake detection, AI-synthesized faces, Perceptual learning, Decision confidence
+  image: /images/publications/deepfake-training.jpg
+  image_width: 1000
+  image_height: 572
+  image_alt: Overview of artifact, generation, and combined training across three phases of a face detection study
